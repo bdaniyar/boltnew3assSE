@@ -1,0 +1,82 @@
+[
+  {
+    "name": "touch existing start",
+    "start": 550,
+    "end": 600,
+    "expected": "Available",
+    "actual": "Available\n\nRoom is available from 09:10 to 10:00 (50 minutes).\n\nThis is a check only — no booking was created.",
+    "pass": true
+  },
+  {
+    "name": "one-minute overlap",
+    "start": 550,
+    "end": 601,
+    "expected": "Unavailable",
+    "actual": "Unavailable\n\nOverlaps an existing booking from 10:00 to 11:00. Touching endpoints are allowed, but this interval overlaps.",
+    "pass": true
+  },
+  {
+    "name": "reversed",
+    "start": 720,
+    "end": 660,
+    "expected": "Unavailable",
+    "actual": "Unavailable\n\nStart time must be earlier than end time.",
+    "pass": true
+  },
+  {
+    "name": "equal",
+    "start": 720,
+    "end": 720,
+    "expected": "Unavailable",
+    "actual": "Unavailable\n\nStart time must be earlier than end time.",
+    "pass": true
+  },
+  {
+    "name": "before now",
+    "start": 539,
+    "end": 570,
+    "expected": "Unavailable",
+    "actual": "Unavailable\n\nStart time must be strictly later than the current demo time (09:00).",
+    "pass": true
+  },
+  {
+    "name": "one minute after now",
+    "start": 541,
+    "end": 542,
+    "expected": "Available",
+    "actual": "Available\n\nRoom is available from 09:01 to 09:02 (1 minute).\n\nThis is a check only — no booking was created.",
+    "pass": true
+  },
+  {
+    "name": "midnight start",
+    "start": 0,
+    "end": 60,
+    "expected": "Unavailable",
+    "actual": "Unavailable\n\nStart time must be strictly later than the current demo time (09:00).",
+    "pass": true
+  },
+  {
+    "name": "last minute of day",
+    "start": 1439,
+    "end": 1440,
+    "expected": "Available",
+    "actual": "Available\n\nRoom is available from 23:59 to 24:00 (1 minute).\n\nThis is a check only — no booking was created.",
+    "pass": true
+  },
+  {
+    "name": "120 ending at24:00",
+    "start": 1320,
+    "end": 1440,
+    "expected": "Available",
+    "actual": "Available\n\nRoom is available from 22:00 to 24:00 (120 minutes).\n\nThis is a check only — no booking was created.",
+    "pass": true
+  },
+  {
+    "name": "121 ending at24:00",
+    "start": 1319,
+    "end": 1440,
+    "expected": "Unavailable",
+    "actual": "Unavailable\n\nRequested duration is 121 minutes. The maximum allowed is 120 minutes.",
+    "pass": true
+  }
+]

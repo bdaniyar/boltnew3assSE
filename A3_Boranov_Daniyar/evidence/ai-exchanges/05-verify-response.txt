@@ -1,0 +1,13 @@
+Independent source verification passed: I executed `python3 -m unittest -v test_booking` (47/47, exit 0) and `npm test` (37/37, exit 0). Exact stdout, stderr, commands, timestamps and exit statuses are saved under `evidence/test-results/independent-final-*`.
+
+The tests meaningfully cover the mandatory fixtures, integer/day/order/future boundaries, 120/121 minutes, blocked rooms, both touching endpoints, containment and overlap in later bookings, and unchanged inputs. The frontend harness tests the actual application utility with frozen data.
+
+Final source retains the required A-102/540/600–660/unblocked fixture, removes booking-management paths, clears results on time/status changes, and limits Start to 00–23 while retaining End 24:00. No out-of-scope login, backend, database, API request or payment feature was found. No source edits or commit were made in this review.
+
+The `prototype-v1` tag still resolves to 687c5f7bbcb29590ad3030cf5e596431be5971b7. All 28 archived files match the tag byte-for-byte, and ZIP integrity is clean; evidence is in `independent-final-integrity.json`.
+
+I reviewed the parent's browser records: final mandatory 6/6, boundaries 10/10, repairs 8/8, and four tested widths without overflow or outside controls. Those UI operations were not independently rerun by me. No screen-reader behavior is claimed.
+
+Remaining boundaries: final PDFs/package and publication were still in progress, so this pass does not certify PDF layout, access links, commit/push, Bolt synchronization or the public demo. The stored dependency audit reports 13 advisories (8 high, 4 moderate, 1 low), mainly tooling; preserve this limitation and avoid claiming a vulnerability-free project.
+
+Full assessment is saved in `evidence/final-independent-review.md`; exact prompt and this complete response are preserved in `evidence/ai-exchanges/05-verify-prompt.txt` and `05-verify-response.txt`. This is a genuine delegated Codex verification exchange, with no invented personal human approval.

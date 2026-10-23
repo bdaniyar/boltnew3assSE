@@ -1,0 +1,603 @@
+# Software Engineering Assignment #03 — Complete Implementation and Submission
+
+I need you to complete my Software Engineering Assignment #03 based strictly on the attached assignment PDF.
+
+Read all 30 pages carefully before working.
+
+This is a full implementation, testing, documentation, and submission task. Complete as much as possible autonomously. Do not stop after planning or implementation. Continue through verification and final deliverables.
+
+## 1. Student and project information
+
+- Name: Boranov Daniyar
+- Student ID: 24B031718
+- Class: Thursday 14:00–17:00
+- Assignment: Software Engineering Assignment #03
+- Project: Smart Campus Room Availability Checker
+- English level: B1–B2
+
+IMPORTANT: This is a NEW Assignment #03 project, not my earlier Practice #06/#07 project.
+
+I already completed the following:
+1. Created the initial project in Bolt.new.
+2. Generated the original prototype v1.
+3. Connected the project to a GitHub repository.
+4. Published the initial prototype.
+5. Prepared the initial scope, assumptions, failure points, and verification plan.
+
+The GitHub repository should already be available in the current workspace or connected account.
+
+Inspect the existing repository before making any changes.
+
+**Do not create a replacement application if the current repository is accessible. Continue the existing Bolt.new project.**
+
+## 2. Critical project preservation
+
+Before modifying anything:
+
+1. Inspect the entire repository.
+2. Identify the framework, components, existing availability logic, and current test setup.
+3. Record the original Git commit hash.
+4. Preserve the original Bolt-generated v1 source.
+5. Create a recoverable baseline (Git tag/branch or archived source).
+6. Save the exact original implementation and its known limitations.
+7. Preserve any existing v1 screenshots and initial Bolt.new prompt.
+8. If original screenshots are unavailable, capture the original v1 from the preserved version before modifying it.
+9. Do not overwrite or recreate the original historical evidence.
+
+Name the baseline clearly, for example `prototype-v1`.
+
+Do not intentionally introduce defects to produce issue evidence.
+
+## 3. Initial scope and assumptions
+
+Use the following approved requirements baseline in the report.
+
+### Scope Statement
+
+The goal of this project is to create a simple Smart Campus Room Availability Checker. The system allows students to check whether a selected university room is available at a specific time.
+
+Students can choose a start time and an end time. The system checks the time limits, room status, and existing bookings. After checking, it displays either "Available" or "Unavailable" with a clear explanation.
+
+The application will have one responsive web page and use fictional booking data. It will only check availability and will not create or confirm bookings.
+
+### Initial Assumptions
+
+- The system works with one selected room.
+- All times are represented as integer minutes after midnight.
+- The current time (`now`) is provided and is valid (0–1439).
+- The room can be available or blocked.
+- Existing bookings are provided as time intervals.
+- Students cannot request a time that starts now or in the past.
+- The maximum allowed duration is 120 minutes.
+- Existing booking data must not be changed.
+- No login, database, backend, external API, or payment system is required.
+- The interface must work on desktop and mobile devices.
+
+### Possible Failure Points
+
+**Issue 1 — Overlapping time intervals**
+
+The system might incorrectly reject a request when its start time is exactly equal to the end time of an existing booking. These intervals should not overlap.
+
+**Issue 2 — Starting at the current time**
+
+The system might accept a request where `start = now`. This should be rejected because the start time must be strictly after the current time.
+
+### Function Contract
+
+`can_book(start, end, now, blocked, existing)`
+
+The function receives a requested start and end time, the current time, the room's blocked status, and a list of existing bookings.
+
+It returns True only if all booking conditions are satisfied. Otherwise, it returns False.
+
+The function must not modify the input data.
+
+### Initial Manual Verification Plan
+
+I will check the function using valid and invalid time intervals. I will test overlapping bookings, touching endpoints, blocked rooms, the 120-minute limit, and requests starting at the current time. I will also check that the interface displays clear results and works on narrow screens.
+
+Preserve this baseline in the requirements section. Do not invent claims about when or how independently it was written.
+
+## 4. Required Acceptance Criteria — AC1 to AC6
+
+Implement and verify every criterion exactly as specified in the assignment.
+
+**AC1 — Time validation**
+- 0 <= start < end <= 1440.
+- Start and end are integer minutes after midnight.
+- start must be strictly greater than now.
+- Assume now is valid between 0 and 1439.
+
+**AC2 — Duration**
+- Maximum duration is 120 minutes.
+- Exactly 120 is valid.
+- 121 is invalid.
+
+**AC3 — Blocked room**
+- Reject all requests when blocked is True.
+
+**AC4 — Overlap**
+- Reject overlap with any existing booking.
+- Touching endpoints do not overlap.
+- Use correct half-open interval logic.
+
+**AC5 — Availability only**
+- Return or display Available / Unavailable.
+- Never create, confirm, delete, or modify bookings.
+- Do not mutate input data.
+
+**AC6 — Usability**
+- Clear validation feedback.
+- Responsive, narrow/mobile-friendly layout.
+- No horizontal overflow or unusable controls.
+
+Do not introduce login, backend, databases, external APIs, payments, booking confirmation, or unrelated features.
+
+## 5. Task 2 — Python implementation
+
+Create the required files:
+
+- `booking.py`
+- `test_booking.py`
+
+Use Python 3 and the standard library only.
+
+Implement:
+
+`can_book(start, end, now, blocked, existing)`
+
+Requirements:
+- Return a Boolean.
+- Return True only when AC1–AC5 are satisfied.
+- Check all existing booking intervals.
+- Do not mutate any arguments.
+- Handle valid boundaries correctly.
+- Keep the function readable and reasonably simple.
+
+Preserve the first generated Python implementation separately as v1 before any fixes.
+
+Use `unittest` or another standard-library testing approach.
+
+Create comprehensive runnable tests.
+
+### Mandatory tests from the PDF
+
+Base data:
+- now = 540
+- blocked = False
+- existing = [(600, 660)]
+
+Test:
+
+1. 660–720 → True
+2. 630–690 → False
+3. 660–720 with blocked=True → False
+4. 720–840 → True
+5. 720–841 → False
+6. 540–570 → False
+
+Also test:
+- reversed times
+- equal start/end
+- negative boundaries
+- end beyond 1440
+- start equal to now
+- several existing bookings
+- touching an interval at either endpoint
+- invalid durations
+- blocked room with otherwise valid times
+- unchanged existing booking data and other input values
+- additional reasonable boundary cases
+
+Run the tests against v1 and record the real results.
+
+Review the conditional branches and explain how each supports AC1–AC5.
+
+If defects are found, fix them and rerun the complete suite.
+
+Record actual executed test results and preserve test output.
+
+Do not claim any test passed unless it was actually executed.
+
+## 6. Task 3 — Inspect and test the existing Bolt.new prototype
+
+The initial Bolt.new prototype v1 already exists in the GitHub repository.
+
+Inspect the actual source files, components, dependencies, and logic.
+
+Determine:
+- main application entry point
+- availability validation function
+- time input handling
+- fictional data storage
+- status display
+- blocked room control
+- responsive layout behavior
+
+Preserve the original Bolt prompt, repository version, preview evidence, and screenshots where available.
+
+Use the existing frontend stack. Do not unnecessarily rewrite or replace the application.
+
+Verify that it implements AC1–AC6 correctly.
+
+Use fictional data only.
+
+For the mandatory fixture use:
+- One selected room: A-102
+- now = 540 (09:00)
+- existing booking = 600–660 (10:00–11:00)
+- blocked = False by default
+
+If the project currently includes functionality outside the assignment scope, identify it and remove it through focused cleanup where necessary.
+
+## 7. Task 4 — Real testing
+
+Test the actual Python implementation and the actual frontend.
+
+Do not rely only on reading code.
+
+Use appropriate test execution and browser tools if available.
+
+Test the six mandatory scenarios and additional boundaries.
+
+For the frontend verify:
+- correct Available / Unavailable output
+- invalid time feedback
+- blocked room behavior
+- endpoint touching
+- maximum duration
+- no booking mutations
+- desktop layout
+- mobile layout
+- no horizontal overflow
+
+If browser automation is available, test the actual rendered interface.
+
+Save genuine screenshots and test logs.
+
+If a specific browser test cannot be executed, explain that limitation without fabricating a PASS.
+
+## 8. Task 5 — Critique, cleanup, and retesting
+
+Perform a focused critique of the ORIGINAL v1.
+
+Find at least two concrete issues.
+
+If no functional defect exists, record justified preventive cleanup improvements instead of intentionally creating bugs.
+
+Prioritize:
+1. Functional correctness if any issue is found.
+2. Usability, accessibility, or code quality.
+
+For each issue record:
+- issue ID
+- actual evidence
+- reproduction steps
+- affected AC
+- priority
+- focused AI prompt or requested change
+- code change
+- retest result
+
+Use small, targeted changes.
+
+Avoid unnecessary features or large redesigns.
+
+After each fix, execute relevant tests.
+
+Then rerun the COMPLETE acceptance test set.
+
+### Before/after evidence
+
+Capture at least one meaningful BEFORE and AFTER comparison.
+
+Prefer screenshots showing a genuine usability or validation improvement.
+
+Do not use fabricated screenshots or identical images labeled as before and after.
+
+Also capture useful final evidence:
+- main desktop interface
+- Available result
+- Unavailable overlap result
+- blocked room result
+- invalid time feedback
+- mobile/narrow layout
+
+Preserve them in an organized evidence directory.
+
+## 9. Task 6 — Coding-agent analysis
+
+Create a simple agent loop diagram:
+
+User goal → Model/Plan → Tool call → Observation → Next step → Human review
+
+Explain:
+- context used by the assistant
+- tools actually observed
+- permissions available
+- file operations
+- code execution
+- tests
+- safety checkpoints
+- human review
+- reliability
+- security
+- why tool permissions matter
+
+Clearly distinguish observed tool behavior from assumptions.
+
+Do not claim access to internal agent operations that cannot be observed.
+
+Include this diagram and explanation in the report.
+
+## 10. Required AI workflow
+
+Document the real workflow:
+
+A. Plan
+B. Generate
+C. Critique
+D. Repair
+E. Verify
+
+Save at least four genuine, meaningful AI prompt-response exchanges, including exact prompts and complete responses.
+
+Where possible, preserve original Bolt.new interactions and actual coding-assistant exchanges.
+
+Do not fabricate separate historical conversations or change what was originally said.
+
+Do not falsely attribute AI-generated decisions to me.
+
+Record the real AI tool name, model if displayed, dates, and purposes.
+
+If the available history does not establish four genuine exchanges, identify the gap rather than manufacturing evidence.
+
+For decisions requiring my personal approval, present concise proposed decisions and retain my actual response when available. Do not invent my approval.
+
+## 11. Traceability table
+
+Create a professional table with these exact columns:
+
+| AC ID | Implementation/file | Test input | Expected | V1 actual | Final actual |
+
+Cover ALL AC1–AC6.
+
+Use actual observed behavior for V1 and Final.
+
+Include both Python and frontend evidence where appropriate.
+
+## 12. Issue log
+
+Include a separate table:
+
+| Issue | Reproduction | Priority | Prompt/change | Retest result |
+
+Include at least two genuine findings or justified preventive changes.
+
+Explain why they matter.
+
+## 13. Reflection — 100–200 words
+
+Prepare a concise, natural English reflection covering:
+
+- AI-assisted coding vs vibe coding
+- one reliability risk
+- one availability/usability risk
+- one security risk
+- code review responsibility
+- tool permissions
+- importance of tests
+- one AI recommendation rejected or modified, if such a decision genuinely occurred
+- what could be improved next without expanding the assignment scope
+
+Use simple B1–B2 English.
+
+Write it in a natural first-person university report style for my review.
+
+Do not invent personal actions or decisions.
+
+## 14. Important writing and formatting rules
+
+This is very important because I had problems with a previous assignment report.
+
+The MAIN REPORT must look like a normal Software Engineering university assignment, not an AI-generated audit of a student.
+
+DO NOT use awkward third-person commentary such as:
+- "The student has not confirmed..."
+- "The student selected..."
+- "AI completed the entire assignment..."
+- "The student delegated this task..."
+- "Student decision pending..."
+- "AI-drafted explanation for student review..."
+- "Submission status..."
+- "Actual student response..."
+- "This text was generated by an AI..."
+- "Student action required..."
+
+Do not add unnecessary comments about the report's creation process.
+
+Use neutral technical language, and first-person language where it accurately reflects my reviewed decisions or experience.
+
+Keep the required AI-use disclosure and prompt-response evidence accurate in the dedicated evidence document.
+
+Do not conceal required AI involvement, invent independent human reviews, or remove authentic prompt-response records.
+
+Use:
+- professional academic formatting
+- consistent black text
+- readable headings
+- clear tables
+- properly placed screenshots
+- no unnecessarily colorful design
+- no decorative content
+- no unnecessary AI commentary
+- simple B1–B2 English
+
+Do not make the report unnecessarily long.
+
+Avoid duplicated sections and repetitive explanations.
+
+## 15. CRITICAL — Bolt.new / GitHub / live demo
+
+This is one of the most important submission requirements.
+
+I previously lost points because I forgot to include the current project/demo link.
+
+DO NOT let that happen again.
+
+We need BOTH:
+
+1. The actual Bolt.new project/editor URL.
+2. The actual PUBLIC working demo URL.
+
+Also provide the GitHub repository link.
+
+### Required verification
+
+After finishing the code changes:
+
+1. Commit the final source to the correct GitHub repository.
+2. Verify whether GitHub changes have reached the Bolt.new project.
+3. Do not assume GitHub commits automatically update the Bolt deployment.
+4. Publish or update the Bolt.new deployment if supported and authorized.
+5. Open the actual public URL in a browser.
+6. Confirm the latest version is visible.
+7. Confirm the page works without requiring the grader to sign in.
+8. Verify the basic availability flow on the published page.
+9. Record the actual checked public URL and results.
+
+If you cannot publish or verify the live site from your environment, explicitly identify the exact remaining action. Do not invent a working URL or claim deployment succeeded.
+
+### Required links in the report
+
+Create an easy-to-find section near the beginning:
+
+**Prototype Access**
+
+Include:
+- Bolt.new project link
+- Public live demo link
+- GitHub repository link
+
+Make all links clickable in the exported PDF.
+
+Repeat the important URLs in a short submission README.
+
+Never leave empty links, fake placeholders, or unverified addresses in the final submitted package.
+
+## 16. Final deliverables
+
+Produce the complete assignment submission:
+
+1. `A3_Boranov_Daniyar_Report.pdf`
+2. `booking.py`
+3. `test_booking.py`
+4. `AI_Evidence.pdf`
+5. Final web prototype source files
+6. Original prototype v1 evidence
+7. Before/after screenshots
+8. Actual Python test logs
+9. Frontend test evidence
+10. Working demo URL
+11. Bolt.new project URL
+12. GitHub repository URL
+13. README with setup, testing, and links
+
+Use an organized structure such as:
+
+A3_Boranov_Daniyar/
+- A3_Boranov_Daniyar_Report.pdf
+- AI_Evidence.pdf
+- booking.py
+- test_booking.py
+- prototype/
+- evidence/
+  - screenshots/
+  - test-results/
+  - original-v1/
+- README.md
+
+Keep the real GitHub repository intact and preserve its working application source.
+
+If useful, create a ZIP of the submission materials as well.
+
+### Report contents
+
+The PDF report must include:
+1. Assignment title, full name, student ID, class
+2. Project overview and initial scope
+3. Initial assumptions and failure points
+4. AC1–AC6
+5. Function contract
+6. Python implementation overview
+7. Bolt.new prototype overview
+8. Prototype access links
+9. Testing results
+10. Traceability table
+11. Issue log
+12. Before/after evidence
+13. Final verification
+14. Coding-agent analysis and loop diagram
+15. Reflection (100–200 words)
+16. References
+
+Put exact AI prompts and responses, meaningful exchanges, and review/revision evidence in the separate `AI_Evidence.pdf`.
+
+## 17. Final quality assurance
+
+Before finishing, perform a final audit against every assignment PDF requirement.
+
+Verify:
+- exactly the required scope
+- AC1–AC6 covered
+- Python source works
+- Python tests actually pass
+- v1 preserved
+- final frontend works
+- screenshots authentic
+- at least two issue-log entries
+- before/after comparison exists
+- agent-loop diagram exists
+- reflection word count valid
+- AI evidence preserved
+- source and test logs included
+- links are real
+- public demo is accessible
+- PDF has no cut-off tables or screenshots
+- no unnecessary text or repeated paragraphs
+
+Render the final PDF and inspect its pages for formatting problems.
+
+Do not claim success for actions that were not actually verified.
+
+## 18. Execution instructions
+
+Proceed through the entire assignment autonomously.
+
+Do not stop after individual stages.
+
+Do not ask unnecessary clarification questions when the answer can be found in the repository or assignment PDF.
+
+Use the attached assignment as the source of truth.
+
+Preserve evidence before modifying files.
+
+Run real commands and tests.
+
+Fix genuine defects.
+
+Produce all deliverables.
+
+If publication, connected-service access, or a required human decision is blocked, complete everything else and provide the exact remaining action.
+
+At the end, provide:
+
+1. A short summary of what was completed.
+2. Actual Python and frontend test results.
+3. Changes made to the original Bolt.new prototype.
+4. Exact Bolt.new, GitHub, and live demo URLs.
+5. Downloadable final deliverables.
+6. A final submission checklist identifying anything that remains unverified.
+
+The objective is a complete, technically correct, well-documented Assignment #03 that satisfies every requirement in the PDF.

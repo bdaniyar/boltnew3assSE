@@ -1,0 +1,20 @@
+{
+  "command": [
+    "/Library/Frameworks/Python.framework/Versions/3.11/bin/python3",
+    "/Users/daniarboranov/Documents/code_materials/python/python-codes/bolnewpr/ass3/boltnew2/boltnew3assSE/A3_Boranov_Daniyar/evidence/run-python-suite.py",
+    "/Users/daniarboranov/Documents/code_materials/python/python-codes/bolnewpr/ass3/boltnew2/boltnew3assSE/booking.py"
+  ],
+  "working_directory": "/Users/daniarboranov/Documents/code_materials/python/python-codes/bolnewpr/ass3/boltnew2/boltnew3assSE",
+  "observed_at_Asia_Almaty": "2026-10-23T21:31:46.389128+05:00",
+  "python_version": "3.11.9 (v3.11.9:de54cf5be3, Apr  2 2024, 07:12:50) [Clang 13.0.0 (clang-1300.0.29.30)]",
+  "implementation": "booking.py",
+  "implementation_sha256": "3ab2168a0228edf8742789ce320304e902024e70d301db82d15291e8410c60c7",
+  "suite_sha256": "413073eca71d57194b32c1b7bcf6af132747ea54bf95514bb3c0fd5bb10d70b1",
+  "tests_run": 47,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "exit_status": 0,
+  "stdout_file": "python-final.stdout.txt",
+  "stderr_file": "python-final.stderr.txt"
+}

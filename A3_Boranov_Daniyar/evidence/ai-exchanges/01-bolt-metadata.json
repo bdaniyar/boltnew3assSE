@@ -1,0 +1,12 @@
+{
+  "tool": "Bolt.new",
+  "model_displayed": false,
+  "mode_displayed": "Standard",
+  "date_displayed": "Oct 23 9:17 PM",
+  "date": "2026-10-23",
+  "project": "https://bolt.new/~/sb1-bskzikuu",
+  "prompt_characters": 4036,
+  "prompt_source": "Original Pasted Content dialog, exact text exported with innerText",
+  "response_source": "Complete rendered final response, Summary through final build sentence; original opening text and tool status labels retained in 01-bolt-observed-chat.txt",
+  "warning": "Original AI correctness claims are historical evidence, not independently verified facts. Later browser tests contradict the no-booking-change and start-hour claims."
+}

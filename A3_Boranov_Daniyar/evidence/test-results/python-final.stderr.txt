@@ -1,0 +1,52 @@
+test_119_minute_duration (test_booking.CanBookTests.test_119_minute_duration) ... ok
+test_blocked_without_existing_bookings (test_booking.CanBookTests.test_blocked_without_existing_bookings) ... ok
+test_boolean_end_is_not_integer_time (test_booking.CanBookTests.test_boolean_end_is_not_integer_time) ... ok
+test_boolean_start_is_not_integer_time (test_booking.CanBookTests.test_boolean_start_is_not_integer_time) ... ok
+test_empty_existing (test_booking.CanBookTests.test_empty_existing) ... ok
+test_end_at_1440_with_120_minutes (test_booking.CanBookTests.test_end_at_1440_with_120_minutes) ... ok
+test_end_beyond_day (test_booking.CanBookTests.test_end_beyond_day) ... ok
+test_end_noninteger_types (test_booking.CanBookTests.test_end_noninteger_types) ... ok
+test_equal_start_and_end (test_booking.CanBookTests.test_equal_start_and_end) ... ok
+test_identical_interval (test_booking.CanBookTests.test_identical_interval) ... ok
+test_inputs_unchanged_after_all_rejection_paths (test_booking.CanBookTests.test_inputs_unchanged_after_all_rejection_paths) ... ok
+test_inputs_unchanged_after_available_result (test_booking.CanBookTests.test_inputs_unchanged_after_available_result) ... ok
+test_last_minute_of_day (test_booking.CanBookTests.test_last_minute_of_day) ... ok
+test_last_valid_now_has_no_future_start (test_booking.CanBookTests.test_last_valid_now_has_no_future_start) ... ok
+test_late_day_121_minute_duration (test_booking.CanBookTests.test_late_day_121_minute_duration) ... ok
+test_mandatory_1_touching_after_booking (test_booking.CanBookTests.test_mandatory_1_touching_after_booking) ... ok
+test_mandatory_2_overlap (test_booking.CanBookTests.test_mandatory_2_overlap) ... ok
+test_mandatory_3_blocked (test_booking.CanBookTests.test_mandatory_3_blocked) ... ok
+test_mandatory_4_exactly_120_minutes (test_booking.CanBookTests.test_mandatory_4_exactly_120_minutes) ... ok
+test_mandatory_5_duration_121_minutes (test_booking.CanBookTests.test_mandatory_5_duration_121_minutes) ... ok
+test_mandatory_6_starts_now (test_booking.CanBookTests.test_mandatory_6_starts_now) ... ok
+test_midnight_start_is_not_future (test_booking.CanBookTests.test_midnight_start_is_not_future) ... ok
+test_multiple_nonoverlapping_bookings (test_booking.CanBookTests.test_multiple_nonoverlapping_bookings) ... ok
+test_negative_end (test_booking.CanBookTests.test_negative_end) ... ok
+test_negative_start (test_booking.CanBookTests.test_negative_start) ... ok
+test_one_minute_after_midnight (test_booking.CanBookTests.test_one_minute_after_midnight) ... ok
+test_one_minute_duration (test_booking.CanBookTests.test_one_minute_duration) ... ok
+test_one_minute_overlap_at_booking_end (test_booking.CanBookTests.test_one_minute_overlap_at_booking_end) ... ok
+test_one_minute_overlap_at_booking_start (test_booking.CanBookTests.test_one_minute_overlap_at_booking_start) ... ok
+test_overlap_with_last_of_several_bookings (test_booking.CanBookTests.test_overlap_with_last_of_several_bookings) ... ok
+test_overlap_with_second_booking (test_booking.CanBookTests.test_overlap_with_second_booking) ... ok
+test_repeated_checks_do_not_create_bookings (test_booking.CanBookTests.test_repeated_checks_do_not_create_bookings) ... ok
+test_request_contains_existing (test_booking.CanBookTests.test_request_contains_existing) ... ok
+test_request_inside_existing (test_booking.CanBookTests.test_request_inside_existing) ... ok
+test_reversed_times (test_booking.CanBookTests.test_reversed_times) ... ok
+test_separated_after_existing (test_booking.CanBookTests.test_separated_after_existing) ... ok
+test_separated_before_existing (test_booking.CanBookTests.test_separated_before_existing) ... ok
+test_start_at_1440 (test_booking.CanBookTests.test_start_at_1440) ... ok
+test_start_beyond_day (test_booking.CanBookTests.test_start_beyond_day) ... ok
+test_start_in_past (test_booking.CanBookTests.test_start_in_past) ... ok
+test_start_noninteger_types (test_booking.CanBookTests.test_start_noninteger_types) ... ok
+test_start_one_minute_in_future (test_booking.CanBookTests.test_start_one_minute_in_future) ... ok
+test_strict_integer_type_excludes_subclass (test_booking.CanBookTests.test_strict_integer_type_excludes_subclass) ... ok
+test_touching_before_booking (test_booking.CanBookTests.test_touching_before_booking) ... ok
+test_touching_two_bookings (test_booking.CanBookTests.test_touching_two_bookings) ... ok
+test_tuple_existing_bookings (test_booking.CanBookTests.test_tuple_existing_bookings) ... ok
+test_unsorted_existing_bookings (test_booking.CanBookTests.test_unsorted_existing_bookings) ... ok
+
+----------------------------------------------------------------------
+Ran 47 tests in 0.001s
+
+OK

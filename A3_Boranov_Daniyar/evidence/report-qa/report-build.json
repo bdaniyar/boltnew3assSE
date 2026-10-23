@@ -1,0 +1,72 @@
+{
+  "date": "2026-10-23",
+  "reflection_word_count": 151,
+  "audit_source": "A3_Boranov_Daniyar/evidence/test-results/frontend-post-dependency-audit.json",
+  "files": {
+    "A3_Boranov_Daniyar_Report.pdf": {
+      "pages": 10,
+      "page_text_lengths": [
+        1826,
+        2167,
+        1720,
+        2280,
+        1883,
+        2034,
+        1682,
+        850,
+        2830,
+        3352
+      ],
+      "link_uris": [
+        "https://bolt.new/~/sb1-bskzikuu",
+        "https://bdaniyar.github.io/boltnew3assSE/",
+        "https://github.com/bdaniyar/boltnew3assSE"
+      ]
+    },
+    "AI_Evidence.pdf": {
+      "pages": 12,
+      "page_text_lengths": [
+        2286,
+        2362,
+        2422,
+        2921,
+        2184,
+        1175,
+        3578,
+        3695,
+        4410,
+        3381,
+        3047,
+        1395
+      ],
+      "link_uris": [
+        "https://bolt.new/~/sb1-bskzikuu",
+        "https://bdaniyar.github.io/boltnew3assSE/",
+        "https://github.com/bdaniyar/boltnew3assSE"
+      ]
+    }
+  },
+  "exchange_count": 6,
+  "approved_baseline": {
+    "scope": "The goal of this project is to create a simple Smart Campus Room Availability Checker. The system allows students to check whether a selected university room is available at a specific time.\n\nStudents can choose a start time and an end time. The system checks the time limits, room status, and existing bookings. After checking, it displays either \"Available\" or \"Unavailable\" with a clear explanation.\n\nThe application will have one responsive web page and use fictional booking data. It will only check availability and will not create or confirm bookings.",
+    "assumptions": "- The system works with one selected room.\n- All times are represented as integer minutes after midnight.\n- The current time (`now`) is provided and is valid (0–1439).\n- The room can be available or blocked.\n- Existing bookings are provided as time intervals.\n- Students cannot request a time that starts now or in the past.\n- The maximum allowed duration is 120 minutes.\n- Existing booking data must not be changed.\n- No login, database, backend, external API, or payment system is required.\n- The interface must work on desktop and mobile devices.",
+    "failure_points": "**Issue 1 — Overlapping time intervals**\n\nThe system might incorrectly reject a request when its start time is exactly equal to the end time of an existing booking. These intervals should not overlap.\n\n**Issue 2 — Starting at the current time**\n\nThe system might accept a request where `start = now`. This should be rejected because the start time must be strictly after the current time.",
+    "contract": "`can_book(start, end, now, blocked, existing)`\n\nThe function receives a requested start and end time, the current time, the room's blocked status, and a list of existing bookings.\n\nIt returns True only if all booking conditions are satisfied. Otherwise, it returns False.\n\nThe function must not modify the input data.",
+    "manual": "I will check the function using valid and invalid time intervals. I will test overlapping bookings, touching endpoints, blocked rooms, the 120-minute limit, and requests starting at the current time. I will also check that the interface displays clear results and works on narrow screens."
+  },
+  "render_review": "All 10 main-report and 12 AI-evidence pages visually inspected at 110 dpi; no final layout defects observed. See visual-review.md and report-content-checks.json for file hashes.",
+  "renders": {
+    "A3_Boranov_Daniyar_Report.pdf": {
+      "renderer": "PyMuPDF",
+      "dpi": 110,
+      "pages_rendered": 10,
+      "folder": "/tmp/a3-pdf-render/A3_Boranov_Daniyar_Report"
+    },
+    "AI_Evidence.pdf": {
+      "renderer": "PyMuPDF",
+      "dpi": 110,
+      "pages_rendered": 12,
+      "folder": "/tmp/a3-pdf-render/AI_Evidence"
+    }
+  }
+}

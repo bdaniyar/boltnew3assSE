@@ -1,0 +1,24 @@
+{
+  "bolt_project_url": "https://bolt.new/~/sb1-bskzikuu",
+  "github_repository_url": "https://github.com/bdaniyar/boltnew3assSE",
+  "public_demo_url": "https://bdaniyar.github.io/boltnew3assSE/",
+  "source_commit": "e6e5da46857e19a2549a07fc38d362c7c66de8cf",
+  "baseline_commit": "687c5f7bbcb29590ad3030cf5e596431be5971b7",
+  "baseline_tag": "prototype-v1",
+  "deployment_commit": "f09256fcd64cfdbde0f5b96f6239e466a1354e9c",
+  "checked_at": "2026-10-23T21:43:24.234769+05:00",
+  "public_access_verified": true,
+  "latest_version_verified": true,
+  "mandatory_cases_passed": 6,
+  "hosting_provider": "GitHub Pages (same production build; no replacement application)",
+  "github_repository_visibility": "private",
+  "bolt_sync_verified": false,
+  "bolt_published": false,
+  "notes": [
+    "GitHub main source e6e5da46857e19a2549a07fc38d362c7c66de8cf and the prototype-v1 tag were pushed and verified.",
+    "The same production build is public on GitHub Pages. Anonymous requests returned HTTP 200 for HTML, JavaScript and CSS; each matched the local build byte for byte. The published browser passed all six mandatory cases and the 320 px layout check.",
+    "Bolt showed a Synced badge, but its latest source could not be inspected after refresh. The startup error stated: WebContainer took longer than 1 minute to boot. Bolt synchronization and Bolt publication remain unverified.",
+    "Remaining Bolt action: open the original project in a working Chromium session, load or sync the latest GitHub main source, confirm prototype v2 and no booking editing controls, then Publish and test the Bolt-hosted URL.",
+    "The GitHub repository remains private. Complete source is included in this submission package."
+  ]
+}

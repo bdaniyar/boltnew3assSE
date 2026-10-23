@@ -1,0 +1,15 @@
+Completed an AI sub-agent source review of original commit 687c5f7bbcb29590ad3030cf5e596431be5971b7. I read the complete assignment text, exact user request, every original component and utility, App, data/types, entry point, and package/build configuration. No application file was edited and no commit was made.
+
+Saved detailed findings, AC1–AC6 assessment, validator branch explanations, concrete reproduction steps, minimal repair prompts, and retest recommendations in `evidence/original-v1/source-review.md`.
+
+Three genuine findings:
+
+1. AC5 scope violation: add/remove demo booking controls change the page's existing-bookings state. The handlers replace the React array rather than mutating the exported fixture in place, but creating/deleting records still violates availability-only scope. Remove the controls and handlers; retain a read-only fictional list.
+2. Misleading stale result: direct time changes and the blocked toggle leave the previous result visible. An Available result can remain under a Blocked room badge. Clear the result in each relevant change handler and require another explicit check.
+3. Start-24 input inconsistency: Start offers hour 24 and retains the prior minute. Changing Start 11:30 to hour 24 computes 1470 while the formatter clamps its clock display to 24:00. The validator still rejects the request. Offer Start hours 00–23; retain End 24:00 with minute zero.
+
+The core validator appears correct for AC1–AC4 by inspection: integer/bounds/order/future checks, duration greater than 120, blocked rejection, and half-open overlap across all bookings. It does not mutate its inputs. The six mandatory fixture outcomes are predicted True, False, False, True, False, False; these are not executed test results from this review.
+
+Additional preventive observations: the Supabase dependency appears unused; its presence does not prove database access. ResultPanel has no live-region attribute, but screen-reader behavior was not tested. Mobile/no-overflow claims require rendered tests.
+
+This is a genuine delegated Codex critique exchange, not a student approval. Browser execution, screenshots, and runtime confirmation are left to the parent agent as assigned. Exact task prompt and this complete response are saved in `evidence/ai-exchanges/03-critique-prompt.txt` and `03-critique-response.txt`.

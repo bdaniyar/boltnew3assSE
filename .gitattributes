@@ -1,0 +1,4 @@
+*.pdf binary
+*.zip binary
+# Preserve raw command output, transcripts and extracted source evidence verbatim.
+A3_Boranov_Daniyar/evidence/** -whitespace

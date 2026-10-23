@@ -1,0 +1,11 @@
+{
+  "staleBlocked": {
+    "actual": "Available\n\nRoom is available from 11:00 to 12:00 (60 minutes).\n\nThis is a check only — no booking was created.",
+    "defect": true
+  },
+  "deleteBooking": {
+    "before": "Existing bookings\n\nThese are demo bookings used to test overlap logic (AC4). Adding them here does not create a real booking.\n\n10:00–11:00(60 min)\n\nAdd a demo booking\n\nStart\nEnd\nAdd",
+    "after": "Existing bookings\n\nThese are demo bookings used to test overlap logic (AC4). Adding them here does not create a real booking.\n\nNo existing bookings.\n\nAdd a demo booking\n\nStart\nEnd\nAdd",
+    "defect": true
+  }
+}

@@ -1,0 +1,97 @@
+Build the first working web prototype (v1) for my Software Engineering Assignment #03. **Project name:** Smart Campus Room Availability Checker...
+
+Pasted
+Thoughts
+
+I'll build the Smart Campus Room Availability Checker as a client-side React app. The assignment explicitly forbids backend/database, so I'll use in-memory React state. Let me first check the existing project setup.
+
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+ files read
+
+No backend needed — the assignment requires client-side logic only, so I'll use in-memory React state. Let me build the full prototype with well-organized components.
+
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+ actions taken
+
+Now let me verify the build passes.
+
+Ran production build to verify
+Open
+
+Build passes cleanly. Let me do a quick verification of the core availability logic against the required example cases.
+
+Check test approach
+Open
+
+The build passes and I've traced through all six required example cases — the availability logic produces the correct result for each. The prototype is complete.
+
+Summary
+
+I built the first working prototype (v1) of the Smart Campus Room Availability Checker — a single-page React app where a student can check whether room A-102 is available during a requested time interval. It only reports availability and never creates, modifies, or confirms bookings.
+
+What was created:
+
+File	Purpose
+src/types.ts	Shared TypeScript types (Booking, Room, AvailabilityResult)
+src/utils/time.ts	HH:MM ↔ integer-minutes helpers, day-end boundary (1440)
+src/utils/availability.ts	Core logic implementing AC1–AC4 (time validation, duration cap, blocked rooms, overlap with touching-endpoint rule)
+src/data/sampleData.ts	Fictional sample data (room A-102, 09:00 demo time, 10:00–11:00 booking) and the six required example test cases
+src/components/Header.tsx	"Smart Campus" header with graduation-cap logo
+src/components/RoomCard.tsx	Room details card with a toggle to set the blocked flag (AC3)
+src/components/CurrentTimeBadge.tsx	Clearly labels the 09:00 demo time and distinguishes it from the real system clock
+src/components/BookingsSection.tsx	Lists existing bookings; supports adding/removing demo bookings for testing AC4
+src/components/TimeControls.tsx	HH:MM dropdown pickers for start/end, internally stored as integer minutes; Check + Reset buttons
+src/components/ResultPanel.tsx	Clear "Available" / "Unavailable" result with explanation (AC5)
+src/components/ExampleCases.tsx	Buttons to load the six required example cases
+src/App.tsx	Wires everything together into the responsive layout
+
+Acceptance criteria coverage:
+
+AC1 — integer-minute validation, 0 ≤ start < end ≤ 1440, start strictly later than current demo time (540), 1440 supported as end-of-day.
+AC2 — 120 minutes accepted, 121 rejected.
+AC3 — blocked room rejects all requests (toggle in the room card).
+AC4 — overlaps rejected; touching endpoints (e.g. 11:00 after a 10:00–11:00 booking) allowed.
+AC5 — shows Available/Unavailable with a reason; no booking/confirm/reserve buttons anywhere; existing bookings never mutated by a check.
+AC6 — responsive grid layout, accessible labels, no horizontal overflow on narrow screens, clear validation feedback.
+
+Known limitations:
+
+Data lives only in React state — refreshing the page resets bookings and the blocked flag to the original sample data (intentional, since the assignment forbids a backend/database).
+The end-time picker uses dropdown selects; 24:00 can only be selected as the end hour (end-of-day boundary), which disables the minute field as expected.
+Input is preserved across checks (the selected times stay until changed or reset).
+
+The production build passes with no errors.
+
+Create Room Availability Checker prototype
+Version 1 at Oct 23 9:17 PM
+Publish your project
+Your project is currently private. Publish it so you can share it.
+Publish

@@ -1,0 +1,8 @@
+Bolt startup error
+WebContainer took longer than 1 minute to boot. Please try the following:
+Make sure you're using Chrome or another Chromium-based browser.
+Clear your browser cache.
+Temporarily disable browser extensions, especially ad blockers, to see if the issue clears.
+If you're using a VPN, turn it off and try again.
+Reload the page
+Contact support

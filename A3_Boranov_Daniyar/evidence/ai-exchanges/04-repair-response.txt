@@ -1,0 +1,16 @@
+This is an actual Codex sub-agent repair exchange dated 2026-10-23.
+
+Completed focused repairs in the existing Bolt React/TypeScript application after the root agent confirmed baseline screenshots were captured:
+
+- Removed booking creation/deletion controls, callbacks, and booking state. The original fictional 600–660 fixture is now frozen and read-only, with readonly TypeScript types.
+- Cleared the result after changes to either time or room status. Added polite, atomic status semantics to the result panel.
+- Limited Start hours to 00–23. End still supports 24:00 with its minute selector fixed at zero.
+- Removed the unused Supabase dependency and missing vite.svg favicon reference. Added npm test and updated the footer to prototype v2. Kept the original components, appearance, six example cases, and responsive layout.
+
+The unchanged executable test harness transpiles and runs the actual source validator. It passed 37/37 tests against preserved v1, after each of the three functional repairs, and against final source. Coverage includes all six mandatory cases, both touching endpoints, 120/121-minute limits, integer/type/day boundaries, second/third booking overlap, and frozen complete-input immutability for every case. The validator's acceptance conditions were retained; its only edit was a readonly input type.
+
+Final npm test, npm run lint, npm run typecheck, and npm run build all exited 0. Actual outputs are saved under evidence/test-results as frontend-v1-logic.tap, frontend-after-*-repair.tap, frontend-final-test.tap, and frontend-final-{lint,typecheck,build}.log. The same quality checks also passed on v1 and their logs are preserved.
+
+npm audit --json exited 1 and reported 13 remaining vulnerabilities: 1 low, 4 moderate, 8 high, and 0 critical. The actual output is frontend-final-dependency-audit.json. No broad dependency upgrades were made.
+
+The root agent owns final rendered-browser checks, screenshots, publishing, documents, and commits. I did not perform those checks or edit Python/report/README files, and made no commit. The exact repair prompt is preserved beside this complete response in 04-repair-prompt.txt.

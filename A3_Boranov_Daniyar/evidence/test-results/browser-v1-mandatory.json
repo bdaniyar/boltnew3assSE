@@ -1,0 +1,38 @@
+[
+  {
+    "case": 1,
+    "expected": "Available",
+    "actual": "Available\n\nRoom is available from 11:00 to 12:00 (60 minutes).\n\nThis is a check only — no booking was created.",
+    "pass": true
+  },
+  {
+    "case": 2,
+    "expected": "Unavailable",
+    "actual": "Unavailable\n\nOverlaps an existing booking from 10:00 to 11:00. Touching endpoints are allowed, but this interval overlaps.",
+    "pass": true
+  },
+  {
+    "case": 3,
+    "expected": "Unavailable",
+    "actual": "Unavailable\n\nThis room is currently blocked. All availability requests are rejected.",
+    "pass": true
+  },
+  {
+    "case": 4,
+    "expected": "Available",
+    "actual": "Available\n\nRoom is available from 12:00 to 14:00 (120 minutes).\n\nThis is a check only — no booking was created.",
+    "pass": true
+  },
+  {
+    "case": 5,
+    "expected": "Unavailable",
+    "actual": "Unavailable\n\nRequested duration is 121 minutes. The maximum allowed is 120 minutes.",
+    "pass": true
+  },
+  {
+    "case": 6,
+    "expected": "Unavailable",
+    "actual": "Unavailable\n\nStart time must be strictly later than the current demo time (09:00).",
+    "pass": true
+  }
+]

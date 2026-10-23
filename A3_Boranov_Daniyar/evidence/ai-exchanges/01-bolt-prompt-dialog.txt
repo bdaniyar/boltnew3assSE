@@ -1,0 +1,115 @@
+Pasted Content
+113 lines • 4 036 characters
+Build the first working web prototype (v1) for my Software Engineering Assignment #03.
+
+**Project name:** Smart Campus Room Availability Checker
+
+**Main goal:**
+Create a clean, responsive, single-page application where a university student can check whether one selected room is available during a requested time interval.
+
+This is an educational prototype. It must check availability only, not make or confirm bookings.
+
+### Technology
+- React + TypeScript + Vite
+- Tailwind CSS for styling
+- Client-side logic only
+- Simple, readable, maintainable components
+- No backend, database, authentication, external APIs, payments, or unnecessary integrations
+
+### Required functionality (AC1–AC6)
+
+**AC1 — Time validation**
+- Candidate times are integer minutes after midnight.
+- Require 0 <= start < end <= 1440.
+- The start must be strictly greater than the supplied current time.
+- Support 1440 as a valid end-of-day boundary.
+- Reject invalid or reversed intervals.
+
+**AC2 — Duration**
+- Maximum duration is 120 minutes.
+- Exactly 120 minutes must be accepted.
+- 121 minutes must be rejected.
+
+**AC3 — Blocked rooms**
+- If the selected room is blocked, every booking request must be rejected.
+
+**AC4 — Overlapping bookings**
+- Reject any interval that overlaps an existing booking.
+- Touching endpoints are allowed.
+- Example: Existing 10:00–11:00, requested 11:00–12:00 is valid.
+- Existing 10:00–11:00, requested 10:30–11:30 is invalid.
+
+**AC5 — Availability only**
+- Display a clear "Available" or "Unavailable" result.
+- Do not create bookings.
+- Do not update or delete existing bookings.
+- Do not add "Confirm Booking" or "Reserve" buttons.
+- Keep all existing booking data unchanged.
+
+**AC6 — Usability**
+- Responsive desktop and mobile layout.
+- Clear validation feedback explaining why a time is invalid.
+- Accessible labels and readable typography.
+- The interface should remain usable on narrow screens without horizontal overflow.
+
+### Fictional sample data
+
+Use exactly one selected room:
+
+Room: A-102
+Room name: Study Room A-102
+Current demo time: 09:00 (540 minutes)
+Blocked: false
+Existing booking: 10:00–11:00 (600–660 minutes)
+
+Allow the blocked flag to be changed for demonstration and testing.
+
+Provide controls for choosing start and end times. Display times in an understandable HH:MM format while maintaining integer-minute logic internally.
+
+Make the current demo time visible and clearly distinguish it from the actual system clock.
+
+### Required example cases
+
+The UI should support checking:
+
+1. 660–720: Available
+2. 630–690: Unavailable (overlap)
+3. 660–720 with blocked=true: Unavailable
+4. 720–840: Available (exactly 120 minutes)
+5. 720–841: Unavailable (121 minutes)
+6. 540–570: Unavailable (starts now)
+
+Also support reversed times, day boundaries, multiple existing bookings and input preservation.
+
+### Design
+
+Use a modern, minimal university dashboard appearance:
+- Header: Smart Campus
+- Main heading: Room Availability Checker
+- Room details card
+- Current time indicator
+- Existing bookings section
+- Start and end time inputs
+- "Check Availability" button
+- Clear availability result with an explanation
+
+Use a white/light-gray background with restrained blue accents, subtle borders, rounded cards and responsive spacing.
+
+Focus on usability rather than decoration.
+
+### IMPORTANT — Assignment evidence
+
+This is the ORIGINAL PROTOTYPE V1.
+
+- Build the first complete, usable version.
+- Do not deliberately introduce bugs.
+- Do not add features outside AC1–AC6.
+- Do not automatically start a second cleanup or redesign phase.
+- Do not modify this version further after the initial build until I request a review.
+- At the end, briefly explain which files and components were created.
+- Report any limitations you know about.
+- Preserve the original source and first preview for comparison with later revisions.
+
+I will save screenshots and connect this project to GitHub before an independent coding assistant performs critique, cleanup and retesting.
+
+Generate the first working prototype now.

@@ -1,0 +1,274 @@
+
+> vite-react-typescript-starter@0.0.0 test
+> node --test --test-reporter=tap scripts/frontend-test.mjs
+
+TAP version 13
+# Actual frontend source: ./src/utils/availability.ts
+# mandatory 1: 660–720 touches existing end: expected=Available, actual=Available
+# mandatory 2: 630–690 overlaps: expected=Unavailable, actual=Unavailable
+# mandatory 3: blocked 660–720: expected=Unavailable, actual=Unavailable
+# mandatory 4: exactly 120 minutes: expected=Available, actual=Available
+# mandatory 5: 121 minutes: expected=Unavailable, actual=Unavailable
+# mandatory 6: starts now: expected=Unavailable, actual=Unavailable
+# touches existing start: expected=Available, actual=Available
+# overlaps by one minute at existing start: expected=Unavailable, actual=Unavailable
+# overlaps by one minute at existing end: expected=Unavailable, actual=Unavailable
+# equals an existing interval: expected=Unavailable, actual=Unavailable
+# contains an existing interval: expected=Unavailable, actual=Unavailable
+# contained by an existing interval: expected=Unavailable, actual=Unavailable
+# reversed times: expected=Unavailable, actual=Unavailable
+# equal times: expected=Unavailable, actual=Unavailable
+# negative start: expected=Unavailable, actual=Unavailable
+# negative end: expected=Unavailable, actual=Unavailable
+# end beyond day: expected=Unavailable, actual=Unavailable
+# start at day end: expected=Unavailable, actual=Unavailable
+# day start cannot be strictly after valid now: expected=Unavailable, actual=Unavailable
+# one minute after earliest now: expected=Available, actual=Available
+# last minute ending at 24:00: expected=Available, actual=Available
+# exactly 120 minutes ending at 24:00: expected=Available, actual=Available
+# one minute before now: expected=Unavailable, actual=Unavailable
+# one minute after now: expected=Available, actual=Available
+# empty bookings: expected=Available, actual=Available
+# fractional start: expected=Unavailable, actual=Unavailable
+# fractional end: expected=Unavailable, actual=Unavailable
+# string start: expected=Unavailable, actual=Unavailable
+# string end: expected=Unavailable, actual=Unavailable
+# boolean start: expected=Unavailable, actual=Unavailable
+# null end: expected=Unavailable, actual=Unavailable
+# NaN start: expected=Unavailable, actual=Unavailable
+# infinite end: expected=Unavailable, actual=Unavailable
+# undefined end: expected=Unavailable, actual=Unavailable
+# overlap found in second booking: expected=Unavailable, actual=Unavailable
+# overlap found in third unsorted booking: expected=Unavailable, actual=Unavailable
+# fits between multiple touching endpoints: expected=Available, actual=Available
+# Subtest: mandatory 1: 660–720 touches existing end
+ok 1 - mandatory 1: 660–720 touches existing end
+  ---
+  duration_ms: 2.594458
+  type: 'test'
+  ...
+# Subtest: mandatory 2: 630–690 overlaps
+ok 2 - mandatory 2: 630–690 overlaps
+  ---
+  duration_ms: 0.180833
+  type: 'test'
+  ...
+# Subtest: mandatory 3: blocked 660–720
+ok 3 - mandatory 3: blocked 660–720
+  ---
+  duration_ms: 0.119292
+  type: 'test'
+  ...
+# Subtest: mandatory 4: exactly 120 minutes
+ok 4 - mandatory 4: exactly 120 minutes
+  ---
+  duration_ms: 0.070208
+  type: 'test'
+  ...
+# Subtest: mandatory 5: 121 minutes
+ok 5 - mandatory 5: 121 minutes
+  ---
+  duration_ms: 0.119208
+  type: 'test'
+  ...
+# Subtest: mandatory 6: starts now
+ok 6 - mandatory 6: starts now
+  ---
+  duration_ms: 0.053583
+  type: 'test'
+  ...
+# Subtest: touches existing start
+ok 7 - touches existing start
+  ---
+  duration_ms: 0.135375
+  type: 'test'
+  ...
+# Subtest: overlaps by one minute at existing start
+ok 8 - overlaps by one minute at existing start
+  ---
+  duration_ms: 0.165375
+  type: 'test'
+  ...
+# Subtest: overlaps by one minute at existing end
+ok 9 - overlaps by one minute at existing end
+  ---
+  duration_ms: 0.277291
+  type: 'test'
+  ...
+# Subtest: equals an existing interval
+ok 10 - equals an existing interval
+  ---
+  duration_ms: 0.307084
+  type: 'test'
+  ...
+# Subtest: contains an existing interval
+ok 11 - contains an existing interval
+  ---
+  duration_ms: 0.102667
+  type: 'test'
+  ...
+# Subtest: contained by an existing interval
+ok 12 - contained by an existing interval
+  ---
+  duration_ms: 0.042875
+  type: 'test'
+  ...
+# Subtest: reversed times
+ok 13 - reversed times
+  ---
+  duration_ms: 0.117208
+  type: 'test'
+  ...
+# Subtest: equal times
+ok 14 - equal times
+  ---
+  duration_ms: 0.036792
+  type: 'test'
+  ...
+# Subtest: negative start
+ok 15 - negative start
+  ---
+  duration_ms: 0.030917
+  type: 'test'
+  ...
+# Subtest: negative end
+ok 16 - negative end
+  ---
+  duration_ms: 0.029167
+  type: 'test'
+  ...
+# Subtest: end beyond day
+ok 17 - end beyond day
+  ---
+  duration_ms: 0.028208
+  type: 'test'
+  ...
+# Subtest: start at day end
+ok 18 - start at day end
+  ---
+  duration_ms: 0.0285
+  type: 'test'
+  ...
+# Subtest: day start cannot be strictly after valid now
+ok 19 - day start cannot be strictly after valid now
+  ---
+  duration_ms: 0.0305
+  type: 'test'
+  ...
+# Subtest: one minute after earliest now
+ok 20 - one minute after earliest now
+  ---
+  duration_ms: 0.030708
+  type: 'test'
+  ...
+# Subtest: last minute ending at 24:00
+ok 21 - last minute ending at 24:00
+  ---
+  duration_ms: 0.036167
+  type: 'test'
+  ...
+# Subtest: exactly 120 minutes ending at 24:00
+ok 22 - exactly 120 minutes ending at 24:00
+  ---
+  duration_ms: 0.029542
+  type: 'test'
+  ...
+# Subtest: one minute before now
+ok 23 - one minute before now
+  ---
+  duration_ms: 0.030958
+  type: 'test'
+  ...
+# Subtest: one minute after now
+ok 24 - one minute after now
+  ---
+  duration_ms: 0.027334
+  type: 'test'
+  ...
+# Subtest: empty bookings
+ok 25 - empty bookings
+  ---
+  duration_ms: 0.028875
+  type: 'test'
+  ...
+# Subtest: fractional start
+ok 26 - fractional start
+  ---
+  duration_ms: 0.032667
+  type: 'test'
+  ...
+# Subtest: fractional end
+ok 27 - fractional end
+  ---
+  duration_ms: 0.031959
+  type: 'test'
+  ...
+# Subtest: string start
+ok 28 - string start
+  ---
+  duration_ms: 0.028083
+  type: 'test'
+  ...
+# Subtest: string end
+ok 29 - string end
+  ---
+  duration_ms: 0.027583
+  type: 'test'
+  ...
+# Subtest: boolean start
+ok 30 - boolean start
+  ---
+  duration_ms: 0.026875
+  type: 'test'
+  ...
+# Subtest: null end
+ok 31 - null end
+  ---
+  duration_ms: 0.027333
+  type: 'test'
+  ...
+# Subtest: NaN start
+ok 32 - NaN start
+  ---
+  duration_ms: 0.031083
+  type: 'test'
+  ...
+# Subtest: infinite end
+ok 33 - infinite end
+  ---
+  duration_ms: 0.026292
+  type: 'test'
+  ...
+# Subtest: undefined end
+ok 34 - undefined end
+  ---
+  duration_ms: 0.026167
+  type: 'test'
+  ...
+# Subtest: overlap found in second booking
+ok 35 - overlap found in second booking
+  ---
+  duration_ms: 0.068458
+  type: 'test'
+  ...
+# Subtest: overlap found in third unsorted booking
+ok 36 - overlap found in third unsorted booking
+  ---
+  duration_ms: 0.031917
+  type: 'test'
+  ...
+# Subtest: fits between multiple touching endpoints
+ok 37 - fits between multiple touching endpoints
+  ---
+  duration_ms: 0.029458
+  type: 'test'
+  ...
+1..37
+# tests 37
+# suites 0
+# pass 37
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 568.154

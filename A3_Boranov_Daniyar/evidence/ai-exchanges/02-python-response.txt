@@ -1,0 +1,9 @@
+Codex sub-agent exchange 02 — Python implementation and verification.
+
+Implemented root `booking.py` and `test_booking.py` using Python's standard library. The first generated implementation was preserved before testing at `A3_Boranov_Daniyar/evidence/original-v1/booking-v1.py`.
+
+The identical suite executed 47 unittest test methods against v1 and final. Both runs passed: 0 failures, 0 errors, 0 skipped, exit status 0. Coverage includes all six mandatory fixtures, strict integer types excluding bool, day boundaries, both endpoint touches, every overlap shape, multiple/unsorted bookings, blocked rooms and input immutability. No Python defect was found, so no artificial repair was made; v1 and final are byte-identical.
+
+Actual stdout, stderr, commands, timestamps, hashes and exit statuses are preserved in `A3_Boranov_Daniyar/evidence/test-results/python-v1.*` and `python-final.*`. The pre-generation plan, full conditional review and traceability are in `evidence/python-plan.md`, `evidence/python-review.md` and `evidence/python-traceability.md`. The exact delegated prompt and this complete response are preserved as exchange 02. These records describe an actual Codex sub-agent exchange and do not claim personal student approval.
+
+Run the submitted suite with `python3 -m unittest -v test_booking` from the directory containing the two Python files. `now`, `blocked`, and existing interval structure follow the assignment assumptions; AC6 requires the separate frontend checks. No frontend, package configuration or shared report files were changed, and no commit was made.

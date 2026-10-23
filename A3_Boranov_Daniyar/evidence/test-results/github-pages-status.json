@@ -1,0 +1,49 @@
+[
+  {
+    "endpoint": "/pages",
+    "status": 200,
+    "data": {
+      "status": "building",
+      "html_url": "https://bdaniyar.github.io/boltnew3assSE/",
+      "source": {
+        "branch": "gh-pages",
+        "path": "/"
+      },
+      "public": true,
+      "build_type": "legacy",
+      "error": null,
+      "commit": null
+    }
+  },
+  {
+    "endpoint": "/pages/builds/latest",
+    "status": 200,
+    "data": {
+      "status": "building",
+      "html_url": null,
+      "source": null,
+      "public": null,
+      "build_type": null,
+      "error": {
+        "message": null
+      },
+      "commit": "f09256fcd64cfdbde0f5b96f6239e466a1354e9c"
+    }
+  },
+  {
+    "endpoint": "/actions/runs?per_page=5",
+    "status": 200,
+    "data": {
+      "workflow_runs": [
+        {
+          "id": 39988882334,
+          "name": "pages build and deployment",
+          "status": "in_progress",
+          "conclusion": null,
+          "html_url": "https://github.com/bdaniyar/boltnew3assSE/actions/runs/39988882334",
+          "head_branch": "gh-pages"
+        }
+      ]
+    }
+  }
+]

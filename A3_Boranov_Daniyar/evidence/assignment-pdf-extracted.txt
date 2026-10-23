@@ -1,0 +1,271 @@
+PAGE 1
+Software Engineering
+Assignment #03
+
+PAGE 2
+
+
+PAGE 3
+Agenda: Assignment #03 - Software Engineering
+1 Assignment #03
+2 References
+3 Submission details
+4 Q & A
+
+PAGE 4
+Agenda: Assignment #03 - Software Engineering
+1 Assignment #03
+2 References
+3 Submission details
+4 Q & A
+
+PAGE 5
+● AI-assisted coding, vibe coding and prototype cleanup.
+● Scenario: Smart Campus Room Availability Checker.
+● Work individually. Build a working one-page prototype and  
+document the engineering decisions.
+● Use at least one AI assistant and preserve evidence of your own 
+review.
+Assignment #03
+Assignment details
+
+PAGE 6
+● Translate a user story into a precise, testable contract.
+● Use an AI coding assistant to implement and review a small 
+function.
+● Use Bolt.new to generate a first web prototype and improve it.
+continues … 
+Assignment #03
+Learning outcomes
+
+PAGE 7
+● Explain how agent tools, permissions, and human checkpoints 
+affect dependability.
+● Demonstrate tests, cleanup and evidence-based verification.
+Assignment #03
+Learning outcomes
+
+PAGE 8
+● User story: As a student, I want to check a room’s availability so 
+that I can choose a valid booking time.
+● Build one responsive page for one selected room, with fictional 
+booking data.
+● The page checks availability only; it does not create or confirm 
+bookings.
+● Exclude login, database, backend, external API, payments and 
+unrelated features.
+Assignment #03
+Scenario and scope
+
+PAGE 9
+● AC1. Candidate times are integer minutes after midnight: 0 <= 
+start < end <= 1440; start must be strictly after now.
+● AC2. Duration must not exceed 120 minutes. Exactly 120 minutes 
+is permitted.
+● AC3. Reject every request when the selected room is blocked.
+● Assume now is valid (0–1439); use fictional data only.
+Assignment #03
+Required rules: AC1–AC3
+
+PAGE 10
+● AC4. Reject overlap with any existing booking. Intervals touching 
+at an endpoint do NOT overlap.
+● AC5. Display an unambiguous Available / Unavailable result; do 
+not mutate existing bookings.
+● AC6. Provide understandable validation feedback and a usable 
+narrow/mobile layout.
+● Treat these criteria as fixed: reject AI suggestions that change 
+their meaning.
+Assignment #03
+Required rules: AC4–AC6
+
+PAGE 11
+● Before prompting AI, write the scope and acceptance criteria in 
+your own words.
+● Identify at least two likely failure points (for example, endpoint 
+overlap and starts-now).
+● Describe the function contract: can_book(start, end, now, 
+blocked, existing).
+● Record your initial assumptions and what will be verified 
+manually.
+Assignment #03
+Task 1: baseline and plan
+
+PAGE 12
+● Create booking.py and test_booking.py with Python 3.
+● Ask AI to propose a short plan, then generate can_book(...) using 
+only the standard library.
+● Save the first generated implementation as v1 before fixing any 
+errors.
+● Review each conditional branch and explain how it satisfies AC1–
+AC5.
+● Keep inputs unchanged and return True only when the request is 
+valid.
+Assignment #03
+Task 2: AI-assisted Python 
+implementation
+
+PAGE 13
+● Prompt Bolt.new to build the one-page Smart Campus Room 
+Availability Checker.
+● Include AC1–AC6 and explicitly forbid login, backend and 
+database.
+● Save the exact prompt, screenshot, tool/model details if visible, 
+and first usable preview.
+● Identify main generated files/components and inspect their role.
+● Do not treat v1 as the final submission.
+Assignment #03
+Task 3: prototype v1 with Bolt.new
+
+PAGE 14
+● Base data: now=540; blocked=False; existing=[(600,660)].
+● Touching: 660–720 -> Available. Overlap: 630–690 -> Unavailable.
+● Blocked: 660–720, blocked=True -> Unavailable.
+● Exactly 120 min: 720–840 -> Available; 121 min: 720–841 -> 
+Unavailable.
+● Starts now: 540–570 -> Unavailable.
+● Also test reversed times, day bounds, multiple bookings and 
+unchanged inputs
+Assignment #03
+Task 4: execute test cases
+
+PAGE 15
+● Record at least two concrete findings from v1 or justify 
+preventive cleanup if all tests pass.
+● Prioritize a functional defect and a usability/code-quality issue 
+where available.
+● For each issue: evidence -> focused AI prompt -> change -> retest.
+● Avoid generic “make it better” prompts and unrequested feature 
+additions.
+● Run the complete acceptance test set again on the final version.
+Assignment #03
+Task 5: cleanup and retest
+
+PAGE 16
+● Draw a simple agent loop: user goal -> model/plan -> tool call -> 
+observation -> next step -> human review.
+● Identify what context, tools and permissions your assistant or 
+Bolt.new used or appeared to use.
+● Distinguish observed behavior from assumptions about internal 
+implementation.
+continues … 
+Assignment #03
+Task 6: coding-agent analysis
+
+PAGE 17
+● Explain one safety checkpoint before executing or accepting AI-
+generated changes.
+● Relate the workflow to system reliability, security and human 
+responsibility.
+Assignment #03
+Task 6: coding-agent analysis
+
+PAGE 18
+● A. Plan: ask for checks, assumptions and boundary tests; approve 
+the plan yourself.
+● B. Generate: save Python v1 and web prototype v1.
+● C. Critique: request a review against AC1–AC6; verify each claim 
+independently.
+continues … 
+Assignment #03
+Required AI workflow
+
+PAGE 19
+● D. Repair: use small, targeted prompts; record exactly what 
+changed.
+● E. Verify: rerun tests, document remaining limitations and explain 
+decisions.
+● Save at least four meaningful prompt-response exchanges.
+Assignment #03
+Required AI workflow
+
+PAGE 20
+● Prepare a table: AC ID | implementation/file | test input | 
+expected | v1 actual | final actual.
+● Keep an issue log: issue | reproduction | priority | prompt/change | 
+retest result.
+● Include before/after screenshots for at least one meaningful 
+improvement.
+continues …
+Assignment #03
+Evidence and traceability
+
+PAGE 21
+● Record tool name, model if displayed, and date of AI use.
+● Never claim a test passed unless it was actually executed.
+Assignment #03
+Evidence and traceability
+
+PAGE 22
+● In 100–200 words, compare AI-assisted coding with vibe coding in 
+this assignment.
+● Explain one example each of reliability, availability/usability and 
+security risk.
+● Discuss why code review, tool permissions and tests remain 
+human responsibilities.
+continues … 
+Assignment #03
+Reflection: dependability and AI
+
+PAGE 23
+● Identify one AI recommendation you rejected or modified, and 
+why.
+● Describe what you would improve next without expanding the 
+current scope.
+Assignment #03
+Reflection: dependability and AI
+
+PAGE 24
+Agenda: Assignment #03 - Software Engineering
+1 Assignment #03
+2 References
+3 Submission details
+4 Q & A
+
+PAGE 25
+● Lesson #05 - Software Engineering - Lecture: dependable 
+systems, security, reuse and software engineering.
+● Lesson #05 - Software Engineering - Practice: AI-assisted coding 
+and can_book tests.
+References
+References details
+
+PAGE 26
+● Lesson #06 - Software Engineering - Lecture: coding agents, 
+agent loop, tools and harness design.
+● Lesson #06 - Software Engineering - Practice: vibe coding, 
+Bolt.new and prototype cleanup.
+● Reference baseline: Assignment #02 format and evidence-driven 
+AI workflow.
+References
+References details
+
+PAGE 27
+Agenda: Assignment #03 - Software Engineering
+1 Assignment #03
+2 References
+3 Submission details
+4 Q & A
+
+PAGE 28
+● A3_Surname_Name_Report.pdf: scope, criteria, traceability, 
+tests, issues, agent analysis and reflection.
+● booking.py and test_booking.py: readable source and runnable 
+tests.
+continues … 
+Submission details
+Submission package
+
+PAGE 29
+● Prototype: the Bolt.new project and a link to a working demo, 
+along with screenshots and source files (you can host these in a 
+repository on GitHub, GitLab, or a similar service and provide a 
+link to it).
+● AI_Evidence.pdf: at least four prompts with responses, review 
+decisions and revisions.
+Submission details
+Submission package
+
+PAGE 30
+Agenda: Assignment #03 - Software Engineering
+Q & A

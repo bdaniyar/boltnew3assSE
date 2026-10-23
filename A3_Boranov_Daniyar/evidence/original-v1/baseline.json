@@ -1,0 +1,14 @@
+{
+  "commit": "687c5f7bbcb29590ad3030cf5e596431be5971b7",
+  "tag": "prototype-v1",
+  "repository": "https://github.com/bdaniyar/boltnew3assSE",
+  "original_worktree": "clean",
+  "original_screenshots_found": false,
+  "initial_tests": "No Python or frontend tests in original source.",
+  "template_prompt": ".bolt/prompt is a template instruction, not the original user request.",
+  "known_findings": [
+    "Add/remove demo booking controls conflict with AC5.",
+    "Displayed result remains stale after input or blocked-status changes.",
+    "Start hour includes 24; minute handling can produce out-of-range values."
+  ]
+}

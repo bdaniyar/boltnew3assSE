@@ -1,0 +1,44 @@
+{
+  "main_pages": 10,
+  "ai_pages": 12,
+  "exact_prompt_response_text_present_ignoring_layout_whitespace": {
+    "01-bolt-prompt.txt": true,
+    "01-bolt-response.txt": true,
+    "02-python-prompt.txt": true,
+    "02-python-response.txt": true,
+    "03-critique-prompt.txt": true,
+    "03-critique-response.txt": true,
+    "04-repair-prompt.txt": true,
+    "04-repair-response.txt": true,
+    "05-verify-prompt.txt": true,
+    "05-verify-response.txt": true,
+    "06-dependencies-prompt.txt": true,
+    "06-dependencies-response.txt": true
+  },
+  "supplied_baseline_text_present_ignoring_layout_whitespace": {
+    "scope": true,
+    "assumptions": true,
+    "failure_points": true,
+    "contract": true,
+    "manual": true
+  },
+  "required_clickable_links": {
+    "A3_Boranov_Daniyar_Report.pdf": {
+      "bolt_project_url": true,
+      "public_demo_url": true,
+      "github_repository_url": true
+    },
+    "AI_Evidence.pdf": {
+      "bolt_project_url": true,
+      "public_demo_url": true,
+      "github_repository_url": true
+    }
+  },
+  "banned_main_report_phrases": [],
+  "out_of_page_text_spans": [],
+  "pdf_sha256": {
+    "A3_Boranov_Daniyar_Report.pdf": "0b45a4ab8bffcab68b035a94a32d67d49bb423858a9ce4781bfddbd3bbc9c607",
+    "AI_Evidence.pdf": "fa97eb80baae6a757143da0f57544356eed6de54b6ba581754c0ca1288d24ec4"
+  },
+  "reflection_words": 151
+}

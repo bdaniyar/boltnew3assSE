@@ -1,0 +1,34 @@
+[
+  {
+    "controlsOutside": 0,
+    "overflow": false,
+    "scrollWidth": 320,
+    "width": 320,
+    "availableFlow": true,
+    "pass": true
+  },
+  {
+    "controlsOutside": 0,
+    "overflow": false,
+    "scrollWidth": 375,
+    "width": 375,
+    "availableFlow": true,
+    "pass": true
+  },
+  {
+    "controlsOutside": 0,
+    "overflow": false,
+    "scrollWidth": 768,
+    "width": 768,
+    "availableFlow": true,
+    "pass": true
+  },
+  {
+    "controlsOutside": 0,
+    "overflow": false,
+    "scrollWidth": 1440,
+    "width": 1440,
+    "availableFlow": true,
+    "pass": true
+  }
+]

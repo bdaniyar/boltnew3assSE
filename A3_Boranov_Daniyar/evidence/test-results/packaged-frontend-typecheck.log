@@ -1,0 +1,9 @@
+Command: npm run typecheck
+Working directory: /tmp/a3-standalone-prototype-check
+
+
+> vite-react-typescript-starter@0.0.0 typecheck
+> tsc --noEmit -p tsconfig.app.json
+
+
+Exit status: 0

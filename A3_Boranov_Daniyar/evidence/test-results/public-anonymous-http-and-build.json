@@ -1,0 +1,26 @@
+[
+  {
+    "url": "https://bdaniyar.github.io/boltnew3assSE/index.html",
+    "status": 200,
+    "authenticated": false,
+    "bytes": 653,
+    "sha256": "a7da7d75571f55b2d31fa37c47cf7b5a9f92f9e982249865b4a24d46e51de623",
+    "matches_local_build": true
+  },
+  {
+    "url": "https://bdaniyar.github.io/boltnew3assSE/assets/index-Dy7Dak8_.js",
+    "status": 200,
+    "authenticated": false,
+    "bytes": 158284,
+    "sha256": "9449a50c705cb512b22d29349f31b0af4692b5e843f0c6abf9bb848db6c2381e",
+    "matches_local_build": true
+  },
+  {
+    "url": "https://bdaniyar.github.io/boltnew3assSE/assets/index-BGlz9EuQ.css",
+    "status": 200,
+    "authenticated": false,
+    "bytes": 11855,
+    "sha256": "f6d2351d519ff07208f27c9f0321b6ebf4c9bf8ebcf0aef8e5e684df45b2f9bd",
+    "matches_local_build": true
+  }
+]

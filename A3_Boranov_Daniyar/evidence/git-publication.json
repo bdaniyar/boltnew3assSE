@@ -1,0 +1,12 @@
+{
+  "repository": "https://github.com/bdaniyar/boltnew3assSE",
+  "source_commit": "e6e5da46857e19a2549a07fc38d362c7c66de8cf",
+  "deployment_commit": "f09256fcd64cfdbde0f5b96f6239e466a1354e9c",
+  "baseline_commit": "687c5f7bbcb29590ad3030cf5e596431be5971b7",
+  "baseline_tag": "prototype-v1",
+  "remote_refs": [
+    "f09256fcd64cfdbde0f5b96f6239e466a1354e9c\trefs/heads/gh-pages",
+    "e6e5da46857e19a2549a07fc38d362c7c66de8cf\trefs/heads/main",
+    "687c5f7bbcb29590ad3030cf5e596431be5971b7\trefs/tags/prototype-v1"
+  ]
+}

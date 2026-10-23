@@ -1,0 +1,27 @@
+{
+  "checked_at": "2026-10-23T21:51:04.618746+05:00",
+  "required_files_present": true,
+  "package_caches_absent": true,
+  "python_matches_first_generation_and_root": true,
+  "tests_match_root": true,
+  "pdf_hashes_match_visual_review": true,
+  "cold_package_tests": {
+    "python": 47,
+    "frontend": 37,
+    "npm_ci": 0,
+    "lint": 0,
+    "typecheck": 0,
+    "build": 0
+  },
+  "published_mandatory": 6,
+  "unverified": [
+    "Latest source loaded inside Bolt",
+    "Bolt-hosted deployment"
+  ],
+  "known_limits": [
+    "GitHub repository is private; full source is supplied.",
+    "Six dependency advisories remain.",
+    "No screen-reader runtime testing."
+  ],
+  "cleanup": "Generated baseline preview cache and Python cache removed after stopping local preview servers; historical cold-package check findings retained."
+}

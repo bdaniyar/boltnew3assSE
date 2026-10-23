@@ -1,0 +1,70 @@
+[
+  {
+    "name": "blocked change clears stale result",
+    "pass": true,
+    "actual": "Choose a start and end time, then select “Check Availability” to see the result."
+  },
+  {
+    "name": "start change clears stale result",
+    "pass": true,
+    "actual": "Choose a start and end time, then select “Check Availability” to see the result."
+  },
+  {
+    "name": "end change clears stale result",
+    "pass": true,
+    "actual": "Choose a start and end time, then select “Check Availability” to see the result."
+  },
+  {
+    "name": "no booking-management buttons",
+    "pass": true,
+    "actual": 0
+  },
+  {
+    "name": "bookings unchanged across scenarios",
+    "pass": true,
+    "actual": "Existing bookings\n\nFixed fictional bookings used to check overlaps. This list is read-only.\n\n10:00–11:00(60 min)"
+  },
+  {
+    "name": "Start limited 0..23",
+    "pass": true,
+    "actual": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16",
+      "17",
+      "18",
+      "19",
+      "20",
+      "21",
+      "22",
+      "23"
+    ]
+  },
+  {
+    "name": "End24:00 fixes minute atzero",
+    "pass": true,
+    "actual": {
+      "disabled": true,
+      "value": "0"
+    }
+  },
+  {
+    "name": "polite live status",
+    "pass": true,
+    "actual": "aria-live=polite"
+  }
+]

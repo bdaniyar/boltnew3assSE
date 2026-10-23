@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-23T21:40:16.988714+05:00",
+  "tool": "CUA browser automation through cua_repl",
+  "browser": "Chrome; existing original Bolt project plus local tabs",
+  "v1_url": "http://127.0.0.1:5174/",
+  "final_url": "http://127.0.0.1:5173/",
+  "v1_mandatory": 6,
+  "v1_boundaries": 10,
+  "final_mandatory": 6,
+  "final_boundaries": 10,
+  "final_repair_checks": 8,
+  "final_layout_checks": 4,
+  "viewports": [
+    320,
+    375,
+    768,
+    1440
+  ],
+  "all_assertions_passed": true,
+  "limitations": [
+    "Multiple existing bookings and invalid numeric types/bounds were executed in actual source-function tests; UI uses fixed fictional fixture and bounded selects.",
+    "Live-region attributes inspected; no screen-reader runtime session executed.",
+    "Logs represent observations from real browser interactions, not a separate browser automation framework."
+  ]
+}

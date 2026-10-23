@@ -1,0 +1,20 @@
+{
+  "archive_integrity_error": null,
+  "baseline_archive_mismatches": [],
+  "baseline_archive_files_checked": 28,
+  "prototype_v1_tag": "687c5f7bbcb29590ad3030cf5e596431be5971b7",
+  "reviewed_sha256": {
+    "booking.py": "3ab2168a0228edf8742789ce320304e902024e70d301db82d15291e8410c60c7",
+    "test_booking.py": "413073eca71d57194b32c1b7bcf6af132747ea54bf95514bb3c0fd5bb10d70b1",
+    "scripts/frontend-test.mjs": "f01e319faca0b718ba531bef1227823c2a801be5982b2083f0076ed66a4e041e",
+    "scripts/fixtures/availability-cases.mjs": "33b4153cd2fa5d68cc0976095bc435518bd2de686771fd1e2e7c3b44aa02b114",
+    "src/App.tsx": "474c3d2acbd324a6ff95cfae5eb70e2b4ab9714ea6fe7ded04d221843185745a",
+    "src/components/BookingsSection.tsx": "c64476f8cd2725751ca1643ecdccc6129bd885b2cc8697da093949266652ee3a",
+    "src/components/TimeControls.tsx": "04449f19e46e74b1f6412ba4184354cda699c1380db760fb1d12a9e7da83298d",
+    "src/components/ResultPanel.tsx": "86fa3a82734af49c4578668a5d6aa052b72a18f3aaec339ee9713010916eaab8",
+    "src/utils/availability.ts": "22d92beb468766708fbabadc0e27793e562a5f90dc6a35e33f6d1f971bca1578",
+    "src/data/sampleData.ts": "e993bf0bea4bbfef0663075851a6353c198774eafad9aed614f423296b71052c"
+  },
+  "source_scope_search": "",
+  "observed_utc": "2026-10-23T16:36:33.021520+00:00"
+}

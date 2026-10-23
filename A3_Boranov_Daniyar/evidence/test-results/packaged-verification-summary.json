@@ -1,0 +1,225 @@
+{
+  "timestamp_utc": "2026-10-23T16:45:40.925734+00:00",
+  "copied_from": "/Users/daniarboranov/Documents/code_materials/python/python-codes/bolnewpr/ass3/boltnew2/boltnew3assSE/A3_Boranov_Daniyar/prototype",
+  "standalone_path": "/tmp/a3-standalone-prototype-check",
+  "comparison": [
+    {
+      "file": "eslint.config.js",
+      "equal": true,
+      "sha256": "fa3cc12579fb0ef678a3153b31ec396d81ef2fec284a1a5ecb779c0ff336cfe0"
+    },
+    {
+      "file": "index.html",
+      "equal": true,
+      "sha256": "119a7c7787d12966fb6cc215e19725a6c7ee52fe901cea70ff35e5d69274e18b"
+    },
+    {
+      "file": "package-lock.json",
+      "equal": true,
+      "sha256": "e70e980c8058553dfb680f4d418f180494eb3d81feeaab3306f5fc710c837dc3"
+    },
+    {
+      "file": "package.json",
+      "equal": true,
+      "sha256": "e7acca29be9076bdbbff4df0671b0d1bbb7c488b141cbe862defbd1c4b452699"
+    },
+    {
+      "file": "postcss.config.js",
+      "equal": true,
+      "sha256": "e32657baf631d7c5f4dc67b4b2ee0ec8e7d5b3c41860e09cddce7c0377cd80bc"
+    },
+    {
+      "file": "scripts/fixtures/availability-cases.mjs",
+      "equal": true,
+      "sha256": "33b4153cd2fa5d68cc0976095bc435518bd2de686771fd1e2e7c3b44aa02b114"
+    },
+    {
+      "file": "scripts/frontend-test.mjs",
+      "equal": true,
+      "sha256": "f01e319faca0b718ba531bef1227823c2a801be5982b2083f0076ed66a4e041e"
+    },
+    {
+      "file": "src/App.tsx",
+      "equal": true,
+      "sha256": "474c3d2acbd324a6ff95cfae5eb70e2b4ab9714ea6fe7ded04d221843185745a"
+    },
+    {
+      "file": "src/components/BookingsSection.tsx",
+      "equal": true,
+      "sha256": "c64476f8cd2725751ca1643ecdccc6129bd885b2cc8697da093949266652ee3a"
+    },
+    {
+      "file": "src/components/CurrentTimeBadge.tsx",
+      "equal": true,
+      "sha256": "44352c6e95f2b009ce1eeffafdfd7a591a1462520bedd62de5dfa21c3ef96d48"
+    },
+    {
+      "file": "src/components/ExampleCases.tsx",
+      "equal": true,
+      "sha256": "3707bf0c53f74d3560b51e915c5b929fc37a6effdcdf103a6b4822765a650fcd"
+    },
+    {
+      "file": "src/components/Header.tsx",
+      "equal": true,
+      "sha256": "3a2639777f8c7ebf6f1f402b46b7ee5eb427f37ffd4b317c8c47ff21a51ef4c0"
+    },
+    {
+      "file": "src/components/ResultPanel.tsx",
+      "equal": true,
+      "sha256": "86fa3a82734af49c4578668a5d6aa052b72a18f3aaec339ee9713010916eaab8"
+    },
+    {
+      "file": "src/components/RoomCard.tsx",
+      "equal": true,
+      "sha256": "863a44c593831ce047f53241ec5b2d97e577380d5f370d620bdeefa7d74a5518"
+    },
+    {
+      "file": "src/components/TimeControls.tsx",
+      "equal": true,
+      "sha256": "04449f19e46e74b1f6412ba4184354cda699c1380db760fb1d12a9e7da83298d"
+    },
+    {
+      "file": "src/data/sampleData.ts",
+      "equal": true,
+      "sha256": "e993bf0bea4bbfef0663075851a6353c198774eafad9aed614f423296b71052c"
+    },
+    {
+      "file": "src/index.css",
+      "equal": true,
+      "sha256": "cc1a7ad0d019ddb1d32d0ecb588ba0ac26ce41d8625dd6c366348b25f83a28ec"
+    },
+    {
+      "file": "src/main.tsx",
+      "equal": true,
+      "sha256": "832842269af94b055b2cd42fd27a0f212773b36d20083b631b863cbb5f0fd09e"
+    },
+    {
+      "file": "src/types.ts",
+      "equal": true,
+      "sha256": "7a7b7817a8203d024ae00a03a69d826b756eb328c333f3b4e1404b629967d112"
+    },
+    {
+      "file": "src/utils/availability.ts",
+      "equal": true,
+      "sha256": "22d92beb468766708fbabadc0e27793e562a5f90dc6a35e33f6d1f971bca1578"
+    },
+    {
+      "file": "src/utils/time.ts",
+      "equal": true,
+      "sha256": "d6bc37bc560c72ca8a5b1ccaa50c2b995129a54a1fe9f5d93d0478663cfe83ea"
+    },
+    {
+      "file": "src/vite-env.d.ts",
+      "equal": true,
+      "sha256": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5"
+    },
+    {
+      "file": "tailwind.config.js",
+      "equal": true,
+      "sha256": "316c86f90ec708a4e953dbba5f6064ddae1feb701754f872b599c4bc2a0aceb5"
+    },
+    {
+      "file": "tsconfig.app.json",
+      "equal": true,
+      "sha256": "9750ea1ad666ba467781ab8e047a2337b7692b774de0865a98dbd189ca3fd87e"
+    },
+    {
+      "file": "tsconfig.json",
+      "equal": true,
+      "sha256": "770b4140bbb581e2dfd9ea9946ffc9c75a1d86ba7d2db5f77c83e37cbdf9d808"
+    },
+    {
+      "file": "tsconfig.node.json",
+      "equal": true,
+      "sha256": "a96b9ba5e40d95b92adf56431fdf9cbe25b5c2557621f0666615bff6889dfc50"
+    },
+    {
+      "file": "vite.config.ts",
+      "equal": true,
+      "sha256": "15e39e0c9e4539c1a425babec469b76b8170a83638ed1413ceeea0133d8dc1ab"
+    },
+    {
+      "file": ".bolt/config.json",
+      "equal": true,
+      "sha256": "da87f3867aa1c920ea2dc6b29775a1be2bcf844ee6caa7b947341fae1a7b1b91"
+    },
+    {
+      "file": ".bolt/prompt",
+      "equal": true,
+      "sha256": "42def6ea7c0d74a7a1fd64b4a10a309872466bf38de50210f6764ed95c4bc1e6"
+    },
+    {
+      "file": ".gitignore",
+      "equal": true,
+      "sha256": "ff3fcaa6641df865954f85833a7488939d1430dce3236d002326561267d823b4"
+    }
+  ],
+  "all_expected_files_match": true,
+  "extra_prototype_files": [],
+  "unwanted_package_paths": [
+    "evidence/original-v1/node_modules"
+  ],
+  "ancestor_node_modules": [],
+  "commands": [
+    {
+      "command": [
+        "npm",
+        "ci"
+      ],
+      "cwd": "/tmp/a3-standalone-prototype-check",
+      "exit_status": 0,
+      "log": "evidence/test-results/packaged-npm-ci.log"
+    },
+    {
+      "command": [
+        "npm",
+        "test"
+      ],
+      "cwd": "/tmp/a3-standalone-prototype-check",
+      "exit_status": 0,
+      "log": "evidence/test-results/packaged-frontend-test.log"
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "lint"
+      ],
+      "cwd": "/tmp/a3-standalone-prototype-check",
+      "exit_status": 0,
+      "log": "evidence/test-results/packaged-frontend-lint.log"
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "typecheck"
+      ],
+      "cwd": "/tmp/a3-standalone-prototype-check",
+      "exit_status": 0,
+      "log": "evidence/test-results/packaged-frontend-typecheck.log"
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "cwd": "/tmp/a3-standalone-prototype-check",
+      "exit_status": 0,
+      "log": "evidence/test-results/packaged-frontend-build.log"
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "-v",
+        "test_booking"
+      ],
+      "cwd": "/Users/daniarboranov/Documents/code_materials/python/python-codes/bolnewpr/ass3/boltnew2/boltnew3assSE/A3_Boranov_Daniyar",
+      "exit_status": 0,
+      "log": "evidence/test-results/packaged-python-tests.log"
+    }
+  ]
+}
