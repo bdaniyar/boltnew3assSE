@@ -6,7 +6,7 @@ import BookingsSection from './components/BookingsSection';
 import TimeControls from './components/TimeControls';
 import ResultPanel from './components/ResultPanel';
 import ExampleCases from './components/ExampleCases';
-import type { AvailabilityResult, Booking, Room } from './types';
+import type { AvailabilityResult, Room } from './types';
 import {
   CURRENT_DEMO_TIME,
   SAMPLE_BOOKINGS,
@@ -20,7 +20,6 @@ const DEFAULT_END = 720;
 
 function App() {
   const [room, setRoom] = useState<Room>(SAMPLE_ROOM);
-  const [bookings, setBookings] = useState<Booking[]>(SAMPLE_BOOKINGS);
   const [start, setStart] = useState(DEFAULT_START);
   const [end, setEnd] = useState(DEFAULT_END);
   const [result, setResult] = useState<AvailabilityResult | null>(null);
@@ -32,7 +31,7 @@ function App() {
         end,
         currentTime: CURRENT_DEMO_TIME,
         blocked: room.blocked,
-        bookings,
+        bookings: SAMPLE_BOOKINGS,
       })
     );
   }
@@ -45,17 +44,17 @@ function App() {
 
   function handleToggleBlocked() {
     setRoom((r) => ({ ...r, blocked: !r.blocked }));
+    setResult(null);
   }
 
-  function handleAddBooking(s: number, e: number) {
-    setBookings((prev) => [
-      ...prev,
-      { id: `b${Date.now()}`, start: s, end: e, label: 'Demo booking' },
-    ]);
+  function handleStartChange(value: number) {
+    setStart(value);
+    setResult(null);
   }
 
-  function handleRemoveBooking(id: string) {
-    setBookings((prev) => prev.filter((b) => b.id !== id));
+  function handleEndChange(value: number) {
+    setEnd(value);
+    setResult(null);
   }
 
   function handleApplyCase(c: ExampleCase) {
@@ -88,16 +87,12 @@ function App() {
             <TimeControls
               start={start}
               end={end}
-              onStartChange={setStart}
-              onEndChange={setEnd}
+              onStartChange={handleStartChange}
+              onEndChange={handleEndChange}
               onCheck={handleCheck}
               onReset={handleReset}
             />
-            <BookingsSection
-              bookings={bookings}
-              onAdd={handleAddBooking}
-              onRemove={handleRemoveBooking}
-            />
+            <BookingsSection bookings={SAMPLE_BOOKINGS} />
           </div>
           <div className="space-y-4">
             <ExampleCases onApply={handleApplyCase} />
@@ -106,7 +101,7 @@ function App() {
         </div>
 
         <footer className="mt-10 border-t border-gray-200 pt-4 text-xs text-gray-400">
-          Smart Campus · Room Availability Checker — prototype v1. Client-side logic only.
+          Smart Campus · Room Availability Checker — prototype v2. Client-side logic only.
         </footer>
       </main>
     </div>

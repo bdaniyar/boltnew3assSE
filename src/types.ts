@@ -1,8 +1,8 @@
 export interface Booking {
-  id: string;
-  start: number; // minutes after midnight
-  end: number; // minutes after midnight
-  label?: string;
+  readonly id: string;
+  readonly start: number; // minutes after midnight
+  readonly end: number; // minutes after midnight
+  readonly label?: string;
 }
 
 export interface Room {

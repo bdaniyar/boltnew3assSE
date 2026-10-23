@@ -10,6 +10,9 @@ export default function ResultPanel({ result }: Props) {
     return (
       <section
         aria-label="Availability result"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
         className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm"
       >
         <p className="text-sm text-gray-400">
@@ -23,6 +26,9 @@ export default function ResultPanel({ result }: Props) {
     return (
       <section
         aria-label="Availability result"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
         className="rounded-xl border border-emerald-200 bg-emerald-50 p-5 shadow-sm"
       >
         <div className="flex items-start gap-3">
@@ -42,6 +48,9 @@ export default function ResultPanel({ result }: Props) {
   return (
     <section
       aria-label="Availability result"
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
       className="rounded-xl border border-red-200 bg-red-50 p-5 shadow-sm"
     >
       <div className="flex items-start gap-3">

@@ -9,7 +9,8 @@ interface Props {
   onReset: () => void;
 }
 
-const HOURS_24 = Array.from({ length: 25 }, (_, i) => i); // 0..24
+const START_HOURS = Array.from({ length: 24 }, (_, i) => i); // 0..23
+const END_HOURS = [...START_HOURS, 24];
 const MINUTES_60 = Array.from({ length: 60 }, (_, i) => i);
 
 function TimePicker({
@@ -39,7 +40,7 @@ function TimePicker({
           onChange={(e) => onHourChange(Number(e.target.value))}
           className="rounded-lg border border-gray-300 bg-white px-2 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
         >
-          {HOURS_24.map((h) => (
+          {(allowEndOfDay ? END_HOURS : START_HOURS).map((h) => (
             <option key={h} value={h}>
               {String(h).padStart(2, '0')}
             </option>

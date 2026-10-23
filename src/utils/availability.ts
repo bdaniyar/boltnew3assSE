@@ -6,7 +6,7 @@ export interface CheckInput {
   end: number;
   currentTime: number;
   blocked: boolean;
-  bookings: Booking[];
+  bookings: readonly Booking[];
 }
 
 export function checkAvailability({

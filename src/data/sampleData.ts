@@ -6,9 +6,9 @@ export const SAMPLE_ROOM: Room = {
   blocked: false,
 };
 
-export const SAMPLE_BOOKINGS: Booking[] = [
-  { id: 'b1', start: 600, end: 660, label: 'Existing booking' },
-];
+export const SAMPLE_BOOKINGS: readonly Booking[] = Object.freeze([
+  Object.freeze({ id: 'b1', start: 600, end: 660, label: 'Existing booking' }),
+]);
 
 export const CURRENT_DEMO_TIME = 540;
 
