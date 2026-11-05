@@ -1,0 +1,13 @@
+flowchart TD
+  Types["types.ts: readonly Room + bookings"] -.-> Catalog["data/rooms.ts: 4 fictional rooms + fixed now"]
+  Catalog --> Filter["utils/filtering.ts: F1/F2"]
+  Filter --> App["App: visible rooms, selected ID, time, result invalidation"]
+  Examples["data/exampleCases.ts: original A-102 cases"] --> App
+  App --> Rules["utils/availability.ts: unchanged AC1-AC5"]
+  App --> UI["RoomFilters + RoomSelector + existing presentation"]
+  App --> Bookings["BookingsSection: selected room bookings"]
+  App --> Result["ResultPanel: one accessible wrapper"]
+  Rules --> Time["utils/time.ts"]
+  Unit["Node regression + catalog/filter tests"] --> Filter
+  Unit --> Rules
+  Browser["Chromium UI tests: F4/F5 + wiring"] --> UI

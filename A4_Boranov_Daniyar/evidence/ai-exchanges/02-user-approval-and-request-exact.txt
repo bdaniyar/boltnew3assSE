@@ -1,0 +1,556 @@
+# Assignment #04 — Approved Plan and Full Implementation
+
+I approve the proposed Task 1 analysis and implementation plan (P1–P4).
+
+Please proceed with the full implementation of Software Engineering Assignment #04, using the attached 30-page assignment PDF as the source of truth.
+
+Complete Tasks 2–6, preserve the existing Task 1 analysis, and prepare the complete submission package.
+
+## 1. Student and project details
+
+- Full name: Boranov Daniyar
+- Student ID: 24B031718
+- Practice class: Thursday 14:00–17:00
+- Assignment: Software Engineering Assignment #04
+- Project: Smart Campus Room Availability Checker
+- English level: B1–B2
+
+Existing repository:
+https://github.com/bdaniyar/boltnew3assSE
+
+Existing Bolt.new project:
+https://bolt.new/~/sb1-bskzikuu
+
+Previous A3 published demo:
+https://smart-campus-room-av-j4pb.bolt.host/
+
+Continue the existing application. Do not create a replacement application, another Bolt project, or an unrelated codebase.
+
+Do not repeat the Practice #08 debugging exercise, and do not create another SKILL.md.
+
+## 2. Preserve the A3 baseline
+
+The approved Task 1 analysis has already recorded:
+
+Baseline commit:
+55cab2a186df4107ab7189f509c259006af28f3f
+
+Baseline tag:
+a4-baseline-2026-11-05
+
+Recovery bundle:
+A4_Boranov_Daniyar/evidence/a4-baseline.bundle
+
+Before editing:
+
+1. Verify that the recovery tag and bundle are valid.
+2. Preserve the original A3 implementation.
+3. Do not rewrite or delete the existing evidence.
+4. Preserve the original test results: Python 47/47 and frontend 37/37.
+5. Keep the previous AC1–AC6 implementation behavior unchanged.
+6. Make all A4 development changes traceable through Git commits.
+7. Preserve actual before/after source snapshots or commit references.
+
+Do not modify the Python reference implementation unnecessarily.
+
+## 3. New functional requirements — F1–F5
+
+Extend the application to support at least FOUR fictional university rooms.
+
+Use the approved room catalog from Task 1:
+
+- A-102
+- B-201
+- C-303
+- D-404
+
+Use the approved fictional capacities, equipment, blocked states and booking intervals described in Task1_Codebase_Analysis.md.
+
+Each room must have:
+
+- room ID
+- room name
+- capacity
+- equipment list
+- blocked status
+- its own existing bookings
+
+Implement:
+
+**F1 — Capacity filtering**
+
+A room matches only if:
+
+room.capacity >= requestedAttendees
+
+Test exact capacity, insufficient capacity and larger capacity.
+
+**F2 — Equipment filtering**
+
+A room matches only when it contains ALL selected required equipment.
+
+Do not use ANY-equipment matching.
+
+Selecting no equipment should not exclude a room based on equipment.
+
+**F3 — Blocked rooms**
+
+A blocked room must NEVER be reported as Available.
+
+It may remain visible in the filtered catalog if it satisfies the capacity/equipment requirements, but it must show its blocked status clearly.
+
+**F4 — Empty state**
+
+When no rooms satisfy the selected requirements, display a clear message explaining that no matching rooms were found.
+
+Do not show stale availability results.
+
+**F5 — Room switching**
+
+When the selected room changes:
+
+- clear or correctly refresh the previous availability result;
+- use the new room's blocked status;
+- use the new room's existing bookings;
+- never accidentally use another room's bookings.
+
+Additional important condition:
+
+If filtering changes and the previously selected room is no longer included in the matching results, clear that selection and the previous availability result.
+
+Do not continue checking a room that is no longer selectable.
+
+## 4. Preserve AC1–AC6
+
+The original acceptance criteria must remain valid:
+
+AC1:
+0 <= start < end <= 1440, with integer times and start > now.
+
+AC2:
+Maximum duration 120 minutes, including exactly 120.
+
+AC3:
+Blocked rooms are unavailable.
+
+AC4:
+Reject overlapping bookings but permit touching endpoints.
+
+AC5:
+Only check availability. Never create, edit, delete, confirm or mutate bookings.
+
+AC6:
+Clear validation feedback and a responsive mobile layout.
+
+Keep the fixed fictional demo time:
+
+now = 540 (09:00)
+
+Keep all existing regression tests.
+
+Do not introduce:
+- authentication
+- database
+- backend
+- external APIs
+- payments
+- actual booking creation
+- unrelated functionality
+
+## 5. Task 2 — Feature extension
+
+Implement the new room catalog and filtering interface.
+
+The final website should allow users to:
+
+1. Enter the required attendee count.
+2. Select zero or more required equipment items.
+3. View only matching rooms.
+4. Select a matching room.
+5. See its capacity, equipment and blocked status.
+6. View that room's fictional existing bookings.
+7. Enter a requested time interval.
+8. Check availability using ONLY the selected room's data.
+9. Receive clear Available / Unavailable feedback.
+10. Understand when no rooms match the filters.
+
+Maintain the visual style of the existing Smart Campus application.
+
+Do not perform a major redesign.
+
+Keep desktop and mobile layouts readable and usable.
+
+## 6. Task 3 — Refactoring
+
+Refactor the application without changing the original behavior.
+
+Separate responsibilities for:
+
+- room catalog and fictional data
+- domain types
+- availability and booking validation
+- capacity/equipment filtering
+- selected-room state
+- UI presentation and feedback
+
+Address the genuine maintainability risks from Task 1:
+
+R1. Global SAMPLE_BOOKINGS usage in App.tsx.
+
+R2. Room type and fixture lacking the new fields.
+
+R3. Multiple result-clearing handlers.
+
+R4. Lack of integration/UI event coverage.
+
+R5. Duplicated status presentation where appropriate.
+
+Avoid unnecessary abstractions, overengineering or a full framework rewrite.
+
+For every meaningful refactoring step:
+
+1. Explain the targeted issue.
+2. Record the source change.
+3. Run appropriate tests.
+4. Inspect the diff.
+5. Preserve the result.
+
+Create TWO architecture diagrams:
+
+- BEFORE — original A3 module/component structure.
+- AFTER — final A4 module/component structure.
+
+The diagrams must reflect the real source code, not an imaginary architecture.
+
+Use Mermaid, PlantUML or another clear format and export readable images for the report.
+
+Explain at least TWO important design decisions and their trade-offs.
+
+## 7. Task 4 — Automated testing
+
+Create and execute at least TEN automated tests.
+
+The final suite should substantially exceed the minimum where useful.
+
+Preserve and run the existing:
+- Python regression suite
+- frontend logic suite
+- lint
+- type checking
+- production build
+
+Add new tests for:
+
+- F1 exact capacity
+- F1 insufficient capacity
+- F2 all required equipment
+- F2 missing one required equipment item
+- F2 no equipment selected
+- F3 blocked room
+- F4 zero matching rooms
+- F5 switching rooms
+- F5 changing filters invalidates a selection
+- correct selected-room bookings
+- room isolation
+- immutable booking inputs
+- multiple bookings
+- 120-minute boundary
+- 121-minute rejection
+- touching endpoints
+- overlapping intervals
+- invalid time
+- narrow/mobile layout
+
+Include at least ONE real integration or browser/UI behavior test.
+
+Prefer Playwright if it can be installed and run reliably.
+
+If browser automation is unavailable, use another real executable approach and describe its limitations accurately.
+
+Do not fabricate test results.
+
+Save:
+
+- actual commands
+- stdout/stderr or test logs
+- actual pass/fail counts
+- exit codes
+- relevant screenshots
+- UI verification evidence
+
+Check the application after each meaningful change and run the complete regression suite at the end.
+
+## 8. Task 5 — Quality evaluation
+
+Create a measured comparison of the ORIGINAL A3 baseline and FINAL A4 version.
+
+Include a table covering:
+
+1. Automated tests passed / total.
+2. Number of duplicated logic locations removed.
+3. Module/component structure and responsibilities.
+4. At least one remaining limitation.
+
+Explain exactly how every metric was obtained.
+
+Do not invent numbers or describe subjective impressions as measurements.
+
+Make the distinction between adding a new feature and improving maintainability clear.
+
+Include actual source/file references.
+
+## 9. Task 6 — AI reflection
+
+Prepare a 200–300-word reflection in natural B1–B2 English.
+
+Address:
+
+- What context was provided to the AI assistant?
+- Which AI suggestions were useful?
+- Which recommendations were incorrect, rejected or modified?
+- What was actually verified?
+- How did the tests influence engineering decisions?
+- What would be improved next?
+
+Use genuine decisions from this workflow, including the approved Task 1 plan.
+
+Do not invent my personal reviews or actions.
+
+Prepare a readable first-person draft for my final review.
+
+## 10. AI evidence and human decisions
+
+Preserve the actual Task 1 prompt and complete response already saved under:
+
+A4_Boranov_Daniyar/evidence/ai-exchanges/
+
+Record AI usage accurately, including:
+
+- assistant/tool name
+- date
+- prompt summary or selected exact prompts
+- output used
+- problems identified
+- changes made
+- verification sources
+- accepted/rejected/modified recommendations
+
+Preserve genuine exchanges and technical evidence.
+
+Do not fabricate prompts, screenshots, independent reviews or approvals.
+
+Document at least one real AI recommendation that was rejected or modified, with a technical reason.
+
+If you encounter another meaningful optional design choice requiring my approval, recommend a default and identify it clearly. Continue with the already approved scope without unnecessary interruptions.
+
+## 11. Important report writing rules
+
+The main report must look like a normal university Software Engineering assignment.
+
+Use natural, simple B1–B2 English.
+
+Do NOT fill the report with unnecessary administrative commentary such as:
+
+- "The student delegated this task to AI."
+- "The student has not confirmed..."
+- "AI generated this report."
+- "Student decision pending."
+- "The root agent performed..."
+- "Human approval not recorded."
+- "This section was written by AI."
+- "The student did not personally execute..."
+
+Use normal engineering language:
+
+- "The original application was preserved."
+- "The new catalog supports four rooms."
+- "The filtering logic was extracted into a separate module."
+- "The automated tests passed."
+- "The following limitations remain."
+
+Preserve honest descriptions of actual verification and mandatory AI-use disclosure in the dedicated evidence appendix.
+
+Do not invent personal actions or conceal AI involvement where the assignment requires it.
+
+Keep the report concise, professional and readable.
+
+Avoid duplicate paragraphs and unnecessarily long source dumps.
+
+## 12. Report and documentation
+
+Create the following deliverables:
+
+A4_Boranov_Daniyar_Report.docx
+A4_Boranov_Daniyar_Report.pdf
+AI_Evidence.pdf
+README.md
+
+Also preserve:
+
+- initial and final source or Git commit references
+- test source files
+- actual test logs
+- architecture diagrams
+- screenshots
+- quality comparison evidence
+- baseline recovery information
+
+The report must contain:
+
+1. Assignment title and student information.
+2. Project overview.
+3. Existing A3 baseline.
+4. Codebase map and three or more maintainability risks.
+5. Prioritized improvement plan.
+6. AC1–AC6 preservation.
+7. F1–F5 new requirements and implementation.
+8. Before/after module diagrams.
+9. At least two refactoring/design decisions.
+10. Automated regression and integration testing.
+11. Test results.
+12. Quality evaluation table.
+13. Evidence and screenshots.
+14. Remaining limitations.
+15. AI reflection (200–300 words).
+16. AI-use indication and references.
+
+Include:
+Boranov Daniyar
+Student ID: 24B031718
+Thursday 14:00–17:00
+
+Make the DOCX fully editable.
+
+Keep tables, headings and screenshots professional and readable.
+
+Render the final PDF and visually inspect all pages.
+
+Do not crop images, overlap text or split tables badly.
+
+## 13. Bolt.new and public deployment
+
+The existing A3 Bolt.new project is:
+
+https://bolt.new/~/sb1-bskzikuu
+
+The previous public demo is:
+
+https://smart-campus-room-av-j4pb.bolt.host/
+
+After completing the A4 implementation:
+
+1. Commit and push the A4 source.
+2. Verify that the original A3 baseline remains recoverable.
+3. Check whether the Bolt.new project has synchronized with the latest source.
+4. Publish/update the Bolt-hosted site if the environment allows it.
+5. Verify the final live site without signing in.
+6. Verify the new four-room catalog.
+7. Verify the capacity filter.
+8. Verify the equipment filter.
+9. Verify the empty state.
+10. Verify room switching and room-specific availability.
+11. Verify that the original time validation still works.
+
+Do not assume GitHub commits automatically update Bolt.host.
+
+If Bolt.new publishing requires my manual action, give the exact instructions and preserve every other completed deliverable.
+
+IMPORTANT:
+Include the actual final working public URL and Bolt.new project URL as clickable links near the beginning of the final PDF.
+
+Do not leave a stale A3 link presented as a verified A4 deployment.
+
+Do not invent a new URL.
+
+## 14. Final submission package
+
+Create an organized A4_Boranov_Daniyar folder containing:
+
+- A4_Boranov_Daniyar_Report.pdf
+- A4_Boranov_Daniyar_Report.docx
+- AI_Evidence.pdf
+- README.md
+- diagrams/
+- tests/
+- evidence/
+- source references or source snapshots as appropriate
+
+Include the source code needed to reproduce the result or accessible initial/final Git commit references.
+
+Also create:
+
+A4_Boranov_Daniyar.zip
+
+The ZIP must include the actual required evidence and not only the PDF documents.
+
+Make README.md explain:
+
+- the application
+- technologies
+- setup instructions
+- run instructions
+- testing commands
+- source locations
+- baseline recovery
+- final live demo URL
+- Bolt project URL
+
+Do not include credentials, API keys, .env secrets, node_modules or unnecessary build cache files.
+
+## 15. Final audit
+
+Before finishing, compare the deliverables against EVERY requirement in the Assignment #04 PDF.
+
+Confirm:
+
+- at least four fictional rooms
+- each room has ID/name/capacity/equipment/blocked/bookings
+- F1–F5 implemented
+- AC1–AC6 preserved
+- at least three real maintainability risks documented
+- two or more design decisions explained
+- before/after architecture diagrams included
+- at least ten executable tests
+- at least one integration/UI check
+- actual execution logs included
+- measured quality evaluation
+- remaining limitation documented
+- 200–300-word reflection
+- AI evidence and actual review decisions
+- baseline and final code recoverable
+- README and reproducible commands
+- DOCX and PDF formatting checked
+- actual public demo links included
+- all required files present in ZIP
+
+The assignment deadline is November 8, 2026 at 23:59:59.
+
+Formatting and completeness are critical because the assignment warns that incorrect or incomplete submissions may be rejected without resubmission.
+
+## 16. Execution
+
+You have approval to perform the proposed P1–P4 implementation.
+
+Proceed through Tasks 2–6 autonomously.
+
+Do not stop after writing code or running the first test suite.
+
+Complete all possible implementation, tests, documentation and final deliverables in this execution.
+
+Do not perform unrelated repository cleanup.
+
+Do not fabricate verification.
+
+If an external action is unavailable, complete everything else and state the exact remaining action.
+
+At the end provide:
+
+1. Summary of completed Tasks 1–6.
+2. Real test results and execution commands.
+3. Main source changes and final commit.
+4. Any remaining blockers.
+5. Actual Bolt.new and public demo URLs.
+6. Downloadable DOCX, PDF and final ZIP.
+7. A short final submission checklist.
+
+The objective is a fully implemented, tested, documented and submission-ready Software Engineering Assignment #04.

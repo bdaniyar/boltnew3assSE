@@ -1,0 +1,6 @@
+The bundle contains these 2 refs:
+d85810110f96aa662e6070a206bc9848d188423d refs/tags/a4-baseline-2026-11-05
+55cab2a186df4107ab7189f509c259006af28f3f refs/heads/main
+The bundle records a complete history.
+The bundle uses this hash algorithm: sha1
+/Users/daniarboranov/Documents/code_materials/se/boltassignmnet/boltnew3assSE/A4_Boranov_Daniyar/evidence/a4-baseline.bundle is okay

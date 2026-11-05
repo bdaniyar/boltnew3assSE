@@ -1,0 +1,57 @@
+{
+  "tool": "Codex",
+  "model_family": "GPT-6 (session instructions)",
+  "exact_model_identifier": null,
+  "date": "2026-11-05",
+  "timezone": "Asia/Almaty",
+  "prompt_file": "01-user-prompt.txt",
+  "prompt_scope": "Verbatim user request text; attachment path and repository are recorded separately, not inserted into the prompt text. Transport/UI wrappers excluded.",
+  "attachment": "/Users/daniarboranov/Downloads/Lesson 08 - Software Engineering - Assignment 04.pdf",
+  "repository": "bdaniyar/boltnew3assSE",
+  "baseline": "55cab2a186df4107ab7189f509c259006af28f3f",
+  "prompt_summary": "Read complete Assignment04 PDF, inspect A3 repository, preserve baseline, perform Task1 analysis only and stop for approval.",
+  "full_final_response": "01-assistant-response.md",
+  "full_analysis": "01-assistant-analysis.md",
+  "outputs_used": [
+    "Task1_Codebase_Analysis.md",
+    "diagrams/before.mmd",
+    "diagrams/proposed-after.mmd"
+  ],
+  "problems_found": [
+    "Global booking coupling",
+    "Room type lacks catalog attributes",
+    "Repeated result invalidation",
+    "No executable UI test",
+    "Repeated status wrapper",
+    "Tracked dist makes ordinary build a mutation risk"
+  ],
+  "changes_made": [
+    "Annotated local baseline tag",
+    "Verified Git bundle",
+    "New A4 analysis/evidence/diagram files",
+    "Ignored baseline dependency installation and build output"
+  ],
+  "source_code_changes": false,
+  "tests_changed": false,
+  "historical_evidence_changed": false,
+  "remote_mutations": false,
+  "verification_sources": [
+    "Complete supplied 30-page PDF, text and rendered pages",
+    "Baseline source file/function references",
+    "Git local refs and GitHub connector main commit",
+    "Fresh baseline command logs/results",
+    "SHA-256 preservation manifest",
+    "Read-only delegated source/requirements review",
+    "https://playwright.dev/docs/intro",
+    "https://playwright.dev/docs/test-webserver"
+  ],
+  "ai_recommendation_modified": {
+    "recommendation": "AI testing reviewer included npm run build in the verification checklist.",
+    "decision": "Use --outDir output/a4-analysis/build-baseline.",
+    "reason": "dist is tracked; verification must preserve deployment snapshot.",
+    "executed_exit_code": 0
+  },
+  "user_review_status": "Awaiting approval; no A4 approval received",
+  "personal_student_verification_claimed": false,
+  "current_task_status": "Task1 analysis complete; implementation not started"
+}

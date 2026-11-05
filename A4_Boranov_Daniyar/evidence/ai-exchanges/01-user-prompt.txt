@@ -1,0 +1,21 @@
+Read the attached Software Engineering Assignment #04 PDF completely and inspect my existing Assignment #03 repository: bdaniyar/boltnew3assSE.
+
+Start with Task 1 — Codebase Analysis ONLY.
+
+Before changing any code:
+
+1. Record the current main commit and preserve a recoverable A4 baseline.
+2. Create a concise repository map with real file and function references.
+3. Identify at least three genuine maintainability risks supported by the existing source.
+4. Explain how AC1–AC6 are currently implemented and how they will remain unchanged.
+5. Propose a minimal feature extension for at least four fictional rooms and F1–F5 filtering.
+6. Propose a refactoring structure separating room data, booking/availability rules, filtering logic, and UI.
+7. Prepare an executable regression and integration/UI testing plan.
+8. Identify possible AI recommendations that should be rejected or modified, with technical reasons.
+9. List all evidence, diagrams, reports and source files required by Assignment #04.
+
+Do not repeat the Practice #08 debugging exercise. Do not create a new SKILL.md. Do not create a new Bolt project. Do not implement changes yet.
+
+Use the Assignment #04 PDF as the source of truth.
+
+Show a concise prioritized plan with review decisions, then STOP for my approval. Preserve the actual prompt and full response for AI evidence.

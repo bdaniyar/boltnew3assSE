@@ -1,0 +1,8 @@
+flowchart TD
+  Data["sampleData.ts: A-102, global bookings, fixed now, examples"] --> App["App: room/time/result state and handlers"]
+  Types["types.ts: Booking, Room, Result"] -.-> Data
+  App --> Rules["availability.ts: AC1-AC5"]
+  Rules --> Time["time.ts: formatting"]
+  App --> UI["7 presentation components"]
+  Tests["frontend-test.mjs: 37 fixtures"] --> Rules
+  Python["booking.py: can_book"] --> PyTests["test_booking.py: 47 tests"]

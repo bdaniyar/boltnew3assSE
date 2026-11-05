@@ -1,0 +1,87 @@
+{
+  "baseline": "55cab2a186df4107ab7189f509c259006af28f3f",
+  "dependency_setup_command": [
+    "npm",
+    "ci",
+    "--ignore-scripts",
+    "--no-audit",
+    "--no-fund"
+  ],
+  "dependency_setup_exit_code": 0,
+  "node": "v22.22.0",
+  "npm": "10.9.4",
+  "python": "Python 3.11.9",
+  "checks": [
+    {
+      "name": "python",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "-v",
+        "test_booking"
+      ],
+      "started_at": "2026-11-05T12:28:23.060204+05:00",
+      "exit_code": 0,
+      "stdout": "baseline-python.stdout.txt",
+      "stderr": "baseline-python.stderr.txt",
+      "tests_total": 47,
+      "tests_passed": 47
+    },
+    {
+      "name": "frontend",
+      "command": [
+        "npm",
+        "test"
+      ],
+      "started_at": "2026-11-05T12:28:23.194023+05:00",
+      "exit_code": 0,
+      "stdout": "baseline-frontend.stdout.txt",
+      "stderr": "baseline-frontend.stderr.txt",
+      "tests": 37,
+      "pass": 37,
+      "fail": 0,
+      "skipped": 0
+    },
+    {
+      "name": "lint",
+      "command": [
+        "npm",
+        "run",
+        "lint"
+      ],
+      "started_at": "2026-11-05T12:28:23.773960+05:00",
+      "exit_code": 0,
+      "stdout": "baseline-lint.stdout.txt",
+      "stderr": "baseline-lint.stderr.txt"
+    },
+    {
+      "name": "typecheck",
+      "command": [
+        "npm",
+        "run",
+        "typecheck"
+      ],
+      "started_at": "2026-11-05T12:28:24.817755+05:00",
+      "exit_code": 0,
+      "stdout": "baseline-typecheck.stdout.txt",
+      "stderr": "baseline-typecheck.stderr.txt"
+    },
+    {
+      "name": "build",
+      "command": [
+        "npm",
+        "run",
+        "build",
+        "--",
+        "--outDir",
+        "output/a4-analysis/build-baseline"
+      ],
+      "started_at": "2026-11-05T12:28:25.871233+05:00",
+      "exit_code": 0,
+      "stdout": "baseline-build.stdout.txt",
+      "stderr": "baseline-build.stderr.txt"
+    }
+  ],
+  "note": "Existing suites only. Build output redirected to an ignored directory to preserve tracked dist snapshot. No A4 filters or UI tests have been implemented."
+}

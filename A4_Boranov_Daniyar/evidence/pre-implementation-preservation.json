@@ -1,0 +1,33 @@
+{
+  "baseline": "55cab2a186df4107ab7189f509c259006af28f3f",
+  "baseline_verified": true,
+  "bundle_verified": true,
+  "pre_existing_tracked_files_unchanged": 223,
+  "preserve_original_A4_files": {
+    "A4_Boranov_Daniyar/Task1_Codebase_Analysis.md": "5b5876b349ad6b4f717657550d2828cb9423ae23518f021b07cb68cf8102aca7",
+    "A4_Boranov_Daniyar/evidence/baseline-checks.json": "36b2fa877752042a935d1eca86bd17bafcc17aa331c2779bc071e712204d099d",
+    "A4_Boranov_Daniyar/evidence/baseline-bundle-verify.txt": "4db5f507aa08c19add03ee9425755637b3d32996c0a3933df3aa8d909e8e38fb",
+    "A4_Boranov_Daniyar/evidence/baseline-build.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "A4_Boranov_Daniyar/evidence/a4-baseline.bundle": "0c520d18acaaa2805c0aebdc6de7bb2d4e4f98ccd1ab39ed543a07f4ad53a906",
+    "A4_Boranov_Daniyar/evidence/baseline-python.stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "A4_Boranov_Daniyar/evidence/baseline-frontend.stdout.txt": "b869dfe3705830d1bb5eaf8e94b3563dfc6c7aa0bfd67ae69523df41d7f9f7a1",
+    "A4_Boranov_Daniyar/evidence/baseline-typecheck.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "A4_Boranov_Daniyar/evidence/baseline-lint.stdout.txt": "b87b0553ce7ede9cd687ee2826d6d5c67944d845831f5d3d0ebeaf5bf31f072a",
+    "A4_Boranov_Daniyar/evidence/baseline.json": "e1ebe7e686a8329b34e9437d38c6180836ffedfacbfd2a77ad9ee75c08748d14",
+    "A4_Boranov_Daniyar/evidence/baseline-npm-ci.log": "aac77b7e1634104cc054066434043383293a13e431f863b25d537ee4d34c1620",
+    "A4_Boranov_Daniyar/evidence/preservation-check.json": "e3f5ebe67db57bc003538cc4244c812bf6ea7a7455c6736aea4c60151e1b4557",
+    "A4_Boranov_Daniyar/evidence/assignment-04-complete-extracted.txt": "5c10d1d17502bba812e96d9923c1e9fb7c1da28b6371b8e54d3539e5b2c78ea7",
+    "A4_Boranov_Daniyar/evidence/baseline-build.stdout.txt": "e0c2169b3c0f04fe98772b720226aed9744f34264c3fe44d2dd057d3651a30a6",
+    "A4_Boranov_Daniyar/evidence/baseline-frontend.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "A4_Boranov_Daniyar/evidence/baseline-python.stderr.txt": "2c90834b203782905e4d0afc4792efc85f46110719020e80be24c6db089bc1e8",
+    "A4_Boranov_Daniyar/evidence/baseline-lint.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "A4_Boranov_Daniyar/evidence/task1-review.md": "fc18fcb6033c9ffccdbcc183e4f9ee1ccc33b1c699a652ef57709f9c13fdeaf9",
+    "A4_Boranov_Daniyar/evidence/baseline-typecheck.stdout.txt": "859c4cc422c2c1e17f29e0b04205936fb1bcd8547564b0d78b3fe3e0ced5a9cd",
+    "A4_Boranov_Daniyar/evidence/ai-exchanges/01-assistant-analysis.md": "5b5876b349ad6b4f717657550d2828cb9423ae23518f021b07cb68cf8102aca7",
+    "A4_Boranov_Daniyar/evidence/ai-exchanges/01-ai-use-record.json": "b0257f86bcab72bffdc97c073ddf5f8f8a9630fec8ac3ec90947aa48732b3782",
+    "A4_Boranov_Daniyar/evidence/ai-exchanges/01-assistant-response.md": "1e0d9d7538fd51602fde60933c530a8e8512c7668ad948501cb2c8a758558b1c",
+    "A4_Boranov_Daniyar/evidence/ai-exchanges/01-user-prompt.txt": "5e80dbe2017877da3f9f41ae1bc5818b56bff4a1797337a517a0a00ec1c8b521",
+    "A4_Boranov_Daniyar/diagrams/proposed-after.mmd": "b8cf8f0469a08cdce6877ed769b27accd0356b4c75ddc086dfc2629e856e7816",
+    "A4_Boranov_Daniyar/diagrams/before.mmd": "dba61b541e823d66831a595dba42ef58e9e9e62d455650cda3b3d92c5dc58601"
+  }
+}
