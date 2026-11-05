@@ -5,10 +5,15 @@ export interface Booking {
   readonly label?: string;
 }
 
+export type Equipment = 'whiteboard' | 'projector' | 'display' | 'video-conference';
+
 export interface Room {
-  id: string;
-  name: string;
-  blocked: boolean;
+  readonly id: string;
+  readonly name: string;
+  readonly capacity: number;
+  readonly equipment: readonly Equipment[];
+  readonly blocked: boolean;
+  readonly bookings: readonly Booking[];
 }
 
 export type AvailabilityResult =

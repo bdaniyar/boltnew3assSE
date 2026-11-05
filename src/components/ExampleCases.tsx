@@ -1,12 +1,13 @@
-import type { ExampleCase } from '../data/sampleData';
-import { EXAMPLE_CASES } from '../data/sampleData';
+import type { ExampleCase } from '../data/exampleCases';
+import { EXAMPLE_CASES } from '../data/exampleCases';
 import { FlaskConical } from 'lucide-react';
 
 interface Props {
   onApply: (c: ExampleCase) => void;
+  disabled?: boolean;
 }
 
-export default function ExampleCases({ onApply }: Props) {
+export default function ExampleCases({ onApply, disabled = false }: Props) {
   return (
     <section
       aria-label="Example test cases"
@@ -17,8 +18,10 @@ export default function ExampleCases({ onApply }: Props) {
         <h2 className="text-base font-semibold text-gray-900">Example test cases</h2>
       </div>
       <p className="mt-1 text-xs text-gray-500">
-        Select a case to load its times and room status, then press “Check Availability”.
+        These original cases use A-102. Select a case, then press “Check Availability”.
       </p>
+
+      {disabled && <p className="mt-2 text-xs text-gray-600">A-102 does not match the current requirements. Change the filters to use these examples.</p>}
 
       <div className="mt-3 grid gap-2 sm:grid-cols-2">
         {EXAMPLE_CASES.map((c) => (
@@ -26,7 +29,8 @@ export default function ExampleCases({ onApply }: Props) {
             key={c.id}
             type="button"
             onClick={() => onApply(c)}
-            className="flex flex-col items-start rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 text-left transition hover:border-blue-300 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            disabled={disabled}
+            className="flex flex-col items-start rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 text-left transition hover:border-blue-300 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-50"
           >
             <span className="text-sm font-medium text-gray-800">
               {c.id}. {c.label}
