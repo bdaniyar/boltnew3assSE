@@ -1,0 +1,33 @@
+
+> vite-react-typescript-starter@0.0.0 test:ui
+> playwright test
+
+
+
+Running 22 tests using 1 worker
+
+
+
+[1/22] [chromium] › tests/room-selection.spec.ts:36:1 › catalog: four fictional rooms, original default and fixed time are visible
+[2/22] [chromium] › tests/room-selection.spec.ts:49:1 › F1: exact, insufficient and larger capacity filters update actual options
+[3/22] [chromium] › tests/room-selection.spec.ts:60:1 › F2: all equipment is required and partial matches disappear
+[4/22] [chromium] › tests/room-selection.spec.ts:70:1 › F2: clearing equipment restores the catalog without an equipment constraint
+[5/22] [chromium] › tests/room-selection.spec.ts:78:1 › F3: matching D-404 is labelled blocked and cannot be unblocked or available
+[6/22] [chromium] › tests/room-selection.spec.ts:88:1 › F5: room switching clears feedback and checks the selected room bookings
+[7/22] [chromium] › tests/room-selection.spec.ts:101:1 › F4: no matches removes selection, clears feedback and disables checking
+[8/22] [chromium] › tests/room-selection.spec.ts:113:1 › F5: capacity changes invalidate an excluded selected room without fallback
+[9/22] [chromium] › tests/room-selection.spec.ts:124:1 › F5: equipment changes invalidate an excluded selected room
+[10/22] [chromium] › tests/room-selection.spec.ts:133:3 › original mandatory example 1: Available
+[11/22] [chromium] › tests/room-selection.spec.ts:133:3 › original mandatory example 2: Unavailable
+[12/22] [chromium] › tests/room-selection.spec.ts:133:3 › original mandatory example 3: Unavailable
+[13/22] [chromium] › tests/room-selection.spec.ts:133:3 › original mandatory example 4: Available
+[14/22] [chromium] › tests/room-selection.spec.ts:133:3 › original mandatory example 5: Unavailable
+[15/22] [chromium] › tests/room-selection.spec.ts:133:3 › original mandatory example 6: Unavailable
+[16/22] [chromium] › tests/room-selection.spec.ts:142:1 › AC2: time controls accept exactly 120 minutes and reject 121
+[17/22] [chromium] › tests/room-selection.spec.ts:154:1 › AC1/AC4: touching booking endpoint is allowed but starting now is rejected
+[18/22] [chromium] › tests/room-selection.spec.ts:163:1 › AC1: end-of-day picker permits 24:00 only for the end
+[19/22] [chromium] › tests/room-selection.spec.ts:172:1 › AC5: checks and room switching leave visible bookings unchanged
+[20/22] [chromium] › tests/room-selection.spec.ts:183:1 › AC6: controls work using keyboard focus and selection
+[21/22] [chromium] › tests/room-selection.spec.ts:196:1 › AC6: 320px layout supports filters and checking without horizontal overflow
+[22/22] [chromium] › tests/room-selection.spec.ts:208:1 › AC3/F3: demo blocked status agrees in selected details and matching catalog
+  22 passed (16.3s)

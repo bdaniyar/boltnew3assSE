@@ -1,0 +1,79 @@
+{
+  "status": "PASS",
+  "report_pages": 10,
+  "ai_evidence_pages": 17,
+  "native_word_paragraphs": 257,
+  "native_word_tables": 9,
+  "embedded_images": 10,
+  "all_image_aspect_ratios_preserved": true,
+  "native_page_field": true,
+  "editing_protection": false,
+  "all_explicit_text_colors_black": true,
+  "docx_external_links": [
+    "https://bolt.new/~/sb1-bskzikuu",
+    "https://smart-campus-room-av-j4pb.bolt.host/"
+  ],
+  "pdf_external_links": [
+    "https://bolt.new/~/sb1-bskzikuu",
+    "https://smart-campus-room-av-j4pb.bolt.host/"
+  ],
+  "exact_history_text_complete_ignoring_layout_whitespace": {
+    "01-user-prompt.txt": true,
+    "01-assistant-response.md": true,
+    "02-user-approval-and-request-exact.txt": true,
+    "03-bolt-sync-prompt-exact.txt": true,
+    "03-bolt-sync-response-visible.txt": true,
+    "04-bolt-publish-ui-request.txt": true,
+    "04-bolt-publish-response-visible.txt": true
+  },
+  "reflection_words": 269,
+  "source_commit": "10eeb3812d6f9491cd47dcd72f5bf03b0884f88c",
+  "public_a4_verified": true,
+  "report_visual_review_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "ai_visual_review_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17
+  ],
+  "visual_issues": [],
+  "renderer": "Bundled Codex LibreOffice 25.2 through render_docx.py; bundled Poppler",
+  "files": {
+    "A4_Boranov_Daniyar_Report.docx": {
+      "bytes": 365514,
+      "sha256": "dc8612070ca043472e2bc5b8117a4e016505bd525a6f3a3bd20f157cb6809a76"
+    },
+    "A4_Boranov_Daniyar_Report.pdf": {
+      "bytes": 482024,
+      "sha256": "90a3d694df11326addfcafc61eb846037133df19cd312cc43e7dd23428a03129"
+    },
+    "AI_Evidence.pdf": {
+      "bytes": 76952,
+      "sha256": "be129fba2ef1d1f5ce05ac67f64c4f10cac640081a9ee9df2dcdcc1ae75a9c4d"
+    }
+  }
+}

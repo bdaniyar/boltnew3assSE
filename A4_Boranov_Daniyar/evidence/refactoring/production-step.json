@@ -1,0 +1,51 @@
+{
+  "targeted_issues": [
+    "R1 globalbookings",
+    "R2 incompleteRoomtype",
+    "R3 duplicatedresultclearing",
+    "R5 duplicatedstatuswrapper"
+  ],
+  "source_change": "Catalog, filtering, selected-room reducer and UI are one atomic migration because Room types and all old single-room consumers must change together.",
+  "unchanged_contract": [
+    "src/utils/availability.ts",
+    "src/utils/time.ts",
+    "booking.py",
+    "test_booking.py",
+    "original37frontendfixtures"
+  ],
+  "checks": [
+    {
+      "name": "original-frontend",
+      "command": [
+        "node",
+        "--test",
+        "--test-reporter=tap",
+        "scripts/frontend-test.mjs"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "typecheck",
+      "command": [
+        "npm",
+        "run",
+        "typecheck"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "lint",
+      "command": [
+        "npm",
+        "run",
+        "lint"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "original_frontend_tests": {
+    "passed": 37,
+    "total": 37
+  },
+  "diff_review": "Root read App, types, room data, state, filtering, filters, selector, status and TimeControls diff. Derivedmatchingrooms shareeffectiveblockedstate andselectedbookings. gitdiff--checkpasses."
+}

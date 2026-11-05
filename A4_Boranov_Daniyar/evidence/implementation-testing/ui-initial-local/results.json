@@ -1,0 +1,937 @@
+{
+  "config": {
+    "argv": [
+      "/opt/homebrew/Cellar/node@22/22.22.0/bin/node",
+      "/Users/daniarboranov/Documents/code_materials/se/boltassignmnet/boltnew3assSE/node_modules/.bin/playwright",
+      "test"
+    ],
+    "configFile": "/Users/daniarboranov/Documents/code_materials/se/boltassignmnet/boltnew3assSE/playwright.config.ts",
+    "rootDir": "/Users/daniarboranov/Documents/code_materials/se/boltassignmnet/boltnew3assSE/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "runLabel": "initial-local",
+      "baseURL": "http://127.0.0.1:4173",
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/daniarboranov/Documents/code_materials/se/boltassignmnet/boltnew3assSE/A4_Boranov_Daniyar/evidence/implementation-testing/ui-initial-local/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "runLabel": "initial-local",
+          "baseURL": "http://127.0.0.1:4173",
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/daniarboranov/Documents/code_materials/se/boltassignmnet/boltnew3assSE/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/Users/daniarboranov/Documents/code_materials/se/boltassignmnet/boltnew3assSE/A4_Boranov_Daniyar/evidence/implementation-testing/ui-initial-local/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "runLabel": "initial-local",
+          "baseURL": "http://127.0.0.1:4173",
+          "actualWorkers": 1
+        },
+        "name": "chromium",
+        "testDir": "/Users/daniarboranov/Documents/code_materials/se/boltassignmnet/boltnew3assSE/tests",
+        "snapshotDir": "/Users/daniarboranov/Documents/code_materials/se/boltassignmnet/boltnew3assSE/tests",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4173",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "chromium"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "line",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "A4_Boranov_Daniyar/evidence/implementation-testing/ui-initial-local/results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run dev -- --host 127.0.0.1 --port 4173 --strictPort",
+      "url": "http://127.0.0.1:4173",
+      "reuseExistingServer": false,
+      "timeout": 60000
+    }
+  },
+  "suites": [
+    {
+      "title": "room-selection.spec.ts",
+      "file": "room-selection.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "catalog: four fictional rooms, original default and fixed time are visible",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1086,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T07:44:43.490Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "desktop-available",
+                      "contentType": "image/png",
+                      "path": "/Users/daniarboranov/Documents/code_materials/se/boltassignmnet/boltnew3assSE/A4_Boranov_Daniyar/evidence/implementation-testing/ui-initial-local/artifacts/room-selection-catalog-fou-27541--and-fixed-time-are-visible-chromium/attachments/desktop-available-d1e8b692fee95a735ae8da081304e9d18465db93.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a30771bfb87c090c3cb0-c70ef9fab911f6a434d4",
+          "file": "room-selection.spec.ts",
+          "line": 36,
+          "column": 1
+        },
+        {
+          "title": "F1: exact, insufficient and larger capacity filters update actual options",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 672,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T07:44:45.646Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "capacity-filter",
+                      "contentType": "image/png",
+                      "path": "/Users/daniarboranov/Documents/code_materials/se/boltassignmnet/boltnew3assSE/A4_Boranov_Daniyar/evidence/implementation-testing/ui-initial-local/artifacts/room-selection-F1-exact-in-b21b0-lters-update-actual-options-chromium/attachments/capacity-filter-ce1391e3384ed52824dcfe7485350bb1859a5ad9.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a30771bfb87c090c3cb0-5f1b7a882b6b2b88e7fc",
+          "file": "room-selection.spec.ts",
+          "line": 49,
+          "column": 1
+        },
+        {
+          "title": "F2: all equipment is required and partial matches disappear",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 756,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T07:44:46.323Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "all-equipment-filter",
+                      "contentType": "image/png",
+                      "path": "/Users/daniarboranov/Documents/code_materials/se/boltassignmnet/boltnew3assSE/A4_Boranov_Daniyar/evidence/implementation-testing/ui-initial-local/artifacts/room-selection-F2-all-equi-59196-d-partial-matches-disappear-chromium/attachments/all-equipment-filter-0a8ebc6347acddc80482cbcdc81a1a127f140e03.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a30771bfb87c090c3cb0-23a372d1df1e25343589",
+          "file": "room-selection.spec.ts",
+          "line": 60,
+          "column": 1
+        },
+        {
+          "title": "F2: clearing equipment restores the catalog without an equipment constraint",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 656,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T07:44:47.084Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a30771bfb87c090c3cb0-724e09e9f44d950481a8",
+          "file": "room-selection.spec.ts",
+          "line": 70,
+          "column": 1
+        },
+        {
+          "title": "F3: matching D-404 is labelled blocked and cannot be unblocked or available",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 742,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T07:44:47.745Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "blocked-room",
+                      "contentType": "image/png",
+                      "path": "/Users/daniarboranov/Documents/code_materials/se/boltassignmnet/boltnew3assSE/A4_Boranov_Daniyar/evidence/implementation-testing/ui-initial-local/artifacts/room-selection-F3-matching-5726d-t-be-unblocked-or-available-chromium/attachments/blocked-room-01832bd8e35125d09bfdf28259b8c1b4bed2e21a.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a30771bfb87c090c3cb0-f0c15e548ea0deaaa6c5",
+          "file": "room-selection.spec.ts",
+          "line": 78,
+          "column": 1
+        },
+        {
+          "title": "F5: room switching clears feedback and checks the selected room bookings",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 795,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T07:44:48.494Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "room-specific-overlap",
+                      "contentType": "image/png",
+                      "path": "/Users/daniarboranov/Documents/code_materials/se/boltassignmnet/boltnew3assSE/A4_Boranov_Daniyar/evidence/implementation-testing/ui-initial-local/artifacts/room-selection-F5-room-swi-e3074--the-selected-room-bookings-chromium/attachments/room-specific-overlap-8a87af7005a987fa5c8f2dca0a10c76847c4ac9c.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a30771bfb87c090c3cb0-9cab63582658de669661",
+          "file": "room-selection.spec.ts",
+          "line": 88,
+          "column": 1
+        },
+        {
+          "title": "F4: no matches removes selection, clears feedback and disables checking",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 776,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T07:44:49.293Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "empty-state",
+                      "contentType": "image/png",
+                      "path": "/Users/daniarboranov/Documents/code_materials/se/boltassignmnet/boltnew3assSE/A4_Boranov_Daniyar/evidence/implementation-testing/ui-initial-local/artifacts/room-selection-F4-no-match-6b76e-dback-and-disables-checking-chromium/attachments/empty-state-c3bd6d61cc41507b14d5ae6cb111fcf0d3b61bab.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a30771bfb87c090c3cb0-887e84bfb8d5d8268130",
+          "file": "room-selection.spec.ts",
+          "line": 101,
+          "column": 1
+        },
+        {
+          "title": "F5: capacity changes invalidate an excluded selected room without fallback",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 684,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T07:44:50.074Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a30771bfb87c090c3cb0-bd23074d3f29cdeb8481",
+          "file": "room-selection.spec.ts",
+          "line": 113,
+          "column": 1
+        },
+        {
+          "title": "F5: equipment changes invalidate an excluded selected room",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 674,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T07:44:50.763Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a30771bfb87c090c3cb0-d0a27c2b80943053e7f5",
+          "file": "room-selection.spec.ts",
+          "line": 124,
+          "column": 1
+        },
+        {
+          "title": "original mandatory example 1: Available",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 710,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T07:44:51.443Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a30771bfb87c090c3cb0-8c0c9348d16a149507c3",
+          "file": "room-selection.spec.ts",
+          "line": 133,
+          "column": 3
+        },
+        {
+          "title": "original mandatory example 2: Unavailable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 621,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T07:44:52.159Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a30771bfb87c090c3cb0-9aa80fb2c310afba4389",
+          "file": "room-selection.spec.ts",
+          "line": 133,
+          "column": 3
+        },
+        {
+          "title": "original mandatory example 3: Unavailable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 620,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T07:44:52.785Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a30771bfb87c090c3cb0-de34b2ea822ec5bcb433",
+          "file": "room-selection.spec.ts",
+          "line": 133,
+          "column": 3
+        },
+        {
+          "title": "original mandatory example 4: Available",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 636,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T07:44:53.410Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a30771bfb87c090c3cb0-7646a2449380ab5716c5",
+          "file": "room-selection.spec.ts",
+          "line": 133,
+          "column": 3
+        },
+        {
+          "title": "original mandatory example 5: Unavailable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 653,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T07:44:54.050Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a30771bfb87c090c3cb0-a5da81d6545eb0468cbe",
+          "file": "room-selection.spec.ts",
+          "line": 133,
+          "column": 3
+        },
+        {
+          "title": "original mandatory example 6: Unavailable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 623,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T07:44:54.708Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a30771bfb87c090c3cb0-e95ade65a4040421715b",
+          "file": "room-selection.spec.ts",
+          "line": 133,
+          "column": 3
+        },
+        {
+          "title": "AC2: time controls accept exactly 120 minutes and reject 121",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 827,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T07:44:55.335Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "121-minute-rejection",
+                      "contentType": "image/png",
+                      "path": "/Users/daniarboranov/Documents/code_materials/se/boltassignmnet/boltnew3assSE/A4_Boranov_Daniyar/evidence/implementation-testing/ui-initial-local/artifacts/room-selection-AC2-time-co-6528c--120-minutes-and-reject-121-chromium/attachments/121-minute-rejection-74ba32293a1bdbaca03d7a88c2aaded3b251dd83.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a30771bfb87c090c3cb0-3e759df713c19371793d",
+          "file": "room-selection.spec.ts",
+          "line": 142,
+          "column": 1
+        },
+        {
+          "title": "AC1/AC4: touching booking endpoint is allowed but starting now is rejected",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 704,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T07:44:56.168Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a30771bfb87c090c3cb0-d24a2650940f92dec8e7",
+          "file": "room-selection.spec.ts",
+          "line": 154,
+          "column": 1
+        },
+        {
+          "title": "AC1: end-of-day picker permits 24:00 only for the end",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 666,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T07:44:56.876Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a30771bfb87c090c3cb0-3bc893796c09d3d6d605",
+          "file": "room-selection.spec.ts",
+          "line": 163,
+          "column": 1
+        },
+        {
+          "title": "AC5: checks and room switching leave visible bookings unchanged",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 660,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T07:44:57.547Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a30771bfb87c090c3cb0-c5044ad5be56b03568ab",
+          "file": "room-selection.spec.ts",
+          "line": 172,
+          "column": 1
+        },
+        {
+          "title": "AC6: controls work using keyboard focus and selection",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5607,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByLabel('Select room', { exact: true })\nExpected: \u001b[32m\"B-201\"\u001b[39m\nReceived: \u001b[31m\"A-102\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveValue\" getByLabel('Select room', { exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByLabel('Select room', { exact: true })\u001b[22m\n\u001b[2m    14 × locator resolved to <select id=\"selected-room\" class=\"mt-1 w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500\">…</select>\u001b[22m\n\u001b[2m       - unexpected value \"A-102\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByLabel('Select room', { exact: true })\nExpected: \u001b[32m\"B-201\"\u001b[39m\nReceived: \u001b[31m\"A-102\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveValue\" getByLabel('Select room', { exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByLabel('Select room', { exact: true })\u001b[22m\n\u001b[2m    14 × locator resolved to <select id=\"selected-room\" class=\"mt-1 w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500\">…</select>\u001b[22m\n\u001b[2m       - unexpected value \"A-102\"\u001b[22m\n\n    at /Users/daniarboranov/Documents/code_materials/se/boltassignmnet/boltnew3assSE/tests/room-selection.spec.ts:187:36",
+                    "location": {
+                      "file": "/Users/daniarboranov/Documents/code_materials/se/boltassignmnet/boltnew3assSE/tests/room-selection.spec.ts",
+                      "column": 36,
+                      "line": 187
+                    },
+                    "snippet": "  185 |   await page.keyboard.press('ArrowDown');\n  186 |   await page.keyboard.press('Enter');\n> 187 |   await expect(roomSelector(page)).toHaveValue('B-201');\n      |                                    ^\n  188 |   const whiteboard = page.getByRole('checkbox', { name: 'Whiteboard', exact: true });\n  189 |   await whiteboard.focus();\n  190 |   await page.keyboard.press('Space');"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/daniarboranov/Documents/code_materials/se/boltassignmnet/boltnew3assSE/tests/room-selection.spec.ts",
+                        "column": 36,
+                        "line": 187
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByLabel('Select room', { exact: true })\nExpected: \u001b[32m\"B-201\"\u001b[39m\nReceived: \u001b[31m\"A-102\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveValue\" getByLabel('Select room', { exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByLabel('Select room', { exact: true })\u001b[22m\n\u001b[2m    14 × locator resolved to <select id=\"selected-room\" class=\"mt-1 w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500\">…</select>\u001b[22m\n\u001b[2m       - unexpected value \"A-102\"\u001b[22m\n\n\n  185 |   await page.keyboard.press('ArrowDown');\n  186 |   await page.keyboard.press('Enter');\n> 187 |   await expect(roomSelector(page)).toHaveValue('B-201');\n      |                                    ^\n  188 |   const whiteboard = page.getByRole('checkbox', { name: 'Whiteboard', exact: true });\n  189 |   await whiteboard.focus();\n  190 |   await page.keyboard.press('Space');\n    at /Users/daniarboranov/Documents/code_materials/se/boltassignmnet/boltnew3assSE/tests/room-selection.spec.ts:187:36"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T07:44:58.212Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/daniarboranov/Documents/code_materials/se/boltassignmnet/boltnew3assSE/A4_Boranov_Daniyar/evidence/implementation-testing/ui-initial-local/artifacts/room-selection-AC6-control-24d8d-eyboard-focus-and-selection-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/daniarboranov/Documents/code_materials/se/boltassignmnet/boltnew3assSE/A4_Boranov_Daniyar/evidence/implementation-testing/ui-initial-local/artifacts/room-selection-AC6-control-24d8d-eyboard-focus-and-selection-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/daniarboranov/Documents/code_materials/se/boltassignmnet/boltnew3assSE/A4_Boranov_Daniyar/evidence/implementation-testing/ui-initial-local/artifacts/room-selection-AC6-control-24d8d-eyboard-focus-and-selection-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/daniarboranov/Documents/code_materials/se/boltassignmnet/boltnew3assSE/tests/room-selection.spec.ts",
+                    "column": 36,
+                    "line": 187
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a30771bfb87c090c3cb0-443a880de2cca80a92b1",
+          "file": "room-selection.spec.ts",
+          "line": 183,
+          "column": 1
+        },
+        {
+          "title": "AC6: 320px layout supports filters and checking without horizontal overflow",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 782,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T07:45:04.296Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "mobile-320",
+                      "contentType": "image/png",
+                      "path": "/Users/daniarboranov/Documents/code_materials/se/boltassignmnet/boltnew3assSE/A4_Boranov_Daniyar/evidence/implementation-testing/ui-initial-local/artifacts/room-selection-AC6-320px-l-59e64-without-horizontal-overflow-chromium/attachments/mobile-320-09dd2f84ecb9edf73e89e4a5bef8ac8d6ec8079f.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a30771bfb87c090c3cb0-0d843e9ac0358f562600",
+          "file": "room-selection.spec.ts",
+          "line": 197,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-05T07:44:41.779Z",
+    "duration": 23452.910000000003,
+    "expected": 20,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

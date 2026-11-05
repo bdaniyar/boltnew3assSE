@@ -1,0 +1,96 @@
+{
+  "recorded_at": "2026-11-05T12:49:36.567813+05:00",
+  "tool": "Node native test runner and Playwright Chromium",
+  "node_version": "v22.22.0",
+  "playwright_version": "Version 1.64.1",
+  "original_runner_and_fixtures_byte_identical": {
+    "scripts/frontend-test.mjs": true,
+    "scripts/fixtures/availability-cases.mjs": true
+  },
+  "node_suite": {
+    "command": [
+      "npm",
+      "test"
+    ],
+    "exit_code": 0,
+    "tests": 76,
+    "pass": 76,
+    "fail": 0,
+    "skipped": 0,
+    "original_regression_cases": 37,
+    "new_catalog_filter_state_cases": 39,
+    "stdout": "node-final.stdout.txt",
+    "stderr": "node-final.stderr.txt"
+  },
+  "ui_suite": {
+    "command": "A4_UI_RUN=final-local npm run test:ui",
+    "exit_code": 0,
+    "passed": 22,
+    "failed": 0,
+    "skipped": 0,
+    "start_time": "2026-11-05T07:46:25.090Z",
+    "duration_ms": 16333.355,
+    "report": "ui-final-local/results.json",
+    "stdout": "ui-final-local.stdout.txt",
+    "stderr": "ui-final-local.stderr.txt"
+  },
+  "earlier_ui_run": {
+    "command": "A4_UI_RUN=initial-local npm run test:ui",
+    "exit_code": 1,
+    "passed": 20,
+    "failed": 1,
+    "reason": "A native-select keyboard test used ArrowDown then Enter; on this macOS Chromium run it retained A-102. The test was corrected to native type-ahead t for Team Room B-201. No production code change was needed.",
+    "report": "ui-initial-local/results.json",
+    "failed_screenshot_and_trace_retained": true
+  },
+  "focused_correction_run": {
+    "command": "A4_UI_RUN=keyboard-correction npm run test:ui -- --grep 'keyboard focus'",
+    "exit_code": 0,
+    "passed": 1,
+    "failed": 0,
+    "report": "ui-keyboard-correction/results.json"
+  },
+  "quality_commands": "final-node-quality-commands.json",
+  "report_screenshot_capture": {
+    "command": [
+      "node",
+      "scripts/capture-report-screenshots.mjs"
+    ],
+    "exit_code": 0,
+    "captured": 10,
+    "metadata": "../screenshots/report-captions.json"
+  },
+  "requirements_coverage": [
+    "AC1-AC6",
+    "F1-F5",
+    "120 vs121 minutes",
+    "touching vs overlapping intervals",
+    "exact insufficient and larger capacity",
+    "all-equipment and missing one item",
+    "no equipment requirements",
+    "selected-room isolation",
+    "nested booking immutability",
+    "multiple bookings",
+    "selection invalidation",
+    "catalog-blocked D404 cannot be unblocked",
+    "effective demo blocked status agrees in catalog and details",
+    "six original UI demonstrations",
+    "24:00 end only",
+    "real keyboard events",
+    "320px mobile with no horizontal overflow"
+  ],
+  "limitations": [
+    "Chromium only; Firefox/WebKit were not exercised",
+    "No full screen-reader or accessibility audit",
+    "Screenshots and local browser tests do not verify public Bolt deployment"
+  ],
+  "test_source_files": [
+    "scripts/frontend-test.mjs",
+    "scripts/fixtures/availability-cases.mjs",
+    "scripts/catalog-test.mjs",
+    "scripts/helpers/load-typescript.mjs",
+    "tests/room-selection.spec.ts",
+    "playwright.config.ts"
+  ],
+  "supporting_capture_script": "scripts/capture-report-screenshots.mjs"
+}

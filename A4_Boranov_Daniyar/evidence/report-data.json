@@ -1,0 +1,312 @@
+{
+  "final_source_commit": "10eeb3812d6f9491cd47dcd72f5bf03b0884f88c",
+  "baseline_commit": "55cab2a186df4107ab7189f509c259006af28f3f",
+  "checks": [
+    {
+      "name": "Python regression",
+      "command": "python3 -m unittest -v test_booking",
+      "passed": 47,
+      "total": 47,
+      "exit_code": 0
+    },
+    {
+      "name": "Frontend rules and catalog/state",
+      "command": "npm test",
+      "passed": 76,
+      "total": 76,
+      "exit_code": 0
+    },
+    {
+      "name": "ESLint",
+      "command": "npm run lint",
+      "passed": null,
+      "total": null,
+      "exit_code": 0
+    },
+    {
+      "name": "TypeScript",
+      "command": "npm run typecheck",
+      "passed": null,
+      "total": null,
+      "exit_code": 0
+    },
+    {
+      "name": "Production build",
+      "command": "npm run build -- --outDir output/a4-final-build",
+      "passed": null,
+      "total": null,
+      "exit_code": 0
+    },
+    {
+      "name": "Chromium integration and UI",
+      "command": "A4_UI_RUN=final-local npm run test:ui -- --project=chromium",
+      "passed": 22,
+      "total": 22,
+      "exit_code": 0
+    },
+    {
+      "name": "Anonymous public Chromium UI",
+      "command": "A4_BASE_URL=https://smart-campus-room-av-j4pb.bolt.host/ A4_UI_RUN=public-bolt-final npm run test:ui -- --project=chromium",
+      "passed": 22,
+      "total": 22,
+      "exit_code": 0
+    }
+  ],
+  "deployment": {
+    "verified": true,
+    "url": "https://smart-campus-room-av-j4pb.bolt.host/",
+    "bolt_url": "https://bolt.new/~/sb1-bskzikuu",
+    "status": "Published and anonymously verified A4",
+    "verified_at": "2026-11-05T08:00:13.300Z",
+    "summary": "The A4 application was synchronized with the existing Bolt.new project and published at the original Bolt.host address. All 22 browser checks passed without signing in. The published JavaScript and CSS match the tested local production build byte for byte.",
+    "manual_steps": [],
+    "published_request_at": "2026-11-05T07:58:43.322Z",
+    "public_ui_passed": 22,
+    "public_ui_total": 22,
+    "http_status": 200,
+    "assets_match_local_build": true,
+    "tested_code_commit": "4b2631f8519cb62321314d8c4b77c0d909c056f7",
+    "source_sync_evidence": [
+      "ConnectedGitHubpanelidentifiedbdaniyar/boltnew3assSE",
+      "CodeviewupdatedtoA4useReducer/roomcatalog/state source",
+      "PublishedappJS/CSSmatchtestedlocalbuild"
+    ],
+    "final_source_commit": "10eeb3812d6f9491cd47dcd72f5bf03b0884f88c"
+  },
+  "diagrams": {
+    "before": "/Users/daniarboranov/Documents/code_materials/se/boltassignmnet/boltnew3assSE/A4_Boranov_Daniyar/diagrams/architecture-before.png",
+    "after": "/Users/daniarboranov/Documents/code_materials/se/boltassignmnet/boltnew3assSE/A4_Boranov_Daniyar/diagrams/architecture-after.png"
+  },
+  "screenshots": [
+    {
+      "path": "A4_Boranov_Daniyar/evidence/screenshots/report-desktop-top.png",
+      "caption": "The original Smart Campus visual style is retained, with the four-room catalog and new requirements controls.",
+      "capture": "Actual browser viewport",
+      "baseURL": "http://127.0.0.1:4173",
+      "viewport": {
+        "width": 1280,
+        "height": 750
+      },
+      "capturedAt": "2026-11-05T07:47:54.454Z",
+      "file": "/Users/daniarboranov/Documents/code_materials/se/boltassignmnet/boltnew3assSE/A4_Boranov_Daniyar/evidence/screenshots/report-desktop-top.png",
+      "kind": "desktop"
+    },
+    {
+      "path": "A4_Boranov_Daniyar/evidence/screenshots/report-filter-controls.png",
+      "caption": "Eight attendees, projector and video conference are required. Capacity and ALL equipment conditions apply together.",
+      "capture": "Actual semantic element",
+      "baseURL": "http://127.0.0.1:4173",
+      "viewport": {
+        "width": 1280,
+        "height": 750
+      },
+      "capturedAt": "2026-11-05T07:47:54.624Z",
+      "file": "/Users/daniarboranov/Documents/code_materials/se/boltassignmnet/boltnew3assSE/A4_Boranov_Daniyar/evidence/screenshots/report-filter-controls.png",
+      "kind": "desktop"
+    },
+    {
+      "path": "A4_Boranov_Daniyar/evidence/screenshots/report-matching-rooms.png",
+      "caption": "Only C-303 and D-404 satisfy the selected requirements; D-404 remains clearly blocked.",
+      "capture": "Actual semantic element",
+      "baseURL": "http://127.0.0.1:4173",
+      "viewport": {
+        "width": 1280,
+        "height": 750
+      },
+      "capturedAt": "2026-11-05T07:47:54.694Z",
+      "file": "/Users/daniarboranov/Documents/code_materials/se/boltassignmnet/boltnew3assSE/A4_Boranov_Daniyar/evidence/screenshots/report-matching-rooms.png",
+      "kind": "desktop"
+    },
+    {
+      "path": "A4_Boranov_Daniyar/evidence/screenshots/report-selected-room.png",
+      "caption": "The selected C-303 record supplies its own capacity, equipment and status.",
+      "capture": "Actual semantic element",
+      "baseURL": "http://127.0.0.1:4173",
+      "viewport": {
+        "width": 1280,
+        "height": 750
+      },
+      "capturedAt": "2026-11-05T07:47:54.790Z",
+      "file": "/Users/daniarboranov/Documents/code_materials/se/boltassignmnet/boltnew3assSE/A4_Boranov_Daniyar/evidence/screenshots/report-selected-room.png",
+      "kind": "desktop"
+    },
+    {
+      "path": "A4_Boranov_Daniyar/evidence/screenshots/report-available-feedback.png",
+      "caption": "C-303 is available from 11:00 to 12:00. The check creates no booking.",
+      "capture": "Actual semantic element",
+      "baseURL": "http://127.0.0.1:4173",
+      "viewport": {
+        "width": 1280,
+        "height": 750
+      },
+      "capturedAt": "2026-11-05T07:47:54.857Z",
+      "file": "/Users/daniarboranov/Documents/code_materials/se/boltassignmnet/boltnew3assSE/A4_Boranov_Daniyar/evidence/screenshots/report-available-feedback.png",
+      "kind": "desktop"
+    },
+    {
+      "path": "A4_Boranov_Daniyar/evidence/screenshots/report-empty-state.png",
+      "caption": "Thirteen attendees plus Display have no matching room. Selection and previous feedback are cleared; checking is disabled.",
+      "capture": "Actual semantic element",
+      "baseURL": "http://127.0.0.1:4173",
+      "viewport": {
+        "width": 1280,
+        "height": 750
+      },
+      "capturedAt": "2026-11-05T07:47:55.025Z",
+      "file": "/Users/daniarboranov/Documents/code_materials/se/boltassignmnet/boltnew3assSE/A4_Boranov_Daniyar/evidence/screenshots/report-empty-state.png",
+      "kind": "desktop"
+    },
+    {
+      "path": "A4_Boranov_Daniyar/evidence/screenshots/report-overlap-feedback.png",
+      "caption": "The same 11:00 to 12:00 interval is unavailable in B-201 because its own booking overlaps.",
+      "capture": "Actual semantic element",
+      "baseURL": "http://127.0.0.1:4173",
+      "viewport": {
+        "width": 1280,
+        "height": 750
+      },
+      "capturedAt": "2026-11-05T07:47:55.173Z",
+      "file": "/Users/daniarboranov/Documents/code_materials/se/boltassignmnet/boltnew3assSE/A4_Boranov_Daniyar/evidence/screenshots/report-overlap-feedback.png",
+      "kind": "desktop"
+    },
+    {
+      "path": "A4_Boranov_Daniyar/evidence/screenshots/report-mobile-top.png",
+      "caption": "At a 320-pixel viewport, room requirements remain readable and usable without horizontal overflow.",
+      "capture": "Actual browser viewport",
+      "baseURL": "http://127.0.0.1:4173",
+      "viewport": {
+        "width": 320,
+        "height": 700
+      },
+      "capturedAt": "2026-11-05T07:47:55.360Z",
+      "file": "/Users/daniarboranov/Documents/code_materials/se/boltassignmnet/boltnew3assSE/A4_Boranov_Daniyar/evidence/screenshots/report-mobile-top.png",
+      "kind": "mobile"
+    },
+    {
+      "path": "A4_Boranov_Daniyar/evidence/screenshots/report-mobile-time-controls.png",
+      "caption": "The original time controls and Check/Reset actions remain usable at 320 pixels.",
+      "capture": "Actual semantic element",
+      "baseURL": "http://127.0.0.1:4173",
+      "viewport": {
+        "width": 320,
+        "height": 700
+      },
+      "capturedAt": "2026-11-05T07:47:55.458Z",
+      "file": "/Users/daniarboranov/Documents/code_materials/se/boltassignmnet/boltnew3assSE/A4_Boranov_Daniyar/evidence/screenshots/report-mobile-time-controls.png",
+      "kind": "mobile"
+    },
+    {
+      "path": "A4_Boranov_Daniyar/evidence/screenshots/report-mobile-feedback.png",
+      "caption": "Availability feedback remains clear in the narrow mobile layout.",
+      "capture": "Actual semantic element",
+      "baseURL": "http://127.0.0.1:4173",
+      "viewport": {
+        "width": 320,
+        "height": 700
+      },
+      "capturedAt": "2026-11-05T07:47:55.524Z",
+      "file": "/Users/daniarboranov/Documents/code_materials/se/boltassignmnet/boltnew3assSE/A4_Boranov_Daniyar/evidence/screenshots/report-mobile-feedback.png",
+      "kind": "mobile"
+    },
+    {
+      "path": "A4_Boranov_Daniyar/evidence/screenshots/report-mobile-filter-controls.png",
+      "caption": "The complete attendee and equipment controls remain readable and usable at a 320-pixel viewport.",
+      "capture": "Actual semantic element",
+      "baseURL": "http://127.0.0.1:4173",
+      "viewport": {
+        "width": 320,
+        "height": 700
+      },
+      "capturedAt": "2026-11-05T07:58:57.214Z",
+      "file": "/Users/daniarboranov/Documents/code_materials/se/boltassignmnet/boltnew3assSE/A4_Boranov_Daniyar/evidence/screenshots/report-mobile-filter-controls.png",
+      "kind": "mobile"
+    }
+  ],
+  "metrics": {
+    "status_wrappers_before": 3,
+    "status_wrappers_after": 1,
+    "result_clear_before": 5,
+    "result_clear_after": 1,
+    "components_before": 7,
+    "components_after": 9,
+    "modules_before": 13,
+    "modules_after": 18,
+    "definition": "Count production <section> wrapper locations in ResultPanel; count input-feedback reset locations (exclude initial state); count TS/TSX production modules excluding .d.ts; retain historical A3 copies outside all metrics.",
+    "old_modules": [
+      "src/App.tsx",
+      "src/components/BookingsSection.tsx",
+      "src/components/CurrentTimeBadge.tsx",
+      "src/components/ExampleCases.tsx",
+      "src/components/Header.tsx",
+      "src/components/ResultPanel.tsx",
+      "src/components/RoomCard.tsx",
+      "src/components/TimeControls.tsx",
+      "src/data/sampleData.ts",
+      "src/main.tsx",
+      "src/types.ts",
+      "src/utils/availability.ts",
+      "src/utils/time.ts"
+    ],
+    "new_modules": [
+      "src/App.tsx",
+      "src/components/BookingsSection.tsx",
+      "src/components/CurrentTimeBadge.tsx",
+      "src/components/ExampleCases.tsx",
+      "src/components/Header.tsx",
+      "src/components/ResultPanel.tsx",
+      "src/components/RoomCard.tsx",
+      "src/components/RoomFilters.tsx",
+      "src/components/RoomSelector.tsx",
+      "src/components/TimeControls.tsx",
+      "src/data/exampleCases.ts",
+      "src/data/rooms.ts",
+      "src/main.tsx",
+      "src/state/checker.ts",
+      "src/types.ts",
+      "src/utils/availability.ts",
+      "src/utils/filtering.ts",
+      "src/utils/time.ts"
+    ],
+    "unchanged_sources": {
+      "src/utils/availability.ts": true,
+      "src/utils/time.ts": true,
+      "booking.py": true,
+      "test_booking.py": true,
+      "scripts/frontend-test.mjs": true,
+      "scripts/fixtures/availability-cases.mjs": true
+    }
+  },
+  "limitations": [
+    "Fictional room data and fixed 09:00 time; no real reservations or persistence.",
+    "Chromium automation covers responsive layout and keyboard interactions; a full screen-reader and cross-browser audit remains outside this verification.",
+    "The current dependency audit reports 12 advisories (2 low, 9 moderate, 1 high, 0 critical); no unrelated dependency upgrade was applied."
+  ],
+  "dependency_audit": {
+    "info": 0,
+    "low": 2,
+    "moderate": 9,
+    "high": 1,
+    "critical": 0,
+    "total": 12
+  },
+  "test_history": {
+    "initial_ui": {
+      "passed": 20,
+      "total": 21,
+      "cause": "Native-select keyboard test assumed ArrowDown+Enter selects the next option; corrected the test to native type-ahead after a focused check. No application fix was required.",
+      "logs": "evidence/implementation-testing/ui-initial-local"
+    },
+    "keyboard_correction": {
+      "passed": 1,
+      "total": 1
+    },
+    "final_local_ui": {
+      "passed": 22,
+      "total": 22
+    },
+    "frontend_original": 37,
+    "frontend_new": 39
+  },
+  "user_approval": "Exact approval saved in evidence/ai-exchanges/02-user-approval-and-request-exact.txt",
+  "reflection_review": "First-person draft for final user review; no invented student test execution."
+}

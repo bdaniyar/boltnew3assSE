@@ -1,0 +1,13 @@
+digraph after {
+  graph [rankdir=LR,bgcolor="white",pad="0.15",nodesep="0.22",ranksep="0.28",fontname="Arial"];
+  node [shape=box,style="rounded,filled",fillcolor="#f3f4f6",color="#9ca3af",fontname="Arial",fontsize=10.5,margin="0.10,0.06"];
+  edge [color="#6b7280",arrowsize=0.6];
+  app [label="App.tsx\nCompose UI + dispatch"];
+  state [label="state/checker.ts\nSelected room + inputs\nOne invalidation path"];
+  rooms [label="data/rooms.ts\n4 frozen room records\nFixed time = 540"];
+  filter [label="utils/filtering.ts\nCapacity + ALL equipment"];
+  rules [label="utils/availability.ts\nUnchanged AC1-AC5 rules"];
+  ui [label="9 UI components\nFilters + selector\nExisting presentation"];
+  examples [label="data/exampleCases.ts\nOriginal A-102 cases"];
+  app -> state; app -> ui; state -> rooms; state -> filter; state -> rules; ui -> examples;
+}

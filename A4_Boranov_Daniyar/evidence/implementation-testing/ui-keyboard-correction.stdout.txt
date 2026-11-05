@@ -1,0 +1,12 @@
+
+> vite-react-typescript-starter@0.0.0 test:ui
+> playwright test --grep keyboard focus
+
+
+
+Running 1 test using 1 worker
+
+
+
+[1/1] [chromium] › tests/room-selection.spec.ts:183:1 › AC6: controls work using keyboard focus and selection
+  1 passed (2.3s)

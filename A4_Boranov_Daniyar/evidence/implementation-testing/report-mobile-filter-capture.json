@@ -1,0 +1,17 @@
+{
+  "command": "One-off Playwright element screenshot capture matching scripts/capture-report-screenshots.mjs mobile-filter-controls step",
+  "exit_code": 0,
+  "caption_appended": true,
+  "existing_screenshots_rewritten": false,
+  "record": {
+    "path": "A4_Boranov_Daniyar/evidence/screenshots/report-mobile-filter-controls.png",
+    "caption": "The complete attendee and equipment controls remain readable and usable at a 320-pixel viewport.",
+    "capture": "Actual semantic element",
+    "baseURL": "http://127.0.0.1:4173",
+    "viewport": {
+      "width": 320,
+      "height": 700
+    },
+    "capturedAt": "2026-11-05T07:58:57.214Z"
+  }
+}

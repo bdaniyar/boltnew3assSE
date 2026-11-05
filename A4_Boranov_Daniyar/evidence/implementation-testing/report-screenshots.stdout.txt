@@ -1,0 +1,5 @@
+{
+  "baseURL": "http://127.0.0.1:4173",
+  "screenshots": 10,
+  "metadata": "A4_Boranov_Daniyar/evidence/screenshots/report-captions.json"
+}

@@ -1,0 +1,76 @@
+
+> vite-react-typescript-starter@0.0.0 test:ui
+> playwright test
+
+
+
+Running 21 tests using 1 worker
+
+
+
+[1/21] [chromium] › tests/room-selection.spec.ts:36:1 › catalog: four fictional rooms, original default and fixed time are visible
+[2/21] [chromium] › tests/room-selection.spec.ts:49:1 › F1: exact, insufficient and larger capacity filters update actual options
+[3/21] [chromium] › tests/room-selection.spec.ts:60:1 › F2: all equipment is required and partial matches disappear
+[4/21] [chromium] › tests/room-selection.spec.ts:70:1 › F2: clearing equipment restores the catalog without an equipment constraint
+[5/21] [chromium] › tests/room-selection.spec.ts:78:1 › F3: matching D-404 is labelled blocked and cannot be unblocked or available
+[6/21] [chromium] › tests/room-selection.spec.ts:88:1 › F5: room switching clears feedback and checks the selected room bookings
+[7/21] [chromium] › tests/room-selection.spec.ts:101:1 › F4: no matches removes selection, clears feedback and disables checking
+[8/21] [chromium] › tests/room-selection.spec.ts:113:1 › F5: capacity changes invalidate an excluded selected room without fallback
+[9/21] [chromium] › tests/room-selection.spec.ts:124:1 › F5: equipment changes invalidate an excluded selected room
+[10/21] [chromium] › tests/room-selection.spec.ts:133:3 › original mandatory example 1: Available
+[11/21] [chromium] › tests/room-selection.spec.ts:133:3 › original mandatory example 2: Unavailable
+[12/21] [chromium] › tests/room-selection.spec.ts:133:3 › original mandatory example 3: Unavailable
+[13/21] [chromium] › tests/room-selection.spec.ts:133:3 › original mandatory example 4: Available
+[14/21] [chromium] › tests/room-selection.spec.ts:133:3 › original mandatory example 5: Unavailable
+[15/21] [chromium] › tests/room-selection.spec.ts:133:3 › original mandatory example 6: Unavailable
+[16/21] [chromium] › tests/room-selection.spec.ts:142:1 › AC2: time controls accept exactly 120 minutes and reject 121
+[17/21] [chromium] › tests/room-selection.spec.ts:154:1 › AC1/AC4: touching booking endpoint is allowed but starting now is rejected
+[18/21] [chromium] › tests/room-selection.spec.ts:163:1 › AC1: end-of-day picker permits 24:00 only for the end
+[19/21] [chromium] › tests/room-selection.spec.ts:172:1 › AC5: checks and room switching leave visible bookings unchanged
+[20/21] [chromium] › tests/room-selection.spec.ts:183:1 › AC6: controls work using keyboard focus and selection
+  1) [chromium] › tests/room-selection.spec.ts:183:1 › AC6: controls work using keyboard focus and selection 
+
+    Error: expect(locator).toHaveValue(expected) failed
+
+    Locator:  getByLabel('Select room', { exact: true })
+    Expected: "B-201"
+    Received: "A-102"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveValue" getByLabel('Select room', { exact: true }) with timeout 5000ms
+      - waiting for getByLabel('Select room', { exact: true })
+        14 × locator resolved to <select id="selected-room" class="mt-1 w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">…</select>
+           - unexpected value "A-102"
+
+
+      185 |   await page.keyboard.press('ArrowDown');
+      186 |   await page.keyboard.press('Enter');
+    > 187 |   await expect(roomSelector(page)).toHaveValue('B-201');
+          |                                    ^
+      188 |   const whiteboard = page.getByRole('checkbox', { name: 'Whiteboard', exact: true });
+      189 |   await whiteboard.focus();
+      190 |   await page.keyboard.press('Space');
+        at /Users/daniarboranov/Documents/code_materials/se/boltassignmnet/boltnew3assSE/tests/room-selection.spec.ts:187:36
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    A4_Boranov_Daniyar/evidence/implementation-testing/ui-initial-local/artifacts/room-selection-AC6-control-24d8d-eyboard-focus-and-selection-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: A4_Boranov_Daniyar/evidence/implementation-testing/ui-initial-local/artifacts/room-selection-AC6-control-24d8d-eyboard-focus-and-selection-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    A4_Boranov_Daniyar/evidence/implementation-testing/ui-initial-local/artifacts/room-selection-AC6-control-24d8d-eyboard-focus-and-selection-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace A4_Boranov_Daniyar/evidence/implementation-testing/ui-initial-local/artifacts/room-selection-AC6-control-24d8d-eyboard-focus-and-selection-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+
+[21/21] [chromium] › tests/room-selection.spec.ts:197:1 › AC6: 320px layout supports filters and checking without horizontal overflow
+  1 failed
+    [chromium] › tests/room-selection.spec.ts:183:1 › AC6: controls work using keyboard focus and selection 
+  20 passed (23.5s)

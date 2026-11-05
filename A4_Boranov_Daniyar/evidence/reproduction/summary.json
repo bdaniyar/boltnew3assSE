@@ -1,0 +1,54 @@
+[
+  {
+    "name": "install",
+    "command": [
+      "npm",
+      "ci",
+      "--no-audit",
+      "--no-fund"
+    ],
+    "working_directory": "Isolated copy of packaged source/ under ignored output/a4-reproduction",
+    "exit_code": 0
+  },
+  {
+    "name": "python",
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "-v",
+      "test_booking"
+    ],
+    "working_directory": "Isolated copy of packaged source/ under ignored output/a4-reproduction",
+    "exit_code": 0
+  },
+  {
+    "name": "frontend",
+    "command": [
+      "npm",
+      "test"
+    ],
+    "working_directory": "Isolated copy of packaged source/ under ignored output/a4-reproduction",
+    "exit_code": 0
+  },
+  {
+    "name": "typecheck",
+    "command": [
+      "npm",
+      "run",
+      "typecheck"
+    ],
+    "working_directory": "Isolated copy of packaged source/ under ignored output/a4-reproduction",
+    "exit_code": 0
+  },
+  {
+    "name": "build",
+    "command": [
+      "npm",
+      "run",
+      "build"
+    ],
+    "working_directory": "Isolated copy of packaged source/ under ignored output/a4-reproduction",
+    "exit_code": 0
+  }
+]

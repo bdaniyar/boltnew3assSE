@@ -1,0 +1,509 @@
+
+> vite-react-typescript-starter@0.0.0 test
+> node --test --test-reporter=tap scripts/frontend-test.mjs scripts/catalog-test.mjs
+
+TAP version 13
+# A4 tests import actual room catalog, filtering, availability and checker state modules.
+# Subtest: catalog: four approved room records have their required fields and bookings
+ok 1 - catalog: four approved room records have their required fields and bookings
+  ---
+  duration_ms: 1.415084
+  type: 'test'
+  ...
+# Subtest: catalog: original A-102 interval and fixed now are preserved
+ok 2 - catalog: original A-102 interval and fixed now are preserved
+  ---
+  duration_ms: 0.067875
+  type: 'test'
+  ...
+# Subtest: catalog: room, equipment and booking data are frozen at every level
+ok 3 - catalog: room, equipment and booking data are frozen at every level
+  ---
+  duration_ms: 0.104666
+  type: 'test'
+  ...
+# Subtest: F1: exact capacity includes A-102 for four attendees
+ok 4 - F1: exact capacity includes A-102 for four attendees
+  ---
+  duration_ms: 0.061875
+  type: 'test'
+  ...
+# Subtest: F1: insufficient capacity excludes A-102 for five attendees
+ok 5 - F1: insufficient capacity excludes A-102 for five attendees
+  ---
+  duration_ms: 0.086125
+  type: 'test'
+  ...
+# Subtest: F1: capacity larger than the requested group remains a match
+ok 6 - F1: capacity larger than the requested group remains a match
+  ---
+  duration_ms: 0.04125
+  type: 'test'
+  ...
+# Subtest: F1: twenty attendees match only the twenty-seat room
+ok 7 - F1: twenty attendees match only the twenty-seat room
+  ---
+  duration_ms: 0.086333
+  type: 'test'
+  ...
+# Subtest: capacity input: invalid attendee count 0 has no matches
+ok 8 - capacity input: invalid attendee count 0 has no matches
+  ---
+  duration_ms: 0.03875
+  type: 'test'
+  ...
+# Subtest: capacity input: invalid attendee count -1 has no matches
+ok 9 - capacity input: invalid attendee count -1 has no matches
+  ---
+  duration_ms: 0.219708
+  type: 'test'
+  ...
+# Subtest: capacity input: invalid attendee count 1.5 has no matches
+ok 10 - capacity input: invalid attendee count 1.5 has no matches
+  ---
+  duration_ms: 0.280709
+  type: 'test'
+  ...
+# Subtest: capacity input: invalid attendee count NaN has no matches
+ok 11 - capacity input: invalid attendee count NaN has no matches
+  ---
+  duration_ms: 0.080167
+  type: 'test'
+  ...
+# Subtest: capacity input: invalid attendee count Infinity has no matches
+ok 12 - capacity input: invalid attendee count Infinity has no matches
+  ---
+  duration_ms: 0.029125
+  type: 'test'
+  ...
+# Subtest: F2: ALL selected equipment is required
+ok 13 - F2: ALL selected equipment is required
+  ---
+  duration_ms: 0.040958
+  type: 'test'
+  ...
+# Subtest: F2: missing one required item excludes partial matches
+ok 14 - F2: missing one required item excludes partial matches
+  ---
+  duration_ms: 0.030458
+  type: 'test'
+  ...
+# Subtest: F2: no equipment selected does not exclude rooms
+ok 15 - F2: no equipment selected does not exclude rooms
+  ---
+  duration_ms: 0.027583
+  type: 'test'
+  ...
+# Subtest: F1/F2: capacity and equipment conditions combine with AND
+ok 16 - F1/F2: capacity and equipment conditions combine with AND
+  ---
+  duration_ms: 0.025959
+  type: 'test'
+  ...
+# Subtest: F4: valid requirements with no matching room return an empty list
+ok 17 - F4: valid requirements with no matching room return an empty list
+  ---
+  duration_ms: 0.025
+  type: 'test'
+  ...
+# Subtest: AC5: filtering does not mutate catalog, equipment or selected requirements
+ok 18 - AC5: filtering does not mutate catalog, equipment or selected requirements
+  ---
+  duration_ms: 0.122542
+  type: 'test'
+  ...
+# Subtest: F3: blocked catalog room stays visible but can never be available
+ok 19 - F3: blocked catalog room stays visible but can never be available
+  ---
+  duration_ms: 0.222541
+  type: 'test'
+  ...
+# Subtest: F3: demonstration action cannot unblock catalog-blocked D-404
+ok 20 - F3: demonstration action cannot unblock catalog-blocked D-404
+  ---
+  duration_ms: 0.038542
+  type: 'test'
+  ...
+# Subtest: room isolation: same interval is available in A-102 and overlaps B-201
+ok 21 - room isolation: same interval is available in A-102 and overlaps B-201
+  ---
+  duration_ms: 0.095584
+  type: 'test'
+  ...
+# Subtest: room isolation: C-303 uses its own noon booking
+ok 22 - room isolation: C-303 uses its own noon booking
+  ---
+  duration_ms: 0.111292
+  type: 'test'
+  ...
+# Subtest: F5: switching room clears previous feedback before another check
+ok 23 - F5: switching room clears previous feedback before another check
+  ---
+  duration_ms: 0.036708
+  type: 'test'
+  ...
+# Subtest: F5: capacity change removes an excluded selection and its feedback
+ok 24 - F5: capacity change removes an excluded selection and its feedback
+  ---
+  duration_ms: 0.039291
+  type: 'test'
+  ...
+# Subtest: F5: equipment change removes an excluded selection and feedback
+ok 25 - F5: equipment change removes an excluded selection and feedback
+  ---
+  duration_ms: 0.07575
+  type: 'test'
+  ...
+# Subtest: F5: a filter change keeps a still-matching selection but clears feedback
+ok 26 - F5: a filter change keeps a still-matching selection but clears feedback
+  ---
+  duration_ms: 0.034834
+  type: 'test'
+  ...
+# Subtest: F4/F5: no-match filters leave no hidden fallback room
+ok 27 - F4/F5: no-match filters leave no hidden fallback room
+  ---
+  duration_ms: 0.037125
+  type: 'test'
+  ...
+# Subtest: F5: an invalid room ID cannot retain or check the previous room
+ok 28 - F5: an invalid room ID cannot retain or check the previous room
+  ---
+  duration_ms: 0.031209
+  type: 'test'
+  ...
+# Subtest: F5: a filtered-out room ID cannot be selected programmatically
+ok 29 - F5: a filtered-out room ID cannot be selected programmatically
+  ---
+  duration_ms: 0.0295
+  type: 'test'
+  ...
+# Subtest: input invalidation: changing the start clears feedback
+ok 30 - input invalidation: changing the start clears feedback
+  ---
+  duration_ms: 0.026625
+  type: 'test'
+  ...
+# Subtest: input invalidation: changing the end clears feedback
+ok 31 - input invalidation: changing the end clears feedback
+  ---
+  duration_ms: 0.026125
+  type: 'test'
+  ...
+# Subtest: AC3: A-102 demo toggle rejects a valid interval and clears old feedback
+ok 32 - AC3: A-102 demo toggle rejects a valid interval and clears old feedback
+  ---
+  duration_ms: 0.039125
+  type: 'test'
+  ...
+# Subtest: room isolation: A-102 demo blocked status never leaks into B-201
+ok 33 - room isolation: A-102 demo blocked status never leaks into B-201
+  ---
+  duration_ms: 0.029792
+  type: 'test'
+  ...
+# Subtest: examples: original six examples select A-102 and keep their outcomes
+ok 34 - examples: original six examples select A-102 and keep their outcomes
+  ---
+  duration_ms: 0.071416
+  type: 'test'
+  ...
+# Subtest: examples: filtered-out A-102 cannot be checked through an example
+ok 35 - examples: filtered-out A-102 cannot be checked through an example
+  ---
+  duration_ms: 0.067833
+  type: 'test'
+  ...
+# Subtest: reset: times/result reset while current room and filters remain unchanged
+ok 36 - reset: times/result reset while current room and filters remain unchanged
+  ---
+  duration_ms: 0.04225
+  type: 'test'
+  ...
+# Subtest: AC5: frozen state, room data and bookings survive repeated filtering/checks
+ok 37 - AC5: frozen state, room data and bookings survive repeated filtering/checks
+  ---
+  duration_ms: 0.174917
+  type: 'test'
+  ...
+# Subtest: AC4/AC5: actual validator detects a second booking without changing frozen input
+ok 38 - AC4/AC5: actual validator detects a second booking without changing frozen input
+  ---
+  duration_ms: 0.058209
+  type: 'test'
+  ...
+# Subtest: AC3/F3: effective demo blocked state agrees in catalog and selected room without mutating base data
+ok 39 - AC3/F3: effective demo blocked state agrees in catalog and selected room without mutating base data
+  ---
+  duration_ms: 0.039875
+  type: 'test'
+  ...
+# Actual frontend source: ./src/utils/availability.ts
+# mandatory 1: 660–720 touches existing end: expected=Available, actual=Available
+# mandatory 2: 630–690 overlaps: expected=Unavailable, actual=Unavailable
+# mandatory 3: blocked 660–720: expected=Unavailable, actual=Unavailable
+# mandatory 4: exactly 120 minutes: expected=Available, actual=Available
+# mandatory 5: 121 minutes: expected=Unavailable, actual=Unavailable
+# mandatory 6: starts now: expected=Unavailable, actual=Unavailable
+# touches existing start: expected=Available, actual=Available
+# overlaps by one minute at existing start: expected=Unavailable, actual=Unavailable
+# overlaps by one minute at existing end: expected=Unavailable, actual=Unavailable
+# equals an existing interval: expected=Unavailable, actual=Unavailable
+# contains an existing interval: expected=Unavailable, actual=Unavailable
+# contained by an existing interval: expected=Unavailable, actual=Unavailable
+# reversed times: expected=Unavailable, actual=Unavailable
+# equal times: expected=Unavailable, actual=Unavailable
+# negative start: expected=Unavailable, actual=Unavailable
+# negative end: expected=Unavailable, actual=Unavailable
+# end beyond day: expected=Unavailable, actual=Unavailable
+# start at day end: expected=Unavailable, actual=Unavailable
+# day start cannot be strictly after valid now: expected=Unavailable, actual=Unavailable
+# one minute after earliest now: expected=Available, actual=Available
+# last minute ending at 24:00: expected=Available, actual=Available
+# exactly 120 minutes ending at 24:00: expected=Available, actual=Available
+# one minute before now: expected=Unavailable, actual=Unavailable
+# one minute after now: expected=Available, actual=Available
+# empty bookings: expected=Available, actual=Available
+# fractional start: expected=Unavailable, actual=Unavailable
+# fractional end: expected=Unavailable, actual=Unavailable
+# string start: expected=Unavailable, actual=Unavailable
+# string end: expected=Unavailable, actual=Unavailable
+# boolean start: expected=Unavailable, actual=Unavailable
+# null end: expected=Unavailable, actual=Unavailable
+# NaN start: expected=Unavailable, actual=Unavailable
+# infinite end: expected=Unavailable, actual=Unavailable
+# undefined end: expected=Unavailable, actual=Unavailable
+# overlap found in second booking: expected=Unavailable, actual=Unavailable
+# overlap found in third unsorted booking: expected=Unavailable, actual=Unavailable
+# fits between multiple touching endpoints: expected=Available, actual=Available
+# Subtest: mandatory 1: 660–720 touches existing end
+ok 40 - mandatory 1: 660–720 touches existing end
+  ---
+  duration_ms: 2.274333
+  type: 'test'
+  ...
+# Subtest: mandatory 2: 630–690 overlaps
+ok 41 - mandatory 2: 630–690 overlaps
+  ---
+  duration_ms: 0.143875
+  type: 'test'
+  ...
+# Subtest: mandatory 3: blocked 660–720
+ok 42 - mandatory 3: blocked 660–720
+  ---
+  duration_ms: 0.111708
+  type: 'test'
+  ...
+# Subtest: mandatory 4: exactly 120 minutes
+ok 43 - mandatory 4: exactly 120 minutes
+  ---
+  duration_ms: 0.064917
+  type: 'test'
+  ...
+# Subtest: mandatory 5: 121 minutes
+ok 44 - mandatory 5: 121 minutes
+  ---
+  duration_ms: 0.117417
+  type: 'test'
+  ...
+# Subtest: mandatory 6: starts now
+ok 45 - mandatory 6: starts now
+  ---
+  duration_ms: 0.053292
+  type: 'test'
+  ...
+# Subtest: touches existing start
+ok 46 - touches existing start
+  ---
+  duration_ms: 0.136166
+  type: 'test'
+  ...
+# Subtest: overlaps by one minute at existing start
+ok 47 - overlaps by one minute at existing start
+  ---
+  duration_ms: 0.159834
+  type: 'test'
+  ...
+# Subtest: overlaps by one minute at existing end
+ok 48 - overlaps by one minute at existing end
+  ---
+  duration_ms: 0.282875
+  type: 'test'
+  ...
+# Subtest: equals an existing interval
+ok 49 - equals an existing interval
+  ---
+  duration_ms: 0.298375
+  type: 'test'
+  ...
+# Subtest: contains an existing interval
+ok 50 - contains an existing interval
+  ---
+  duration_ms: 0.09775
+  type: 'test'
+  ...
+# Subtest: contained by an existing interval
+ok 51 - contained by an existing interval
+  ---
+  duration_ms: 0.043834
+  type: 'test'
+  ...
+# Subtest: reversed times
+ok 52 - reversed times
+  ---
+  duration_ms: 0.11675
+  type: 'test'
+  ...
+# Subtest: equal times
+ok 53 - equal times
+  ---
+  duration_ms: 0.043708
+  type: 'test'
+  ...
+# Subtest: negative start
+ok 54 - negative start
+  ---
+  duration_ms: 0.030542
+  type: 'test'
+  ...
+# Subtest: negative end
+ok 55 - negative end
+  ---
+  duration_ms: 0.029042
+  type: 'test'
+  ...
+# Subtest: end beyond day
+ok 56 - end beyond day
+  ---
+  duration_ms: 0.028291
+  type: 'test'
+  ...
+# Subtest: start at day end
+ok 57 - start at day end
+  ---
+  duration_ms: 0.027792
+  type: 'test'
+  ...
+# Subtest: day start cannot be strictly after valid now
+ok 58 - day start cannot be strictly after valid now
+  ---
+  duration_ms: 0.029542
+  type: 'test'
+  ...
+# Subtest: one minute after earliest now
+ok 59 - one minute after earliest now
+  ---
+  duration_ms: 0.03125
+  type: 'test'
+  ...
+# Subtest: last minute ending at 24:00
+ok 60 - last minute ending at 24:00
+  ---
+  duration_ms: 0.036834
+  type: 'test'
+  ...
+# Subtest: exactly 120 minutes ending at 24:00
+ok 61 - exactly 120 minutes ending at 24:00
+  ---
+  duration_ms: 0.031834
+  type: 'test'
+  ...
+# Subtest: one minute before now
+ok 62 - one minute before now
+  ---
+  duration_ms: 0.028416
+  type: 'test'
+  ...
+# Subtest: one minute after now
+ok 63 - one minute after now
+  ---
+  duration_ms: 0.027584
+  type: 'test'
+  ...
+# Subtest: empty bookings
+ok 64 - empty bookings
+  ---
+  duration_ms: 0.028583
+  type: 'test'
+  ...
+# Subtest: fractional start
+ok 65 - fractional start
+  ---
+  duration_ms: 0.080458
+  type: 'test'
+  ...
+# Subtest: fractional end
+ok 66 - fractional end
+  ---
+  duration_ms: 0.035666
+  type: 'test'
+  ...
+# Subtest: string start
+ok 67 - string start
+  ---
+  duration_ms: 0.027458
+  type: 'test'
+  ...
+# Subtest: string end
+ok 68 - string end
+  ---
+  duration_ms: 0.375334
+  type: 'test'
+  ...
+# Subtest: boolean start
+ok 69 - boolean start
+  ---
+  duration_ms: 0.185791
+  type: 'test'
+  ...
+# Subtest: null end
+ok 70 - null end
+  ---
+  duration_ms: 0.100083
+  type: 'test'
+  ...
+# Subtest: NaN start
+ok 71 - NaN start
+  ---
+  duration_ms: 0.081584
+  type: 'test'
+  ...
+# Subtest: infinite end
+ok 72 - infinite end
+  ---
+  duration_ms: 0.223917
+  type: 'test'
+  ...
+# Subtest: undefined end
+ok 73 - undefined end
+  ---
+  duration_ms: 0.038625
+  type: 'test'
+  ...
+# Subtest: overlap found in second booking
+ok 74 - overlap found in second booking
+  ---
+  duration_ms: 0.108375
+  type: 'test'
+  ...
+# Subtest: overlap found in third unsorted booking
+ok 75 - overlap found in third unsorted booking
+  ---
+  duration_ms: 0.033291
+  type: 'test'
+  ...
+# Subtest: fits between multiple touching endpoints
+ok 76 - fits between multiple touching endpoints
+  ---
+  duration_ms: 0.033833
+  type: 'test'
+  ...
+1..76
+# tests 76
+# suites 0
+# pass 76
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 360.824208

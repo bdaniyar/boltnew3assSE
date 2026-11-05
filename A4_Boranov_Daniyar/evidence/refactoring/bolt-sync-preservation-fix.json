@@ -1,0 +1,9 @@
+{
+  "external_commit": "e3d22724bdbcb368bbf4474f33030337f0d8cfcf",
+  "external_changes": "Bolt managed sync deleted five ignored tracked files during publication.",
+  "review_decision": "Keep history; fast-forward, restore original baseline install log exactly, retain original deployment under baseline recovery, track the verified current A4 build, and add narrow ignore exceptions.",
+  "baseline_log_restored_sha256": "aac77b7e1634104cc054066434043383293a13e431f863b25d537ee4d34c1620",
+  "final_source_commit": "10eeb3812d6f9491cd47dcd72f5bf03b0884f88c",
+  "production_typescript_python_tests_changed": false,
+  "new_build_assets_match_public": true
+}

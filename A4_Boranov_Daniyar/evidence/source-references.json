@@ -1,0 +1,14 @@
+{
+  "repository": "https://github.com/bdaniyar/boltnew3assSE",
+  "baseline_commit": "55cab2a186df4107ab7189f509c259006af28f3f",
+  "baseline_tag": "a4-baseline-2026-11-05",
+  "baseline_bundle": "evidence/a4-baseline.bundle",
+  "implementation_commit": "fbb9888fb63ce81f6f3410eed5b8edecb691c0e2",
+  "tested_code_commit": "4b2631f8519cb62321314d8c4b77c0d909c056f7",
+  "final_submission_ref": "a4-final-submission",
+  "source_snapshot": "source/",
+  "snapshot_notes": "Active app/test source is copied for reproducibility; no node_modules, .git, .env, historical A3 duplicate package or stale dist build is included. The tested code commit identifies production app and test changes; later commits add documentation/evidence only.",
+  "final_source_commit": "10eeb3812d6f9491cd47dcd72f5bf03b0884f88c",
+  "logic_and_tests_commit": "4b2631f8519cb62321314d8c4b77c0d909c056f7",
+  "publication_build_commit": "10eeb3812d6f9491cd47dcd72f5bf03b0884f88c"
+}

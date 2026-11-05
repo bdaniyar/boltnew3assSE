@@ -1,0 +1,59 @@
+{
+  "code_commit": "fbb9888fb63ce81f6f3410eed5b8edecb691c0e2",
+  "checks": [
+    {
+      "name": "python",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "-v",
+        "test_booking"
+      ],
+      "exit_code": 0,
+      "total": 47,
+      "passed": 47
+    },
+    {
+      "name": "frontend",
+      "command": [
+        "npm",
+        "test"
+      ],
+      "exit_code": 0,
+      "tests": 76,
+      "pass": 76,
+      "fail": 0
+    },
+    {
+      "name": "lint",
+      "command": [
+        "npm",
+        "run",
+        "lint"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "typecheck",
+      "command": [
+        "npm",
+        "run",
+        "typecheck"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "build",
+      "command": [
+        "npm",
+        "run",
+        "build",
+        "--",
+        "--outDir",
+        "output/a4-final-build"
+      ],
+      "exit_code": 0
+    }
+  ]
+}

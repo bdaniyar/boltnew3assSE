@@ -1,0 +1,452 @@
+diff --git a/src/App.tsx b/src/App.tsx
+index 3cacee1..1eda190 100644
+--- a/src/App.tsx
++++ b/src/App.tsx
+@@ -1,107 +1,63 @@
+-import { useState } from 'react';
++import { useReducer } from 'react';
+ import Header from './components/Header';
++import RoomFilters from './components/RoomFilters';
++import RoomSelector from './components/RoomSelector';
+ import RoomCard from './components/RoomCard';
+ import CurrentTimeBadge from './components/CurrentTimeBadge';
+ import BookingsSection from './components/BookingsSection';
+ import TimeControls from './components/TimeControls';
+ import ResultPanel from './components/ResultPanel';
+ import ExampleCases from './components/ExampleCases';
+-import type { AvailabilityResult, Room } from './types';
+-import {
+-  CURRENT_DEMO_TIME,
+-  SAMPLE_BOOKINGS,
+-  SAMPLE_ROOM,
+-  type ExampleCase,
+-} from './data/sampleData';
+-import { checkAvailability } from './utils/availability';
+-
+-const DEFAULT_START = 660;
+-const DEFAULT_END = 720;
++import { CURRENT_DEMO_TIME, DEFAULT_ROOM_ID } from './data/rooms';
++import { checkerReducer, createInitialCheckerState, getMatchingRooms, getSelectedRoom } from './state/checker';
+ 
+ function App() {
+-  const [room, setRoom] = useState<Room>(SAMPLE_ROOM);
+-  const [start, setStart] = useState(DEFAULT_START);
+-  const [end, setEnd] = useState(DEFAULT_END);
+-  const [result, setResult] = useState<AvailabilityResult | null>(null);
+-
+-  function handleCheck() {
+-    setResult(
+-      checkAvailability({
+-        start,
+-        end,
+-        currentTime: CURRENT_DEMO_TIME,
+-        blocked: room.blocked,
+-        bookings: SAMPLE_BOOKINGS,
+-      })
+-    );
+-  }
+-
+-  function handleReset() {
+-    setStart(DEFAULT_START);
+-    setEnd(DEFAULT_END);
+-    setResult(null);
+-  }
+-
+-  function handleToggleBlocked() {
+-    setRoom((r) => ({ ...r, blocked: !r.blocked }));
+-    setResult(null);
+-  }
+-
+-  function handleStartChange(value: number) {
+-    setStart(value);
+-    setResult(null);
+-  }
+-
+-  function handleEndChange(value: number) {
+-    setEnd(value);
+-    setResult(null);
+-  }
+-
+-  function handleApplyCase(c: ExampleCase) {
+-    setStart(c.start);
+-    setEnd(c.end);
+-    setRoom((r) => ({ ...r, blocked: c.blocked }));
+-    setResult(null);
+-  }
++  const [state, dispatch] = useReducer(checkerReducer, undefined, createInitialCheckerState);
++  const rooms = getMatchingRooms(state);
++  const selectedRoom = getSelectedRoom(state);
+ 
+   return (
+     <div className="min-h-screen bg-gray-50 text-gray-900">
+       <Header />
+-
+       <main className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
+-        <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
+-          Room Availability Checker
+-        </h1>
++        <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Room Availability Checker</h1>
+         <p className="mt-2 max-w-2xl text-sm text-gray-500">
+-          Check whether a room is available during a requested time interval. This tool only
+-          reports availability — it does not make, confirm, or modify bookings.
++          Find a room with enough seats and the equipment you need, then check a time interval.
++          This tool only reports availability — it does not make, confirm, or modify bookings.
+         </p>
+-
+-        <div className="mt-6 grid gap-4 md:grid-cols-2">
+-          <RoomCard room={room} onToggleBlocked={handleToggleBlocked} />
++        <div className="mt-6 space-y-4">
++          <RoomFilters attendees={state.attendees} requiredEquipment={state.requiredEquipment}
++            onAttendeesChange={(value) => dispatch({ type: 'attendees', value })}
++            onEquipmentChange={(value) => dispatch({ type: 'equipment', value })} />
++          <RoomSelector rooms={rooms} selectedRoomId={state.selectedRoomId}
++            onSelect={(roomId) => dispatch({ type: 'select-room', roomId })} />
++        </div>
++        <div className="mt-4 grid gap-4 md:grid-cols-2">
++          {selectedRoom ? <RoomCard room={selectedRoom} onToggleBlocked={() => dispatch({ type: 'toggle-blocked' })} /> : (
++            <section aria-label="Room details" className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
++              <h2 className="text-base font-semibold text-gray-900">No room selected</h2>
++              <p className="mt-2 text-sm text-gray-500">Choose a matching room from the catalog above.</p>
++            </section>
++          )}
+           <CurrentTimeBadge currentTime={CURRENT_DEMO_TIME} />
+         </div>
+-
+         <div className="mt-4 grid gap-4 lg:grid-cols-2">
+           <div className="space-y-4">
+-            <TimeControls
+-              start={start}
+-              end={end}
+-              onStartChange={handleStartChange}
+-              onEndChange={handleEndChange}
+-              onCheck={handleCheck}
+-              onReset={handleReset}
+-            />
+-            <BookingsSection bookings={SAMPLE_BOOKINGS} />
++            <TimeControls start={state.start} end={state.end}
++              onStartChange={(value) => dispatch({ type: 'start', value })}
++              onEndChange={(value) => dispatch({ type: 'end', value })}
++              onCheck={() => dispatch({ type: 'check' })}
++              onReset={() => dispatch({ type: 'reset' })} checkDisabled={!selectedRoom} />
++            {selectedRoom && <BookingsSection bookings={selectedRoom.bookings} />}
+           </div>
+           <div className="space-y-4">
+-            <ExampleCases onApply={handleApplyCase} />
+-            <ResultPanel result={result} />
++            <ExampleCases onApply={(example) => dispatch({ type: 'example', example })}
++              disabled={!rooms.some((room) => room.id === DEFAULT_ROOM_ID)} />
++            <ResultPanel result={state.result} hasSelectedRoom={Boolean(selectedRoom)} />
+           </div>
+         </div>
+-
+         <footer className="mt-10 border-t border-gray-200 pt-4 text-xs text-gray-400">
+-          Smart Campus · Room Availability Checker — prototype v2. Client-side logic only.
++          Smart Campus · Room Availability Checker — prototype v3 (Assignment 04). Client-side logic only.
+         </footer>
+       </main>
+     </div>
+diff --git a/src/components/ExampleCases.tsx b/src/components/ExampleCases.tsx
+index 864a8fe..17327da 100644
+--- a/src/components/ExampleCases.tsx
++++ b/src/components/ExampleCases.tsx
+@@ -1,12 +1,13 @@
+-import type { ExampleCase } from '../data/sampleData';
+-import { EXAMPLE_CASES } from '../data/sampleData';
++import type { ExampleCase } from '../data/exampleCases';
++import { EXAMPLE_CASES } from '../data/exampleCases';
+ import { FlaskConical } from 'lucide-react';
+ 
+ interface Props {
+   onApply: (c: ExampleCase) => void;
++  disabled?: boolean;
+ }
+ 
+-export default function ExampleCases({ onApply }: Props) {
++export default function ExampleCases({ onApply, disabled = false }: Props) {
+   return (
+     <section
+       aria-label="Example test cases"
+@@ -17,16 +18,19 @@ export default function ExampleCases({ onApply }: Props) {
+         <h2 className="text-base font-semibold text-gray-900">Example test cases</h2>
+       </div>
+       <p className="mt-1 text-xs text-gray-500">
+-        Select a case to load its times and room status, then press “Check Availability”.
++        These original cases use A-102. Select a case, then press “Check Availability”.
+       </p>
+ 
++      {disabled && <p className="mt-2 text-xs text-gray-600">A-102 does not match the current requirements. Change the filters to use these examples.</p>}
++
+       <div className="mt-3 grid gap-2 sm:grid-cols-2">
+         {EXAMPLE_CASES.map((c) => (
+           <button
+             key={c.id}
+             type="button"
+             onClick={() => onApply(c)}
+-            className="flex flex-col items-start rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 text-left transition hover:border-blue-300 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-500"
++            disabled={disabled}
++            className="flex flex-col items-start rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 text-left transition hover:border-blue-300 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-50"
+           >
+             <span className="text-sm font-medium text-gray-800">
+               {c.id}. {c.label}
+diff --git a/src/components/ResultPanel.tsx b/src/components/ResultPanel.tsx
+index 7759d41..8480ac2 100644
+--- a/src/components/ResultPanel.tsx
++++ b/src/components/ResultPanel.tsx
+@@ -3,63 +3,35 @@ import { CheckCircle2, XCircle } from 'lucide-react';
+ 
+ interface Props {
+   result: AvailabilityResult | null;
++  hasSelectedRoom?: boolean;
+ }
+ 
+-export default function ResultPanel({ result }: Props) {
+-  if (!result) {
+-    return (
+-      <section
+-        aria-label="Availability result"
+-        role="status"
+-        aria-live="polite"
+-        aria-atomic="true"
+-        className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm"
+-      >
+-        <p className="text-sm text-gray-400">
+-          Choose a start and end time, then select “Check Availability” to see the result.
+-        </p>
+-      </section>
+-    );
+-  }
+-
+-  if (result.available) {
+-    return (
+-      <section
+-        aria-label="Availability result"
+-        role="status"
+-        aria-live="polite"
+-        aria-atomic="true"
+-        className="rounded-xl border border-emerald-200 bg-emerald-50 p-5 shadow-sm"
+-      >
++export default function ResultPanel({ result, hasSelectedRoom = true }: Props) {
++  const colors = !result ? 'border-gray-200 bg-white'
++    : result.available ? 'border-emerald-200 bg-emerald-50' : 'border-red-200 bg-red-50';
++  return (
++    <section aria-label="Availability result" role="status" aria-live="polite" aria-atomic="true"
++      className={`rounded-xl border p-5 shadow-sm ${colors}`}>
++      {!result ? (
++        <p className="text-sm text-gray-500">{hasSelectedRoom
++          ? 'Choose a start and end time, then select “Check Availability” to see the result.'
++          : 'Select a matching room before checking availability.'}</p>
++      ) : (
+         <div className="flex items-start gap-3">
+-          <CheckCircle2 className="mt-0.5 h-6 w-6 flex-shrink-0 text-emerald-600" aria-hidden="true" />
++          {result.available
++            ? <CheckCircle2 className="mt-0.5 h-6 w-6 flex-shrink-0 text-emerald-600" aria-hidden="true" />
++            : <XCircle className="mt-0.5 h-6 w-6 flex-shrink-0 text-red-600" aria-hidden="true" />}
+           <div>
+-            <h2 className="text-base font-semibold text-emerald-800">Available</h2>
+-            <p className="mt-1 text-sm text-emerald-700">{result.message}</p>
+-            <p className="mt-2 text-xs text-emerald-600/80">
+-              This is a check only — no booking was created.
++            <h2 className={`text-base font-semibold ${result.available ? 'text-emerald-800' : 'text-red-800'}`}>
++              {result.available ? 'Available' : 'Unavailable'}
++            </h2>
++            <p className={`mt-1 text-sm ${result.available ? 'text-emerald-700' : 'text-red-700'}`}>
++              {result.available ? result.message : result.reason}
+             </p>
++            {result.available && <p className="mt-2 text-xs text-emerald-700">This is a check only — no booking was created.</p>}
+           </div>
+         </div>
+-      </section>
+-    );
+-  }
+-
+-  return (
+-    <section
+-      aria-label="Availability result"
+-      role="status"
+-      aria-live="polite"
+-      aria-atomic="true"
+-      className="rounded-xl border border-red-200 bg-red-50 p-5 shadow-sm"
+-    >
+-      <div className="flex items-start gap-3">
+-        <XCircle className="mt-0.5 h-6 w-6 flex-shrink-0 text-red-600" aria-hidden="true" />
+-        <div>
+-          <h2 className="text-base font-semibold text-red-800">Unavailable</h2>
+-          <p className="mt-1 text-sm text-red-700">{result.reason}</p>
+-        </div>
+-      </div>
++      )}
+     </section>
+   );
+ }
+diff --git a/src/components/RoomCard.tsx b/src/components/RoomCard.tsx
+index 1810add..3dc2d1a 100644
+--- a/src/components/RoomCard.tsx
++++ b/src/components/RoomCard.tsx
+@@ -1,5 +1,6 @@
+ import type { Room } from '../types';
+ import { DoorOpen, Lock, Unlock } from 'lucide-react';
++import { DEFAULT_ROOM_ID, EQUIPMENT_LABELS } from '../data/rooms';
+ 
+ interface Props {
+   room: Room;
+@@ -8,48 +9,37 @@ interface Props {
+ 
+ export default function RoomCard({ room, onToggleBlocked }: Props) {
+   return (
+-    <section
+-      aria-label="Room details"
+-      className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm"
+-    >
+-      <div className="flex items-start justify-between gap-4">
+-        <div className="flex items-start gap-3">
+-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-600">
++    <section aria-label="Room details" className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
++      <div className="flex flex-wrap items-start justify-between gap-3">
++        <div className="flex min-w-0 items-start gap-3">
++          <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-blue-50 text-blue-600">
+             <DoorOpen className="h-5 w-5" aria-hidden="true" />
+           </div>
+-          <div>
++          <div className="min-w-0">
+             <h2 className="text-base font-semibold text-gray-900">{room.name}</h2>
+-            <p className="text-sm text-gray-500">Room ID: {room.id}</p>
++            <p className="text-sm text-gray-500">Room ID: {room.id} · Capacity: {room.capacity}</p>
+           </div>
+         </div>
+-        <span
+-          className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium ${
+-            room.blocked
+-              ? 'bg-red-50 text-red-700'
+-              : 'bg-emerald-50 text-emerald-700'
+-          }`}
+-        >
++        <span className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium ${room.blocked ? 'bg-red-50 text-red-700' : 'bg-emerald-50 text-emerald-700'}`}>
+           {room.blocked ? <Lock className="h-3.5 w-3.5" /> : <Unlock className="h-3.5 w-3.5" />}
+           {room.blocked ? 'Blocked' : 'Open'}
+         </span>
+       </div>
+-
+-      <div className="mt-4 flex items-center justify-between gap-3 rounded-lg bg-gray-50 px-4 py-3">
+-        <div>
+-          <p className="text-sm font-medium text-gray-700">Room status</p>
+-          <p className="text-xs text-gray-500">
+-            Toggle to demonstrate AC3 — when blocked, all requests are rejected.
+-          </p>
++      <p className="mt-3 text-sm text-gray-600">Equipment: {room.equipment.map((item) => EQUIPMENT_LABELS[item]).join(', ')}</p>
++      {room.id === DEFAULT_ROOM_ID ? (
++        <div className="mt-4 flex flex-wrap items-center justify-between gap-3 rounded-lg bg-gray-50 px-4 py-3">
++          <div>
++            <p className="text-sm font-medium text-gray-700">Room status</p>
++            <p className="text-xs text-gray-500">Toggle A-102 to demonstrate blocked-room validation.</p>
++          </div>
++          <button type="button" onClick={onToggleBlocked} aria-pressed={room.blocked}
++            className="rounded-lg border border-gray-300 bg-white px-3 py-1.5 text-sm font-medium text-gray-700 transition hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">
++            {room.blocked ? 'Mark as open' : 'Mark as blocked'}
++          </button>
+         </div>
+-        <button
+-          type="button"
+-          onClick={onToggleBlocked}
+-          aria-pressed={room.blocked}
+-          className="rounded-lg border border-gray-300 bg-white px-3 py-1.5 text-sm font-medium text-gray-700 transition hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+-        >
+-          {room.blocked ? 'Mark as open' : 'Mark as blocked'}
+-        </button>
+-      </div>
++      ) : room.blocked ? (
++        <p className="mt-4 rounded-lg bg-red-50 px-4 py-3 text-sm text-red-700">This room is blocked. Availability requests will be rejected.</p>
++      ) : null}
+     </section>
+   );
+ }
+diff --git a/src/components/TimeControls.tsx b/src/components/TimeControls.tsx
+index 39ee7f9..e248255 100644
+--- a/src/components/TimeControls.tsx
++++ b/src/components/TimeControls.tsx
+@@ -7,6 +7,7 @@ interface Props {
+   onEndChange: (min: number) => void;
+   onCheck: () => void;
+   onReset: () => void;
++  checkDisabled?: boolean;
+ }
+ 
+ const START_HOURS = Array.from({ length: 24 }, (_, i) => i); // 0..23
+@@ -77,6 +78,7 @@ export default function TimeControls({
+   onEndChange,
+   onCheck,
+   onReset,
++  checkDisabled = false,
+ }: Props) {
+   const sHour = Math.floor(start / 60);
+   const sMinute = start % 60;
+@@ -116,7 +118,8 @@ export default function TimeControls({
+         <button
+           type="button"
+           onClick={onCheck}
+-          className="inline-flex items-center justify-center rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
++          disabled={checkDisabled}
++          className="inline-flex items-center justify-center rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:cursor-not-allowed disabled:bg-gray-400"
+         >
+           Check Availability
+         </button>
+diff --git a/src/data/sampleData.ts b/src/data/sampleData.ts
+deleted file mode 100644
+index d97202c..0000000
+--- a/src/data/sampleData.ts
++++ /dev/null
+@@ -1,32 +0,0 @@
+-import type { Booking, Room } from '../types';
+-
+-export const SAMPLE_ROOM: Room = {
+-  id: 'A-102',
+-  name: 'Study Room A-102',
+-  blocked: false,
+-};
+-
+-export const SAMPLE_BOOKINGS: readonly Booking[] = Object.freeze([
+-  Object.freeze({ id: 'b1', start: 600, end: 660, label: 'Existing booking' }),
+-]);
+-
+-export const CURRENT_DEMO_TIME = 540;
+-
+-export interface ExampleCase {
+-  id: number;
+-  label: string;
+-  start: number;
+-  end: number;
+-  blocked: boolean;
+-  expected: 'available' | 'unavailable';
+-  note: string;
+-}
+-
+-export const EXAMPLE_CASES: ExampleCase[] = [
+-  { id: 1, label: '11:00–12:00', start: 660, end: 720, blocked: false, expected: 'available', note: 'Available' },
+-  { id: 2, label: '10:30–11:30', start: 630, end: 690, blocked: false, expected: 'unavailable', note: 'Overlaps 10:00–11:00' },
+-  { id: 3, label: '11:00–12:00 (blocked)', start: 660, end: 720, blocked: true, expected: 'unavailable', note: 'Room blocked' },
+-  { id: 4, label: '12:00–14:00 (120 min)', start: 720, end: 840, blocked: false, expected: 'available', note: 'Exactly 120 min' },
+-  { id: 5, label: '12:00–14:01 (121 min)', start: 720, end: 841, blocked: false, expected: 'unavailable', note: 'Exceeds 120 min' },
+-  { id: 6, label: '09:00–09:30 (starts now)', start: 540, end: 570, blocked: false, expected: 'unavailable', note: 'Start not later than current time' },
+-];
+diff --git a/src/types.ts b/src/types.ts
+index e03d3f6..8fec04b 100644
+--- a/src/types.ts
++++ b/src/types.ts
+@@ -5,10 +5,15 @@ export interface Booking {
+   readonly label?: string;
+ }
+ 
++export type Equipment = 'whiteboard' | 'projector' | 'display' | 'video-conference';
++
+ export interface Room {
+-  id: string;
+-  name: string;
+-  blocked: boolean;
++  readonly id: string;
++  readonly name: string;
++  readonly capacity: number;
++  readonly equipment: readonly Equipment[];
++  readonly blocked: boolean;
++  readonly bookings: readonly Booking[];
+ }
+ 
+ export type AvailabilityResult =

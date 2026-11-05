@@ -1,0 +1,34 @@
+[
+  {
+    "command": [
+      "npm",
+      "test"
+    ],
+    "exit_code": 0,
+    "recorded_at": "2026-11-05T12:46:25.083755+05:00",
+    "stdout": "node-final.stdout.txt",
+    "stderr": "node-final.stderr.txt"
+  },
+  {
+    "command": [
+      "npm",
+      "run",
+      "lint"
+    ],
+    "exit_code": 0,
+    "recorded_at": "2026-11-05T12:46:26.338371+05:00",
+    "stdout": "lint-final.stdout.txt",
+    "stderr": "lint-final.stderr.txt"
+  },
+  {
+    "command": [
+      "npm",
+      "run",
+      "typecheck"
+    ],
+    "exit_code": 0,
+    "recorded_at": "2026-11-05T12:46:28.116622+05:00",
+    "stdout": "typecheck-final.stdout.txt",
+    "stderr": "typecheck-final.stderr.txt"
+  }
+]

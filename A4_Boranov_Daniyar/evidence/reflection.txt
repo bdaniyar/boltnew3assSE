@@ -1,0 +1,9 @@
+For Assignment 04, I chose to extend the existing Smart Campus prototype. I provided the previous source, the original acceptance criteria, the assignment PDF and clear limits. I approved a small plan that kept the current framework, fixed demo time and booking rules.
+
+The most useful AI suggestion was to separate room matching from availability checking. This made the new filters easier to understand and test. Keeping the selected room ID also reduced the risk of showing one room while checking another room's bookings. A shared result panel made the status messages more consistent.
+
+One recommendation was modified for a technical reason. A normal production build would overwrite the tracked deployment folder. The verification build therefore used a separate ignored output folder. I also kept the original overlap comparison because touching booking endpoints must remain valid. A backend, live clock and booking creation were outside the agreed scope.
+
+The verification evidence includes real Python and frontend regression results, new filtering and state tests, and browser checks. Room switching and empty-state tests were especially useful. A correct validation function alone cannot prove that the interface passes the right room data. These tests supported the decision to clear old results whenever the room or requirements change. One keyboard check initially used an unreliable key sequence. It was corrected to native type-ahead after a focused browser check; the application did not need a change.
+
+I would next improve keyboard and screen-reader testing. A larger catalog would also need clearer data validation and more equipment combinations. For this assignment, a small fictional catalog keeps the behavior reproducible and the design easy to inspect.

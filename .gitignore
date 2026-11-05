@@ -27,6 +27,7 @@ __pycache__/
 /tmp/
 /output/
 /A3_Boranov_Daniyar.zip
+/A4_Boranov_Daniyar.zip
 !A3_Boranov_Daniyar/evidence/test-results/*.log
 
 # Preserve submission logs and the already tracked deployment output during Bolt sync.

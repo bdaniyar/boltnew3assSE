@@ -1,0 +1,27 @@
+{
+  "url": "https://smart-campus-room-av-j4pb.bolt.host/",
+  "recorded_at": "2026-11-05T13:01:01.126656+05:00",
+  "status": 200,
+  "authentication": "curl anonymous HTTPS; no cookies, Authorization header or sign-in",
+  "html_sha256": "4649e26ee704710d921a6a78f0dc41e4f008f996a8a9cd5bf2c661f31f381bb0",
+  "assets": [
+    {
+      "url": "https://smart-campus-room-av-j4pb.bolt.host/assets/index-Bkb6ySDv.js",
+      "http_status": 200,
+      "sha256": "0f32dc42fe7bbd12b2f8231c9d4a2aa8a922d72e5105d8ca88deb13a7da03c01",
+      "local_build_asset": "output/a4-final-build/assets/index-Bkb6ySDv.js",
+      "local_exists": true,
+      "byte_identical_to_local_build": true
+    },
+    {
+      "url": "https://smart-campus-room-av-j4pb.bolt.host/assets/index-DGUI4bjT.css",
+      "http_status": 200,
+      "sha256": "e8d7db12da760077009bb96031cea78828f49a50f5a1b2545e589c0e943c3b67",
+      "local_build_asset": "output/a4-final-build/assets/index-DGUI4bjT.css",
+      "local_exists": true,
+      "byte_identical_to_local_build": true
+    }
+  ],
+  "preliminary_request_note": "A Python urllib request returned403; standardcurl returned200 and the actual browser verification is recorded separately.",
+  "all_assets_match_local_build": true
+}

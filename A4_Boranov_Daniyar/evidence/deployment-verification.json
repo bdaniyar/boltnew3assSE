@@ -1,0 +1,21 @@
+{
+  "verified": true,
+  "url": "https://smart-campus-room-av-j4pb.bolt.host/",
+  "bolt_url": "https://bolt.new/~/sb1-bskzikuu",
+  "status": "Published and anonymously verified A4",
+  "verified_at": "2026-11-05T08:00:13.300Z",
+  "summary": "The A4 application was synchronized with the existing Bolt.new project and published at the original Bolt.host address. All 22 browser checks passed without signing in. The published JavaScript and CSS match the tested local production build byte for byte.",
+  "manual_steps": [],
+  "published_request_at": "2026-11-05T07:58:43.322Z",
+  "public_ui_passed": 22,
+  "public_ui_total": 22,
+  "http_status": 200,
+  "assets_match_local_build": true,
+  "tested_code_commit": "4b2631f8519cb62321314d8c4b77c0d909c056f7",
+  "source_sync_evidence": [
+    "ConnectedGitHubpanelidentifiedbdaniyar/boltnew3assSE",
+    "CodeviewupdatedtoA4useReducer/roomcatalog/state source",
+    "PublishedappJS/CSSmatchtestedlocalbuild"
+  ],
+  "final_source_commit": "10eeb3812d6f9491cd47dcd72f5bf03b0884f88c"
+}

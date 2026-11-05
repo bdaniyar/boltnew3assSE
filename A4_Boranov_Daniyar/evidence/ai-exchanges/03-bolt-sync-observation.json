@@ -1,0 +1,8 @@
+{
+  "captured_at": "2026-11-05T07:58:01.667Z",
+  "tool": "Bolt.new Standard agent",
+  "exact_model": null,
+  "response_visibility": "Complete rendered response following the exact prompt, including intermediate progress/tool labels; hidden chain-of-thought or unexpanded tool internals are not claimed.",
+  "outcome": "Managed workspace has no shell Git commands, but source was refreshed by built-in GitHub integration and the Code view contains A4 useReducer/RoomFilters/RoomSelector/state and rooms modules. No source changes were requested or generated.",
+  "review_decision": "Do not treat lack of shell Git as proof that the UI integration or publication is unavailable. Verify actual source and published behavior through the existing UI."
+}

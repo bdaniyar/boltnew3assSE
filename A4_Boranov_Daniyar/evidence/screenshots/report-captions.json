@@ -1,0 +1,123 @@
+[
+  {
+    "path": "A4_Boranov_Daniyar/evidence/screenshots/report-desktop-top.png",
+    "caption": "The original Smart Campus visual style is retained, with the four-room catalog and new requirements controls.",
+    "capture": "Actual browser viewport",
+    "baseURL": "http://127.0.0.1:4173",
+    "viewport": {
+      "width": 1280,
+      "height": 750
+    },
+    "capturedAt": "2026-11-05T07:47:54.454Z"
+  },
+  {
+    "path": "A4_Boranov_Daniyar/evidence/screenshots/report-filter-controls.png",
+    "caption": "Eight attendees, projector and video conference are required. Capacity and ALL equipment conditions apply together.",
+    "capture": "Actual semantic element",
+    "baseURL": "http://127.0.0.1:4173",
+    "viewport": {
+      "width": 1280,
+      "height": 750
+    },
+    "capturedAt": "2026-11-05T07:47:54.624Z"
+  },
+  {
+    "path": "A4_Boranov_Daniyar/evidence/screenshots/report-matching-rooms.png",
+    "caption": "Only C-303 and D-404 satisfy the selected requirements; D-404 remains clearly blocked.",
+    "capture": "Actual semantic element",
+    "baseURL": "http://127.0.0.1:4173",
+    "viewport": {
+      "width": 1280,
+      "height": 750
+    },
+    "capturedAt": "2026-11-05T07:47:54.694Z"
+  },
+  {
+    "path": "A4_Boranov_Daniyar/evidence/screenshots/report-selected-room.png",
+    "caption": "The selected C-303 record supplies its own capacity, equipment and status.",
+    "capture": "Actual semantic element",
+    "baseURL": "http://127.0.0.1:4173",
+    "viewport": {
+      "width": 1280,
+      "height": 750
+    },
+    "capturedAt": "2026-11-05T07:47:54.790Z"
+  },
+  {
+    "path": "A4_Boranov_Daniyar/evidence/screenshots/report-available-feedback.png",
+    "caption": "C-303 is available from 11:00 to 12:00. The check creates no booking.",
+    "capture": "Actual semantic element",
+    "baseURL": "http://127.0.0.1:4173",
+    "viewport": {
+      "width": 1280,
+      "height": 750
+    },
+    "capturedAt": "2026-11-05T07:47:54.857Z"
+  },
+  {
+    "path": "A4_Boranov_Daniyar/evidence/screenshots/report-empty-state.png",
+    "caption": "Thirteen attendees plus Display have no matching room. Selection and previous feedback are cleared; checking is disabled.",
+    "capture": "Actual semantic element",
+    "baseURL": "http://127.0.0.1:4173",
+    "viewport": {
+      "width": 1280,
+      "height": 750
+    },
+    "capturedAt": "2026-11-05T07:47:55.025Z"
+  },
+  {
+    "path": "A4_Boranov_Daniyar/evidence/screenshots/report-overlap-feedback.png",
+    "caption": "The same 11:00 to 12:00 interval is unavailable in B-201 because its own booking overlaps.",
+    "capture": "Actual semantic element",
+    "baseURL": "http://127.0.0.1:4173",
+    "viewport": {
+      "width": 1280,
+      "height": 750
+    },
+    "capturedAt": "2026-11-05T07:47:55.173Z"
+  },
+  {
+    "path": "A4_Boranov_Daniyar/evidence/screenshots/report-mobile-top.png",
+    "caption": "At a 320-pixel viewport, room requirements remain readable and usable without horizontal overflow.",
+    "capture": "Actual browser viewport",
+    "baseURL": "http://127.0.0.1:4173",
+    "viewport": {
+      "width": 320,
+      "height": 700
+    },
+    "capturedAt": "2026-11-05T07:47:55.360Z"
+  },
+  {
+    "path": "A4_Boranov_Daniyar/evidence/screenshots/report-mobile-time-controls.png",
+    "caption": "The original time controls and Check/Reset actions remain usable at 320 pixels.",
+    "capture": "Actual semantic element",
+    "baseURL": "http://127.0.0.1:4173",
+    "viewport": {
+      "width": 320,
+      "height": 700
+    },
+    "capturedAt": "2026-11-05T07:47:55.458Z"
+  },
+  {
+    "path": "A4_Boranov_Daniyar/evidence/screenshots/report-mobile-feedback.png",
+    "caption": "Availability feedback remains clear in the narrow mobile layout.",
+    "capture": "Actual semantic element",
+    "baseURL": "http://127.0.0.1:4173",
+    "viewport": {
+      "width": 320,
+      "height": 700
+    },
+    "capturedAt": "2026-11-05T07:47:55.524Z"
+  },
+  {
+    "path": "A4_Boranov_Daniyar/evidence/screenshots/report-mobile-filter-controls.png",
+    "caption": "The complete attendee and equipment controls remain readable and usable at a 320-pixel viewport.",
+    "capture": "Actual semantic element",
+    "baseURL": "http://127.0.0.1:4173",
+    "viewport": {
+      "width": 320,
+      "height": 700
+    },
+    "capturedAt": "2026-11-05T07:58:57.214Z"
+  }
+]

@@ -1,0 +1,5 @@
+{
+  "question": "Bolt.new is open in Chrome, but Chrome rejects automation because “Allow JavaScript from Apple Events” is disabled. Can you enable View → Developer → Allow JavaScript from Apple Events so I can synchronize and publish the existing project? I’ll continue implementation, tests and submission files meanwhile.",
+  "actual_user_reply": "I’ll enable it in Chrome",
+  "subsequent_verification": "Chrome then accepted executejavascript via AppleEvents. No browser permission was changed automatically."
+}

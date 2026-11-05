@@ -1,0 +1,102 @@
+{
+  "status": "PASS",
+  "assignment": "Software Engineering Assignment 04",
+  "baseline": {
+    "commit": "55cab2a186df4107ab7189f509c259006af28f3f",
+    "tag": "a4-baseline-2026-11-05",
+    "bundle_verified": true
+  },
+  "source": {
+    "final_code_commit": "10eeb3812d6f9491cd47dcd72f5bf03b0884f88c",
+    "tested_code_commit": "4b2631f8519cb62321314d8c4b77c0d909c056f7",
+    "final_submission_tag": "a4-final-submission"
+  },
+  "application": {
+    "fictional_rooms": 4,
+    "filter_requirements": [
+      "F1",
+      "F2",
+      "F3",
+      "F4",
+      "F5"
+    ],
+    "preserved_acceptance_criteria": [
+      "AC1",
+      "AC2",
+      "AC3",
+      "AC4",
+      "AC5",
+      "AC6"
+    ],
+    "unchanged_python_reference": true
+  },
+  "tests": {
+    "python": "47/47",
+    "node": "76/76 (37 original + 39 new)",
+    "local_chromium": "22/22",
+    "anonymous_public_chromium": "22/22",
+    "lint": "exit 0",
+    "typecheck": "exit 0",
+    "production_build": "exit 0"
+  },
+  "deployment": {
+    "public_url": "https://smart-campus-room-av-j4pb.bolt.host/",
+    "bolt_project_url": "https://bolt.new/~/sb1-bskzikuu",
+    "anonymous_http_status": 200,
+    "published_js_css_match_tested_build": true,
+    "public_browser_checks": "22/22"
+  },
+  "documents": {
+    "report_docx": {
+      "bytes": 365514,
+      "sha256": "dc8612070ca043472e2bc5b8117a4e016505bd525a6f3a3bd20f157cb6809a76"
+    },
+    "report_pdf_pages": 10,
+    "ai_evidence_pdf_pages": 17,
+    "visual_review": "All rendered pages inspected; no layout issues found.",
+    "word_editable": true,
+    "native_tables": 9,
+    "images": 10,
+    "both_urls_clickable_in_docx_and_pdf": true,
+    "reflection_words": 269,
+    "full_prompt_response_history_preserved": true
+  },
+  "archive": {
+    "path": "A4_Boranov_Daniyar.zip",
+    "expected_package_file_count": 249,
+    "includes_source_tests_logs_screenshots_diagrams_baseline_recovery_and_reports": true,
+    "credential_or_cache_scan": "No credentials, .env files, node_modules, .git, Python bytecode or cache directories found.",
+    "integrity_check": "Final archive integrity was checked after assembly."
+  },
+  "known_limits": [
+    "Fictional room data and fixed 09:00 time; no real reservations or persistence.",
+    "Chromium automation covers responsive layout and keyboard interactions; a full screen-reader and cross-browser audit remains outside this verification.",
+    "The current dependency audit reports 12 advisories (2 low, 9 moderate, 1 high, 0 critical); no unrelated dependency upgrade was applied."
+  ],
+  "required_paths_present": [
+    "A4_Boranov_Daniyar_Report.docx",
+    "A4_Boranov_Daniyar_Report.pdf",
+    "AI_Evidence.pdf",
+    "README.md",
+    "Task1_Codebase_Analysis.md",
+    "evidence/a4-baseline.bundle",
+    "evidence/report-data.json",
+    "evidence/deployment-verification.json",
+    "evidence/document-qa.json",
+    "diagrams/architecture-before.png",
+    "diagrams/architecture-after.png",
+    "source/package.json",
+    "source/src/App.tsx",
+    "source/src/data/rooms.ts",
+    "source/src/utils/filtering.ts",
+    "source/src/state/checker.ts",
+    "tests/tests/room-selection.spec.ts",
+    "tests/scripts/catalog-test.mjs",
+    "tests/test_booking.py",
+    "tools/build_documents.py",
+    "tools/verify_documents.py",
+    "tools/capture-report-screenshots.mjs"
+  ],
+  "missing_paths": [],
+  "forbidden_paths_found": []
+}
